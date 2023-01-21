@@ -1,0 +1,20 @@
+@import "base/resets";
+@import "base/typography";
+
+//should not contain anything but @import and comments.
+
+$primary-color: red;
+
+body {
+  background-color: white;
+}
+
+h1 {
+  color: black;
+  font-family: "Poppins";
+}
+
+.icon-fa:before {
+  font-family: "icon";
+  content: "\ea92"; //unicode char
+}
