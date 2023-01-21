@@ -3,6 +3,7 @@ const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
+  //mode the webpack should run in
   mode: "development",
 
   devServer: {
