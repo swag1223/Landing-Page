@@ -12,9 +12,15 @@ module.exports = {
   //output where we specify name of compiled js (bundle.js) and output path (dist)
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name][contenthash].js", //add hash value to the bundle. It is to bust the browser cache to load the newer content. It adds hash based on content change.
-    assetModuleFilename: "[name][ext]",
+    filename: "[name].js", //add hash value to the bundle. It is to bust the browser cache to load the newer content. It adds hash based on content change.
     clean: true,
+  },
+
+  resolve: {
+    alias: {
+      "@fonts": path.resolve(__dirname, "src/assets/fonts"),
+      images: path.resolve(__dirname, "src/assets/images"),
+    },
   },
 
   module: {

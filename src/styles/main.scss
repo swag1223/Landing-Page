@@ -1,20 +1,16 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
 @import "base/resets";
+@import "base/icons";
 @import "base/typography";
 
+@import "layout/navigation";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/forms";
+
+@import "components/buttons";
+@import "components/carousel";
+
 //should not contain anything but @import and comments.
-
-$primary-color: red;
-
-body {
-  background-color: white;
-}
-
-h1 {
-  color: black;
-  font-family: "Poppins";
-}
-
-.icon-fa:before {
-  font-family: "icon";
-  content: "\ea92"; //unicode char
-}

@@ -1,7 +1,7 @@
 {
   "name": "webpack-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "static-website",
   "main": "index.js",
   "scripts": {
     "build:dev": "webpack --config webpack.dev.js",
@@ -9,7 +9,7 @@
     "dev": "webpack serve --config webpack.dev.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "swaijot",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.7.3",
