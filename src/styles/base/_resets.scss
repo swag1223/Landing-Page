@@ -66,42 +66,46 @@ video {
   text-size-adjust: none;
 }
 
-footer,
-header,
-nav,
-section,
-main {
-  display: block;
-}
+// footer,
+// header,
+// nav,
+// section,
+// main {
+//   display: block;
+// }
 
-body {
-  line-height: 1;
-}
+// body {
+//   line-height: 1;
+// }
 
 ol,
 ul {
   list-style: none;
 }
 
-blockquote,
-q {
-  quotes: none;
+a {
+  text-decoration: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
+// blockquote,
+// q {
+//   quotes: none;
+// }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+// blockquote:before,
+// blockquote:after,
+// q:before,
+// q:after {
+//   content: "";
+//   content: none;
+// }
 
-input {
-  appearance: none;
-  border-radius: 0;
-}
+// table {
+//   border-collapse: collapse;
+//   border-spacing: 0;
+// }
+
+// input {
+//   appearance: none;
+//   border-radius: 0;
+// }

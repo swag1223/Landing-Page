@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name][contenthash].js", //add hash value to the bundle. It is to bust the browser cache to load the newer content. It adds hash based on content change.
-    assetModuleFilename: "[name][ext]",
+    // assetModuleFilename: "[name][ext]",
     clean: true,
   },
 
