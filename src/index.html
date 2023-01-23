@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>what</title>
+    <title>Webpack App</title>
   </head>
   <body>
     <header>
       <nav class="site-navigation">
-        <img src="./assets/images/logo.svg" alt="blue oval" />
+        <img src="~images/logo.svg" alt="blue oval" />
 
         <ul class="site-navigation__menu">
           <li class="site-navigation__menu__item">
@@ -35,9 +35,10 @@
 
         <img
           class="site-navigation__hamburger"
-          src="./assets/images/hamburger.svg"
+          src="~images/hamburger.svg"
           alt="nav menu"
         />
+        <!-- html-loader and css-loader translate non-root URLs to relative paths. In order to treat it like a module path, prefix it with ~ -->
       </nav>
     </header>
   </body>

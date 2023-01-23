@@ -2,8 +2,17 @@
 @import "abstracts/mixins";
 
 @import "base/resets";
+@import "base/icons";
 @import "base/typography";
 @import "components/buttons";
 @import "layout/navigation";
+
+@import "layout/navigation";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/forms";
+
+@import "components/buttons";
+@import "components/carousel";
 
 //should not contain anything but @import and comments.

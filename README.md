@@ -1,3 +1,7 @@
+## About the app
+
+A static and responsive website using HTML, SCSS ,JS and webpack.
+
 ## How to develop the app
 
 **Initialize the environment**
@@ -8,7 +12,17 @@
 git clone git@code.jtg.tools:swaijot.kaur/assignment1.git
 ```
 
-2\. Install the dependencies:
+2\. Install nvm :
+
+```
+https://github.com/nvm-sh/nvm#installing-and-updating
+```
+
+3\. Install node using nvm:
+
+`nvm install --lts`
+
+4\. Install the dependencies:
 
 ```bash
 nvm use

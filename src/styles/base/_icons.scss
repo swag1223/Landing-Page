@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "icon";
+  src: url("@fonts/icomoon.woff") format("woff");
+  font-style: normal;
+}
+
+.icon-facebook:before {
+  font-family: "icon";
+  content: "\ea91"; //unicode char
+}
+
+.icon-instagram:before {
+  font-family: "icon";
+  content: "\ea92";
+}
+
+.icon-twitter:before {
+  font-family: "icon";
+  content: "\ea96";
+}
+
+.icon-youtube:before {
+  font-family: "icon";
+  content: "\ea9d";
+}

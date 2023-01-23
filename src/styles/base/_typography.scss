@@ -2,11 +2,22 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("../assets/fonts/Poppins-Bold.woff") format("woff");
+  src: url("@fonts/Poppins-Regular.woff") format("woff");
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: "icon";
-  src: url("../assets/fonts/icomoon.woff") format("woff");
-  font-style: normal;
+  font-family: "Poppins";
+  src: url("@fonts/Poppins-Medium.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("@fonts/Poppins-Bold.woff") format("woff");
+  font-weight: 800;
+}
+
+body {
+  font-family: "Poppins";
 }
