@@ -1,3 +1,4 @@
+//should not contain anything but @import and comments.
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
@@ -14,5 +15,3 @@
 
 @import "components/buttons";
 @import "components/carousel";
-
-//should not contain anything but @import and comments.

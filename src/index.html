@@ -8,37 +8,40 @@
   </head>
   <body>
     <header>
-      <nav class="site-navigation">
-        <img src="~images/logo.svg" alt="blue oval" />
+      <nav class="nav">
+        <div class="nav__logo">
+          <img src="assets/images/logo.svg" alt="blue oval" />
+        </div>
 
-        <ul class="site-navigation__menu">
-          <li class="site-navigation__menu__item">
-            <a href="#">First Link</a>
-          </li>
-          <li class="site-navigation__menu__item">
-            <a href="#">Second Link</a>
-          </li>
-          <li class="site-navigation__menu__item">
-            <a href="#">Third Link</a>
-          </li>
-          <li class="site-navigation__menu__item">
-            <a href="#">Fourth Link</a>
-          </li>
+        <ul class="nav__menu">
+          <div class="nav__menu--left">
+            <li class="nav__item">
+              <a href="#">First Link</a>
+            </li>
+            <li class="nav__item">
+              <a href="#">Second Link</a>
+            </li>
+            <li class="nav__item">
+              <a href="#">Third Link</a>
+            </li>
+            <li class="nav__item">
+              <a href="#">Fourth Link</a>
+            </li>
+          </div>
 
-          <li class="site-navigation__menu__item">
-            <a href="#">Fifth Link</a>
-          </li>
-          <li class="site-navigation__menu__item">
-            <button>Button</button>
-          </li>
+          <div class="nav__menu--right">
+            <li class="nav__item">
+              <a href="#">Fifth Link</a>
+            </li>
+            <li class="nav__item">
+              <button>Button</button>
+            </li>
+          </div>
         </ul>
 
-        <img
-          class="site-navigation__hamburger"
-          src="~images/hamburger.svg"
-          alt="nav menu"
-        />
-        <!-- html-loader and css-loader translate non-root URLs to relative paths. In order to treat it like a module path, prefix it with ~ -->
+        <div class="nav__hamburger">
+          <img src="assets/images/hamburger.svg" alt="hamburger menu" />
+        </div>
       </nav>
     </header>
   </body>

@@ -1,61 +1,106 @@
 //Navigation
 
-.site-navigation {
+.nav {
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 2rem;
   align-items: center;
-
-  border: 1px solid black;
 }
 
-.site-navigation__hamburger {
+.nav__hamburger > img {
   height: 2.2rem;
   cursor: pointer;
-}
-.site-navigation__menu {
-  // border: 1px solid white;
-  display: none;
+  display: block;
+  // z-index: 1;
 }
 
-@media (max-width: 992px) {
-  .site-navigation__hamburger {
-    display: block;
-  }
+.nav__menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // gap: 1rem;
+  justify-content: space-between;
+  // flex: start;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  // bottom: 0;
+  right: -100%;
+  transition: 0.5s;
+  border: 1px solid blue;
 
-  .site-navigation__menu {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: -15%;
-    right: -100%;
-    transition: 0.5s;
-    margin: 0 auto;
-  }
+  padding: 5rem 2rem;
+  // background-color: pink;
+  // margin: 0 auto;
+}
 
-  .site-navigation__menu > li {
-    padding: 1rem 0;
-  }
+.nav__menu--left {
+  // border: 1px solid red;
 
-  .site-navigation__menu__item > a {
-    margin: 1rem 0;
-    color: $secondary-color;
-    // z-index: 1;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  // padding: 5rem 2rem;
 
-  .active {
-    right: 0;
-    z-index: 100;
-    transition: 0.2s ease;
+  width: 100%;
+  li {
+    padding: 1rem;
+    // background-color: green;
+  }
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+
+  // height: ;
+}
+.nav__menu--right {
+  // border: 1px solid red;
+  width: 100%;
+  li {
+    padding: 1rem;
+  }
+  // flex: 1;
+}
+// .site-navigation__menu > li {
+//   padding: 1rem 0;
+//   // margin: 1rem 0;
+// }
+
+.nav__item > a {
+  color: $secondary-color;
+}
+
+.active {
+  right: 0;
+  z-index: 100;
+  transition: 0.5s ease;
+}
+
+.nav__hamburger,
+.nav__menu {
+  @include desktop {
+    display: none;
   }
 }
 
-@media screen and (max-width: 480px) {
-  site-navigation__menu__item > a {
-    padding: 0.75rem 0;
-  }
-}
+//desktop
+// @media (min-width: 992px) {
+//   .site-navigation__hamburger {
+//     display: none;
+//   }
+
+//   .site-navigation__menu {
+//     display: none;
+//   }
+// }
+
+//tablet 768
+//landscape 568
+//portrait 320
+
+// @media screen and (max-width: 480px) {
+//   .site-navigation__menu__item {
+//     padding: 0.75rem 0;
+//   }
+// }

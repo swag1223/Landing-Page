@@ -12,14 +12,15 @@ module.exports = {
   //output where we specify name of compiled js (bundle.js) and output path (dist)
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].js", //add hash value to the bundle. It is to bust the browser cache to load the newer content. It adds hash based on content change.
+    filename: "[name].js",
     clean: true,
   },
 
+  //Aliases are a way to let webpack know where to find our code by providing a word or character that represents a partial reference to where the code is located. Once webpack knows this, the code can be properly resolved while it is compiling during development or building the final package.
   resolve: {
     alias: {
       "@fonts": path.resolve(__dirname, "src/assets/fonts"),
-      images: path.resolve(__dirname, "src/assets/images"),
+      // images: path.resolve(__dirname, "src/assets/images"),
     },
   },
 

@@ -1,21 +1,21 @@
 import "./styles/main.scss";
 
 console.log("swaijot kaur");
-const hamburger = document.querySelector(".site-navigation__hamburger");
-const siteNavMenu = document.querySelector(".site-navigation__menu");
+const hamburger = document.querySelector(".nav__hamburger");
+const navMenu = document.querySelector(".nav__menu");
 
 console.log(hamburger);
-console.log(siteNavMenu);
+console.log(navMenu);
 
 hamburger.addEventListener("click", () => {
   console.log("clicked");
   hamburger.classList.toggle("active");
-  siteNavMenu.classList.toggle("active");
+  navMenu.classList.toggle("active");
 });
 
-document.querySelectorAll(".site-navigation__menu__item").forEach((link) =>
+document.querySelectorAll(".nav__item").forEach((link) =>
   link.addEventListener("click", () => {
     hamburger.classList.remove("active");
-    siteNavMenu.classList.remove("active");
+    navMenu.classList.remove("active");
   })
 );
