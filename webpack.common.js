@@ -20,11 +20,7 @@ module.exports = {
   resolve: {
     alias: {
       "@fonts": path.resolve(__dirname, "src/assets/fonts"),
-<<<<<<< HEAD
       // images: path.resolve(__dirname, "src/assets/images"),
-=======
-      // "@images": path.resolve(__dirname, "src/assets/images"),
->>>>>>> sk_ru_01
     },
   },
 
