@@ -6,7 +6,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   //entry where we will select out main js file (in this case index.js)
   entry: {
-    bundle: path.resolve(__dirname, "src/index.js"), //relative path to where webpack is run from
+    bundle: [
+      path.resolve(__dirname, "src/index.js"), //relative path to where webpack is run from
+      path.resolve(__dirname, "src/styles/main.scss"),
+    ],
   },
 
   //output where we specify name of compiled js (bundle.js) and output path (dist)
@@ -20,7 +23,6 @@ module.exports = {
   resolve: {
     alias: {
       "@fonts": path.resolve(__dirname, "src/assets/fonts"),
-      // images: path.resolve(__dirname, "src/assets/images"),
     },
   },
 
@@ -45,7 +47,7 @@ module.exports = {
         test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
         type: "asset/resource", //asset/resource emits a separate file and exports the URL.
         generator: {
-          filename: "./assests/images/[name][ext]",
+          filename: "./assets/images/[name][ext]",
         },
       },
 
@@ -53,7 +55,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
         generator: {
-          filename: "./assests/fonts/[name][ext]",
+          filename: "./assets/fonts/[name][ext]",
         },
       },
     ],

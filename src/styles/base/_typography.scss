@@ -3,17 +3,17 @@
 @font-face {
   font-family: "Poppins";
   src: url("@fonts/Poppins-Regular.woff") format("woff");
-  font-weight: 400;
+  font-weight: $normal-weight;
 }
 
 @font-face {
   font-family: "Poppins";
   src: url("@fonts/Poppins-Medium.woff") format("woff");
-  font-weight: 600;
+  font-weight: $semibold-weight;
 }
 
 @font-face {
   font-family: "Poppins";
   src: url("@fonts/Poppins-Bold.woff") format("woff");
-  font-weight: 800;
+  font-weight: $bold-weight;
 }

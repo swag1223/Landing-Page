@@ -1,5 +1,3 @@
-import "./styles/main.scss";
-
 console.log("swaijot kaur");
 const hamburger = document.querySelector(".nav__hamburger");
 const navMenu = document.querySelector(".nav__menu");
