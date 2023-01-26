@@ -6,8 +6,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   //entry where we will select out main js file (in this case index.js)
   entry: {
+    //relative path to where webpack is run from
     bundle: [
-      path.resolve(__dirname, "src/index.js"), //relative path to where webpack is run from
+      path.resolve(__dirname, "src/index.js"),
       path.resolve(__dirname, "src/styles/main.scss"),
     ],
   },
