@@ -3,8 +3,15 @@ const hamburger = document.querySelector(".nav__hamburger");
 const navMenu = document.querySelector(".nav__menu");
 const navItem = document.querySelectorAll(".nav__item");
 
-console.log(hamburger);
-console.log(navMenu);
+if (navMenu.classList.contains("active")) {
+  navItem.forEach((link) => {
+    link.removeAttribute("tabindex");
+  });
+} else {
+  navItem.forEach((link) => {
+    link.setAttribute("tabindex", "-1");
+  });
+}
 
 hamburger.addEventListener("click", () => {
   console.log("clicked");
