@@ -1,0 +1,19 @@
+// Typography rules
+
+@font-face {
+  font-family: "Poppins";
+  src: url("@fonts/Poppins-Regular.woff") format("woff");
+  font-weight: $normal-weight;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("@fonts/Poppins-Medium.woff") format("woff");
+  font-weight: $semibold-weight;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("@fonts/Poppins-Bold.woff") format("woff");
+  font-weight: $bold-weight;
+}
