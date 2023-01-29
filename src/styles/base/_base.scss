@@ -1,5 +1,5 @@
 html {
-  font-size: 62.5%;
+  font-size: $html-font-size;
 }
 
 body {
@@ -10,8 +10,7 @@ a {
   text-decoration: none;
   color: $secondary-color;
 
-  &:hover,
-  :active {
+  &:hover {
     color: $primary-color;
   }
 }

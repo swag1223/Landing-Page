@@ -1,40 +1,38 @@
-//Sass Mixins
+@use "sass:math";
+@function px2rem($px) {
+  $calcRem: math.div($px, $base-font-size);
+  @return #{$calcRem}rem;
+}
 
-@mixin breakpoint($media) {
-  @if $media == mobile-potrait {
-    @media (min-width: $screen-mobile-potrait) {
-      @content;
-    }
-  } @else if $media == mobile-landscape {
-    @media (min-width: $screen-mobile-landscape) {
-      @content;
-    }
-  } @else if $media == tablet {
-    @media (min-width: $screen-tablet) {
-      @content;
-    }
-  } @else if $media == desktop {
-    @media (min-width: $screen-desktop) {
+@mixin breakpoint($name) {
+  @if not map-has-key($breakpoints, $name) {
+    @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+  } @else {
+    @media (min-width: map-get($breakpoints, $name)) {
       @content;
     }
   }
 }
 
+@mixin display-flex(
+  $justify-content: center,
+  $align-items: center,
+  $flex-direction: row
+) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+}
+
 @mixin primary-button {
   background-color: $primary-color;
-  color: $base-color;
-  border-radius: 0.6rem;
-  padding: 1rem 1.2rem;
+  border-radius: px2rem(6px);
+  padding: px2rem(10px) px2rem(12px);
   border: none;
   cursor: pointer;
 
   &:hover {
     background-color: $primary-dark-color;
   }
-}
-
-@mixin display-flex($justify-content: center, $align-items: center) {
-  display: flex;
-  justify-content: $justify-content;
-  align-items: $align-items;
 }

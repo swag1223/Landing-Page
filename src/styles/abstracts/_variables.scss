@@ -1,4 +1,7 @@
 //Sass Variables
+$html-font-size: 62.5%;
+$base-font-size: 10px;
+
 $base-color: #ffffff;
 
 $primary-color: #24afb5;
@@ -10,7 +13,9 @@ $normal-weight: 400;
 $semibold-weight: 600;
 $bold-weight: 800;
 
-$screen-mobile-potrait: 320px;
-$screen-mobile-landscape: 568px;
-$screen-tablet: 768px;
-$screen-desktop: 992px;
+$breakpoints: (
+  "small": 320px,
+  "medium": 568px,
+  "large": 768px,
+  "wide": 992px,
+);
