@@ -1,7 +1,11 @@
-import img from "./assets/images/cancel-circle.svg";
+import img from "@images/cancel-circle.svg";
+
 const hamburger = document.querySelector(".nav__hamburger");
 const navMenu = document.querySelector(".nav__menu");
 const navItem = document.querySelectorAll(".nav__item");
+
+let activeLink = document.querySelector(".nav__item--active");
+
 
 if (navMenu.classList.contains("active")) {
   navItem.forEach((link) => {
@@ -15,9 +19,9 @@ if (navMenu.classList.contains("active")) {
 
 hamburger.addEventListener("click", () => {
   console.log("clicked");
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-  if (hamburger.classList.contains("active")) {
+  hamburger.classList.toggle("nav__menu--open");
+  navMenu.classList.toggle("nav__menu--open");
+  if (hamburger.classList.contains("nav__menu--open")) {
     hamburger.firstElementChild.src = "assets/images/cancel-circle.svg";
   } else {
     hamburger.firstElementChild.src = "assets/images/hamburger.svg";
@@ -26,8 +30,13 @@ hamburger.addEventListener("click", () => {
 
 navItem.forEach((link) =>
   link.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
+    
+    link.classList.add("nav__item--active");
+    activeLink.classList.remove("nav__item--active");
+    activeLink = link;
+
+    hamburger.classList.remove("nav__menu--open");
+    navMenu.classList.remove("nav__menu--open");
 
     hamburger.firstElementChild.src = "assets/images/hamburger.svg";
   })
