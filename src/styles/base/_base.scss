@@ -5,13 +5,34 @@ html {
 body {
   font-family: "Poppins";
 }
+h1 {
+  font-weight: $semibold-weight;
+  font-size: 3.6rem;
+  line-height: 4.6rem;
+  letter-spacing: -0.08rem;
+  margin: 0;
+}
+
+// h2 {
+//   font-size: ;
+// }
+
+p {
+  font-weight: $regular-weight;
+  font-size: 2rem;
+  line-height: 3rem;
+
+  letter-spacing: -0.03rem;
+  color: $text-color;
+}
 
 a {
   text-decoration: none;
   color: $secondary-color;
 
   &:hover,
-  :active {
+  &:focus,
+  &:active {
     color: $primary-color;
   }
 }
