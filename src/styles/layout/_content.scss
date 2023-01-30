@@ -1,5 +1,4 @@
 .content {
-    border-bottom: 1px solid #DBDBDB;
     @include breakpoint(large){
         @include display-flex($align-items: flex-start, $flex-direction: row-reverse);
         padding: px2rem(25px);
@@ -39,10 +38,10 @@
             gap: px2rem(20px);
 
         }
-        padding: px2rem(42px) px2rem(15px);
+        padding: px2rem(30px) px2rem(15px);
         // border: 1px solid black;
         text-align: left;
-        gap: px2rem(20px);
+        gap: px2rem(18px);
     }
 
     &__sub-heading{
@@ -70,7 +69,5 @@
             color: $primary-dark-color;
         }
     }
-
-
 
 }

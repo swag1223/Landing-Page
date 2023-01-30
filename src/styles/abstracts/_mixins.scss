@@ -19,20 +19,6 @@
   flex-direction: $flex-direction;
 }
 
-@mixin typography(
-  $font-size: px2rem(36px),
-  $font-weight: $semibold-weight,
-  $letter-spacing: px2rem(-0.8px),
-  $line-height: px2rem(46px)
-) {
-  font-size: $font-size;
-  font-weight: $font-weight;
-  letter-spacing: $letter-spacing;
-  line-height: $line-height;
-
-}
-
-
 @mixin primary-button {
   background-color: $primary-color;
   border-radius: px2rem(6px);
@@ -47,3 +33,43 @@
     background-color: $primary-dark-color;
   }
 }
+
+@mixin typography(
+  $font-size: px2rem(36px),
+  $font-weight: $semibold-weight,
+  $letter-spacing: px2rem(-0.8px),
+  $line-height: px2rem(46px)
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+
+}
+
+// @mixin large-description-text {
+//   font-size: px2rem(20px);
+//   font-weight: $regular-weight;
+//   letter-spacing: px2rem(-0.3px);
+//   line-height: px2rem(30px);
+
+// }
+
+// @mixin small-description-text {
+//   font-size: px2rem(15px);
+//   font-weight: $regular-weight;
+//   letter-spacing: px2rem(-0.2px);
+//   line-height: px2rem(22px);
+
+// }
+
+// @mixin short-description-text {
+//   font-size: px2rem(13px);
+//   font-weight: $regular-weight;
+//   letter-spacing: px2rem(-0.1px);
+//   line-height: px2rem(18px);
+
+// }
+
+
+

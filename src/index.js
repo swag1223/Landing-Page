@@ -3,6 +3,8 @@ import img from "@images/cancel-circle.svg";
 const hamburger = document.querySelector(".nav__hamburger");
 const navMenu = document.querySelector(".nav__menu");
 const navItem = document.querySelectorAll(".nav__item");
+const newsLetterFormInput = document.querySelector(".newsletter__form-input");
+const newsLetterSubscribeBtn = document.querySelector(".newsletter__form-subscribe-btn");
 
 let activeLink = document.querySelector(".nav__item--active");
 
@@ -39,3 +41,28 @@ navItem.forEach((link) =>
     hamburger.firstElementChild.src = "assets/images/hamburger.svg";
   })
 );
+
+//email validation 
+newsLetterSubscribeBtn.addEventListener('click', ()=> {
+  let input = newsLetterFormInput.value;
+
+  if(input == "") {
+    alert("Please fill the email ");
+    return false;
+  }
+  else {
+    let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    if(newsLetterFormInput.value.amatch(mailFormat)) {
+      alert("SUbscribbed successfully!!");
+      newsLetterFormInput.focus();
+      return true;
+    }
+    else {
+      alert("Enter valid email please!!");
+      newsLetterFormInput.focus();
+      return false;
+    }
+    
+  }
+})

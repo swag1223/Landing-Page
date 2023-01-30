@@ -1,0 +1,45 @@
+.newsletter {
+    margin-top: px2rem(35px);
+  padding: px2rem(18px);
+  border-bottom: 1px solid #DBDBDB;
+  border-top: 1px solid #DBDBDB;
+//   border: 1px solid red;
+  @include display-flex($align-items:flex-start ,$flex-direction: column);
+
+  gap: px2rem(15px);
+  &__heading {
+    @include breakpoint(small);
+  }
+
+  &__para {
+    @include typography(
+      $font-weight: $regular-weight,
+      $font-size: px2rem(15px),
+      $letter-spacing: px2rem(-0.2px),
+      $line-height: px2rem(22px)
+    );
+  }
+
+  &__form {
+    // border: 1px solid black;
+    @include display-flex($align-items: flex-start,$flex-direction: column);
+    gap: px2rem(10px);
+  }
+
+  &__form-input {
+    border: px2rem(1px) solid #dbdbdb;
+    border-radius: px2rem(6px);
+    width: 85%;
+    padding: px2rem(10px) px2rem(20px);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: -0.3px;
+
+    /* 2. On Surface / 200 */
+
+    color: #585757;
+  }
+}
