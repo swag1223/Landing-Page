@@ -6,7 +6,6 @@ const navItem = document.querySelectorAll(".nav__item");
 
 let activeLink = document.querySelector(".nav__item--active");
 
-
 if (navMenu.classList.contains("active")) {
   navItem.forEach((link) => {
     link.removeAttribute("tabindex");
@@ -30,7 +29,6 @@ hamburger.addEventListener("click", () => {
 
 navItem.forEach((link) =>
   link.addEventListener("click", () => {
-    
     link.classList.add("nav__item--active");
     activeLink.classList.remove("nav__item--active");
     activeLink = link;

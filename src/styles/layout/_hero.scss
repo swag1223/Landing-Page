@@ -1,4 +1,5 @@
 .hero {
+  // border: 1px solid red;
   padding: px2rem(10px);
   height: 100%;
 
@@ -191,6 +192,7 @@
     }
 
     &__brands {
+      // border: 1px solid blue;
 
       padding: px2rem(26px) px2rem(5px);
       @include display-flex($justify-content: flex-start, $align-items: center);

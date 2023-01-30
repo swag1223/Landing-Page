@@ -7,24 +7,72 @@ body {
 }
 h1 {
 
+
   @include typography();
   margin: 0;
 }
 
 
+h2{
+  @include breakpoint(small) {
+    @include typography($font-size: px2rem(36px), $font-weight: $semibold-weight,$letter-spacing: px2rem(-0.8px),$line-height: px2rem(46px));
+  }
+  @include breakpoint(medium){
+    @include typography($font-size: px2rem(32px), $font-weight: $semibold-weight,$letter-spacing: px2rem(-1.2px),$line-height: px2rem(60px));
+
+  }
+  @include breakpoint(large){
+    @include typography($font-size: px2rem(32px), $font-weight: $semibold-weight,$letter-spacing: px2rem(-1.2px),$line-height: px2rem(40px));
+
+  }
+
+}
+
+h3{
+  @include breakpoint(small) {
+    @include typography($font-size: px2rem(13px), $font-weight: $semibold-weight,$letter-spacing: px2rem(1px),$line-height: px2rem(14px));
+  }
+
+}
+
+
 p {
-  @include typography(
-    $font-size: px2rem(20px),
-    $font-weight: $regular-weight,
-    $letter-spacing: px2rem(-0.3px),
-    $line-height: px2rem(30px)
-  );
+
+  @include breakpoint(small) {
+    @include typography($font-size: px2rem(20px), $font-weight: $regular-weight,$letter-spacing: px2rem(-0.3px),$line-height: px2rem(30px));
+  }
+  @include breakpoint(medium) {
+    @include typography($font-size: px2rem(16px), $font-weight: $regular-weight,$letter-spacing: px2rem(-0.3px),$line-height: px2rem(30px));
+  }
   color: $text-color;
 }
+
 
 a {
   text-decoration: none;
   color: $secondary-color;
+
+  @include breakpoint(small) {
+    @include typography(
+  
+      $font-weight: $medium-weight,
+      $font-size: px2rem(20px),
+      $line-height: px2rem(26px),
+      $letter-spacing: px2rem(-0.2px)
+
+    );
+  }
+
+  @include breakpoint(large) {
+    @include typography(
+      $font-weight: $medium-weight,
+      $font-size: px2rem(16px),
+      $line-height: px2rem(26px),
+      $letter-spacing: px2rem(-0.2px)
+      
+
+    );
+  }
 
   &:hover {
     color: $primary-color;

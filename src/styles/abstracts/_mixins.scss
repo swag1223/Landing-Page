@@ -1,9 +1,3 @@
-@use "sass:math";
-@function px2rem($px) {
-  $calcRem: math.div($px, $base-font-size);
-  @return #{$calcRem}rem;
-}
-
 @mixin breakpoint($name) {
   @if not map-has-key($breakpoints, $name) {
     @warn "Warning: `#{$name}` is not a valid breakpoint name.";
