@@ -2,7 +2,12 @@
   @include display-flex($justify-content: space-between);
   font-size: px2rem(20px);
   padding: px2rem(15px);
-  font-weight: $semibold-weight;
+  font-weight: $medium-weight;
+
+  @include breakpoint(medium) {
+    padding: px2rem(15px) px2rem(30px);
+
+  }
 
   @include breakpoint(wide) {
     padding: px2rem(15px) px2rem(30px);

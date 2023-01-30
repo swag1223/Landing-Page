@@ -6,23 +6,19 @@ body {
   font-family: "Poppins";
 }
 h1 {
-  font-weight: $semibold-weight;
-  font-size: 3.6rem;
-  line-height: 4.6rem;
-  letter-spacing: -0.08rem;
+
+  @include typography();
   margin: 0;
 }
 
-// h2 {
-//   font-size: ;
-// }
 
 p {
-  font-weight: $regular-weight;
-  font-size: 2rem;
-  line-height: 3rem;
-
-  letter-spacing: -0.03rem;
+  @include typography(
+    $font-size: px2rem(20px),
+    $font-weight: $regular-weight,
+    $letter-spacing: px2rem(-0.3px),
+    $line-height: px2rem(30px)
+  );
   color: $text-color;
 }
 

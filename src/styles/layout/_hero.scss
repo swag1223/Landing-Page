@@ -1,0 +1,216 @@
+.hero {
+  padding: px2rem(10px);
+  height: 100%;
+
+  @include display-flex($flex-direction: column);
+  gap: px2rem(15px);
+
+  @include breakpoint(medium) {
+    padding: px2rem(30px);
+    gap: 0;
+  }
+  @include breakpoint(large) {
+    @include display-flex(
+      $justify-content: space-between,
+      $flex-direction: column
+    );
+    gap: px2rem(40px);
+  }
+
+  @include breakpoint(wide) {
+    gap: px2rem(35px);
+    padding: px2rem(90px);
+  }
+
+  &__card-one {
+    padding: px2rem(20px) px2rem(4px);
+    @include display-flex($flex-direction: column);
+    height: 100%;
+    gap: px2rem(32px);
+
+    @include breakpoint(medium) {
+      @include display-flex($align-items: flex-start, $flex-direction: column);
+      padding: px2rem(20px) 0;
+    }
+
+    @include breakpoint(large) {
+      padding: 0;
+      @include display-flex($align-items: flex-start, $flex-direction: row);
+    }
+
+    @include breakpoint(wide) {
+      @include display-flex(
+        $justify-content: space-around,
+        $align-items: center,
+        $flex-direction: row
+      );
+      padding: px2rem(10px) 0;
+      gap: 0 px2rem(20px) 0;
+    }
+
+    &__img {
+      width: 97%;
+      border-radius: px2rem(6px);
+
+      @include breakpoint(medium) {
+        width: 100%;
+      }
+      @include breakpoint(large) {
+        width: 50%;
+      }
+      
+
+      img {
+        min-height: px2rem(222px);
+        width: 100%;
+
+        @include breakpoint(large) {
+          height: px2rem(350px);
+        }
+        @include breakpoint(large) {
+          height:  px2rem(350px);
+        }
+      }
+    }
+
+    &__content {
+   
+      @include display-flex($align-items: flex-start, $flex-direction: column);
+      gap: px2rem(18px);
+      padding: 0 px2rem(1px);
+
+      @include breakpoint(medium) {
+        width: 78%;
+        @include display-flex(
+          $justify-content: flex-start,
+          $align-items: flex-start,
+          $flex-direction: column
+        );
+        gap: px2rem(20px);
+        padding: 0;
+      }
+
+      @include breakpoint(large) {
+        width: 50%;
+      }
+
+      @include breakpoint(wide){
+        @include display-flex(
+        $align-items: flex-start,
+        $flex-direction: column
+      );
+      padding: 0;
+      gap: 0;
+
+      }
+
+      h1 {
+        @include breakpoint(medium) {
+          @include typography(
+            $font-size: px2rem(40px),
+            $letter-spacing: px2rem(-1.2px),
+            $line-height: px2rem(60px)
+          );
+        }
+
+        @include breakpoint(large) {
+          @include typography(
+            $font-size: px2rem(32px),
+            $letter-spacing: px2rem(-1.2px),
+            $line-height: px2rem(40px)
+          );
+        }
+
+        @include breakpoint(wide) {
+          @include typography(
+            $font-size: px2rem(40px),
+            $letter-spacing: px2rem(-1.2px),
+            $line-height: px2rem(60px)
+          );
+        }
+      }
+
+      p {
+        @include breakpoint(medium) {
+          @include typography(
+            $font-size: px2rem(16px),
+            $font-weight: $regular-weight,
+            $letter-spacing: px2rem(-0.3px),
+            $line-height: px2rem(30px)
+          );
+        }
+      }
+
+      button {
+        @include primary-button;
+        margin: px2rem(13px) 0;
+        padding: px2rem(11px) px2rem(16px);
+
+        @include breakpoint(medium) {
+          margin: px2rem(13px) 0 0 0;
+        }
+      }
+
+      @include breakpoint(wide) {
+        padding: px2rem(20px) px2rem(8px);
+
+      }
+    }
+  }
+
+  &__card-two {
+    padding: px2rem(4px);
+    width: 100%;
+    @include breakpoint(medium) {
+      padding: 0;
+    }
+    
+    p {
+      padding: px2rem(4px);
+
+      @include typography(
+        $font-size: px2rem(13px),
+        $font-weight: $regular-weight,
+        $letter-spacing: px2rem(1px),
+        $line-height: px2rem(14px)
+      );
+
+      @include breakpoint(medium) {
+        margin: 0 0 px2rem(20px) 0;
+      };
+
+      @include breakpoint(large) {
+        margin: 0 0 px2rem(30px) 0;
+
+      }
+      @include breakpoint(wide) {
+        margin: 0 0 px2rem(25px) 0;
+
+      }
+
+    }
+
+    &__brands {
+
+      padding: px2rem(26px) px2rem(5px);
+      @include display-flex($justify-content: flex-start, $align-items: center);
+      flex-wrap: wrap;
+      gap: px2rem(16px);
+
+      @include breakpoint(medium) {
+        gap: px2rem(30px);
+      }
+      @include breakpoint(large) {
+        padding: 0;
+        @include display-flex($justify-content: space-between, $align-items: center);
+        gap: px2rem(16px);
+      }
+      @include breakpoint(wide) {
+        padding: 0 px2rem(5px);
+        @include display-flex($justify-content: space-between, $align-items: center);
+
+        
+      }
+    }
+  }
+}
