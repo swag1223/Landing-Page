@@ -6,10 +6,9 @@
 
   @include breakpoint(medium) {
     padding: px2rem(15px) px2rem(30px);
-
   }
 
-  @include breakpoint(wide) {
+  @include breakpoint(xlarge) {
     padding: px2rem(15px) px2rem(30px);
     gap: px2rem(20px);
     font-size: px2rem(15px);
@@ -18,7 +17,7 @@
   &__logo {
     img {
       width: px2rem(40px);
-      @include breakpoint(wide) {
+      @include breakpoint(xlarge) {
         width: px2rem(48px);
       }
     }
@@ -34,7 +33,7 @@
       height: px2rem(30px);
     }
 
-    @include breakpoint(wide) {
+    @include breakpoint(xlarge) {
       display: none;
     }
   }
@@ -51,7 +50,7 @@
     transition: 0.5s ease;
     overflow: auto;
 
-    @include breakpoint(wide) {
+    @include breakpoint(xlarge) {
       @include display-flex(
         $justify-content: space-between,
         $flex-direction: row
@@ -71,7 +70,7 @@
         padding: px2rem(10px);
       }
 
-      @include breakpoint(wide) {
+      @include breakpoint(xlarge) {
         width: fit-content;
         margin: 0;
 
@@ -92,11 +91,11 @@
 
       li {
         padding: px2rem(10px);
-        @include breakpoint(wide) {
+        @include breakpoint(xlarge) {
           padding: px2rem(8px) 0;
         }
       }
-      @include breakpoint(wide) {
+      @include breakpoint(xlarge) {
         width: 25%;
         margin: 0;
         @include display-flex($justify-content: flex-end, $flex-direction: row);
@@ -108,20 +107,16 @@
       right: 0;
       z-index: 100;
       transition: 0.5s ease;
-      @include breakpoint(wide) {
-        position: relative;
-        z-index: 0;
-      }
+      // @include breakpoint(xlarge) {
+      //   position: relative;
+      //   z-index: 0;
+      // }
     }
-
-    
   }
   &__item--active {
-    a{
+    a {
       color: $primary-color;
     }
-
-      
   }
 
   &__btn {
@@ -135,7 +130,7 @@
       font-size: px2rem(20px);
       font-weight: $semibold-weight;
       text-align: center;
-      @include breakpoint(wide) {
+      @include breakpoint(xlarge) {
         font-size: px2rem(15px);
       }
     }

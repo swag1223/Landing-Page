@@ -18,7 +18,7 @@
     gap: px2rem(40px);
   }
 
-  @include breakpoint(wide) {
+  @include breakpoint(xlarge) {
     gap: px2rem(35px);
     padding: px2rem(90px);
   }
@@ -39,7 +39,7 @@
       @include display-flex($align-items: flex-start, $flex-direction: row);
     }
 
-    @include breakpoint(wide) {
+    @include breakpoint(xlarge) {
       @include display-flex(
         $justify-content: space-around,
         $align-items: center,
@@ -95,7 +95,7 @@
         width: 50%;
       }
 
-      @include breakpoint(wide){
+      @include breakpoint(xlarge){
         @include display-flex(
         $align-items: flex-start,
         $flex-direction: column
@@ -122,7 +122,7 @@
           );
         }
 
-        @include breakpoint(wide) {
+        @include breakpoint(xlarge) {
           @include typography(
             $font-size: px2rem(40px),
             $letter-spacing: px2rem(-1.2px),
@@ -152,7 +152,7 @@
         }
       }
 
-      @include breakpoint(wide) {
+      @include breakpoint(xlarge) {
         padding: px2rem(20px) px2rem(8px);
 
       }
@@ -184,7 +184,7 @@
         margin: 0 0 px2rem(30px) 0;
 
       }
-      @include breakpoint(wide) {
+      @include breakpoint(xlarge) {
         margin: 0 0 px2rem(25px) 0;
 
       }
@@ -207,7 +207,7 @@
         @include display-flex($justify-content: space-between, $align-items: center);
         gap: px2rem(16px);
       }
-      @include breakpoint(wide) {
+      @include breakpoint(xlarge) {
         padding: 0 px2rem(5px);
         @include display-flex($justify-content: space-between, $align-items: center);
 
