@@ -29,9 +29,14 @@
   font-weight: $font-weight;
   letter-spacing: $letter-spacing;
   line-height: $line-height;
-
 }
 
+@mixin link-typography {
+  font-weight: $medium-weight;
+  font-size: px2rem(20px);
+  line-height: px2rem(26px);
+  letter-spacing: px2rem(-0.2px);
+}
 
 @mixin primary-button {
   background-color: $primary-color;

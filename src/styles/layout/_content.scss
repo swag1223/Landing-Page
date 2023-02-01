@@ -1,76 +1,87 @@
 .content {
-    border-bottom: 1px solid #DBDBDB;
-    @include breakpoint(large){
-        @include display-flex($align-items: flex-start, $flex-direction: row-reverse);
-        padding: px2rem(25px);
-        gap: px2rem(30px);
-        border: none;
+  @include breakpoint(large) {
+    @include display-flex(
+      $align-items: flex-start,
+      $flex-direction: row-reverse
+    );
+    padding: px2rem(25px);
+    gap: px2rem(30px);
+  }
+  @include breakpoint(xlarge) {
+    @include display-flex($flex-direction: row-reverse);
+    padding: 0 0 0 px2rem(100px);
+    gap: px2rem(40px);
+  }
+ 
+
+  &__img-wrapper {
+    width: 100%;
+
+    @include breakpoint(large) {
+      height: px2rem(436px);
+      width: px2rem(346px);
     }
-    @include breakpoint(wide){
-        @include display-flex($align-items: center, $flex-direction: row-reverse);
-        padding: px2rem(25px);
-        gap: px2rem(30px);
-        border: none;
+    @include breakpoint(xlarge) {
+      width: px2rem(496px);
+      height: px2rem(650px);
     }
-    &__img{
-        // border: 1px solid green;
-        @include breakpoint(large) {
-            @include display-flex($justify-content: flex-start , $align-items: flex-start);
-        }
-        img{
-            width: 100%;
-            @include breakpoint(large) {
-                // max-width: 100%;
-                height: px2rem(436px);
-                width: px2rem(346px);
-                
-            }
-        }
+    .img {
+      width: 100%;
+      height: auto;
+      @include breakpoint(large) {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-text {
+    @include display-flex($align-items: flex-start, $flex-direction: column);
+    @include breakpoint(medium) {
+      padding: px2rem(42px) px2rem(46px);
+    }
+    @include breakpoint(large) {
+      width: 50%;
+      padding: 0;
+      gap: px2rem(20px);
+    }
+    @include breakpoint(xlarge) {
+      width: 40%;
+      @include display-flex(
+        $justify-content: space-between,
+        $align-items: flex-start,
+        $flex-direction: column
+      );
+    }
+    padding: px2rem(40px) px2rem(15px);
+    text-align: left;
+    gap: px2rem(20px);
+
+    &__sub-heading {
+      @include breakpoint(small); //same for landscape
+      text-transform: uppercase;
     }
 
-    &__text {
-        @include display-flex($align-items:flex-start, $flex-direction:column);
-        @include breakpoint(medium){
-            padding: px2rem(42px) px2rem(46px);
-        }
-        @include breakpoint(large){
-            width: 50%;
-            padding: 0;
-            gap: px2rem(20px);
-
-        }
-        padding: px2rem(42px) px2rem(15px);
-        // border: 1px solid black;
-        text-align: left;
-        gap: px2rem(20px);
+    &__main-heading {
+      @include breakpoint(small);
+      @include breakpoint(medium);
+      @include breakpoint(large);
+      @include breakpoint(xlarge);
     }
 
-    &__sub-heading{
-        @include breakpoint(small); //same for landscape
-        text-transform: uppercase;
-    }
-
-    &__main-heading{
-        @include breakpoint(small);  
-        @include breakpoint(medium); 
-
-    }
-    
     &__para {
-        @include breakpoint(small);
+      @include breakpoint(small);
     }
 
+    &__link {
+      @include breakpoint(small) {
+        @include link-typography;
+      }
 
-    &__link{
-        @include breakpoint(small);
-        @include breakpoint(large);
-        
-        color: $primary-color;
-        &:hover {
-            color: $primary-dark-color;
-        }
+      color: $primary-color;
+      &:hover {
+        color: $primary-dark-color;
+      }
     }
-
-
-
+  }
 }
