@@ -1,5 +1,6 @@
 //should not contain anything but @import and comments.
 @import "abstracts/variables";
+@import "abstracts/functions";
 @import "abstracts/mixins";
 
 @import "~reset-css/sass/reset";
@@ -8,13 +9,14 @@
 @import "base/base";
 @import "base/icons";
 @import "base/typography";
-@import "components/buttons";
-@import "layout/navigation";
-
-@import "layout/navigation";
-@import "layout/footer";
-@import "layout/forms";
-@import "layout/hero";
 
 @import "components/buttons";
 @import "components/carousel";
+
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/forms";
+@import "layout/footer";
+
+
+
