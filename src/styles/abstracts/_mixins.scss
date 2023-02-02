@@ -1,9 +1,3 @@
-@use "sass:math";
-@function px2rem($px) {
-  $calcRem: math.div($px, $base-font-size);
-  @return #{$calcRem}rem;
-}
-
 @mixin breakpoint($name) {
   @if not map-has-key($breakpoints, $name) {
     @warn "Warning: `#{$name}` is not a valid breakpoint name.";
@@ -25,14 +19,9 @@
   flex-direction: $flex-direction;
 }
 
-@mixin primary-button {
-  background-color: $primary-color;
-  border-radius: px2rem(6px);
-  padding: px2rem(10px) px2rem(12px);
-  border: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $primary-dark-color;
-  }
+@mixin nav-links-typography {
+  font-weight: $semibold-weight; //600
+  font-size: rem(15);
+  line-height: rem(22);
+  letter-spacing: rem(-0.1);
 }
