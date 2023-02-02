@@ -9,42 +9,50 @@
   <body>
     <header>
       <nav class="nav">
-        <div class="nav__logo">
-          <img src="assets/images/logo.svg" alt="blue oval" />
+        <div class="nav-logo-wrapper">
+          <img
+            class="nav-logo-wrapper__logo"
+            src="assets/images/logo.svg"
+            alt="blue oval"
+          />
         </div>
         <div class="nav__menu">
-          <ul class="nav__menu--left">
-            <li class="nav__item nav__item--active">
-              <a href="#firstLink">First Link</a>
+          <ul class="nav__menu-left">
+            <li class="nav__menu-item nav__menu-item--active">
+              <a class="nav__menu-item__link" href="/firstLink">First Link</a>
             </li>
-            <li class="nav__item">
-              <a href="#secondLink">Second Link</a>
+            <li class="nav__menu-item">
+              <a class="nav__menu-item__link" href="/secondLink">Second Link</a>
             </li>
-            <li class="nav__item">
-              <a href="#thirdLink">Third Link</a>
+            <li class="nav__menu-item">
+              <a class="nav__menu-item__link" href="/thirdLink">Third Link</a>
             </li>
-            <li class="nav__item">
-              <a href="#fourthLink">Fourth Link</a>
+            <li class="nav__menu-item">
+              <a class="nav__menu-item__link" href="/fourthLink">Fourth Link</a>
             </li>
           </ul>
 
-          <ul class="nav__menu--right">
-            <li class="nav__item">
-              <a href="#fifthLink">Fifth Link</a>
+          <ul class="nav__menu-right">
+            <li class="nav__menu-item">
+              <a class="nav__menu-item__link" href="/fifthLink">Fifth Link</a>
             </li>
-            <li class="nav__item">
-              <button class="nav__btn">
+            <li class="nav__menu-item nav-btn-wrapper">
+              <a href="#" class="nav__btn">
                 <span class="nav__btn-text">Button</span>
                 <span class="nav__btn-icon"
                   ><img src="assets/images/button-icon.svg " alt="square" />
                 </span>
-              </button>
+              </a>
             </li>
           </ul>
         </div>
 
-        <div class="nav__hamburger">
-          <img src="assets/images/hamburger.svg" alt="open-close nav menu" />
+        <div class="nav-hamburger-wrapper">
+          <img
+            class="nav-hamburger-wrapper__hamburger"
+            src="assets/images/hamburger.svg"
+            alt="open-close nav menu"
+          />
         </div>
       </nav>
     </header>
