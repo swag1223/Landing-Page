@@ -9,7 +9,7 @@ module.exports = {
   entry: {
     //relative path to where webpack is run from
     bundle: [
-      path.resolve(__dirname, "src/index.js"),
+      path.resolve(__dirname, "src/scripts/index.js"),
       path.resolve(__dirname, "src/styles/main.scss"),
     ],
   },
