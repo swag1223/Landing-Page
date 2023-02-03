@@ -20,6 +20,14 @@ hamburger.addEventListener("click", () => {
   }
 });
 
+navItem.forEach((link)=>{
+  link.addEventListener('click', ()=>{
+    closeMenu();
+    isMobileMenuOpen=false;
+  })
+  
+});
+
 
 function handleActiveLink() {
   navItem.forEach((link)=>{
@@ -27,11 +35,6 @@ function handleActiveLink() {
     
   });
   document.querySelector(`a[href="${document.location.hash}"]`).classList.add("menu-item__link--active");
-  
-  if(isMobileMenuOpen) {
-    closeMenu();
-    isMobileMenuOpen=false;
-  };
 }
 
 function disableTabIndex(){
