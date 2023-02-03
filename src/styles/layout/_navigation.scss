@@ -36,7 +36,6 @@
   }
 
   &__menu {
-    // border: 1px solid orange;
     @include breakpoint(xl) {
       @include display-flex(space-between, $flex-direction: row);
       position: relative;
@@ -80,19 +79,21 @@
       @include display-flex(space-between, $flex-direction: column);
       margin-bottom: auto;
 
-      .nav__menu-item {
-        @include display-flex;
-        @include breakpoint(xl) {
-          padding: rem(8) 0;
-        }
-        width: 100%;
-        text-align: center;
-        padding: rem(10);
-      }
       @include breakpoint(xl) {
         @include display-flex(flex-end, $flex-direction: row);
         width: 25%;
         margin: 0;
+        gap: rem(30);
+      }
+      .nav__menu-item {
+        @include display-flex;
+        @include breakpoint(xl) {
+          padding: rem(8) 0;
+          width: fit-content;
+        }
+        width: 100%;
+        text-align: center;
+        padding: rem(10);
       }
     }
 
@@ -111,30 +112,31 @@
       }
       .nav__menu-item {
         @include breakpoint(xl) {
-          border: none;
+          border: none;  
         }
         border-bottom: 1px solid $base-color;
       }
-      .nav-btn-wrapper {
+      .menu-item__btn-wrapper {
         border: none;
       }
     }
 
     &-item {
       @include nav-links-typography;
-      &__link {
+      .menu-item__link {
         text-decoration: none;
         color: $secondary-color;
         &:hover {
           color: $primary-color;
         }
       }
-    }
-    &-item--active > a {
-      color: $primary-color;
+      .menu-item__link--active{
+        color: $primary-color;
+      }
+      
     }
   }
-  &__btn {
+  .menu-item__btn {
     gap: rem(12);
     background-color: $primary-color;
     border-radius: rem(6);
