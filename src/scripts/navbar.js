@@ -12,9 +12,11 @@ let isMobileMenuOpen = false;
 
 /** Handles the active link in the navigation. */
 const handleActiveLink = () => {
-  navItem.forEach((link) => {
-    link.firstElementChild.classList.remove(active);
-  });
+  const activeLink = document.querySelector(`.${active}`);
+  if(activeLink) {
+    activeLink.classList.remove(active);
+  }
+  
   document.querySelector(`a[href="${document.location.hash}"]`).classList.add(active);
 };
 
@@ -35,7 +37,7 @@ const openMenu = () => {
   });
 };
 
-/** Opens the navigation menu and changes the icon of the hamburger to hamburger icon. */
+/** Close the navigation menu and changes the icon of the hamburger to hamburger icon. */
 const closeMenu = () => {
   body.style.overflow = "auto";
   hamburger.firstElementChild.src = "assets/images/hamburger.svg";
@@ -62,12 +64,12 @@ window.addEventListener("hashchange", handleActiveLink);
 
 /** Closes the navigation menu and changes the state of the mobile menu when a navigation item is clicked. */
 hamburger.addEventListener("click", () => {
-  isMobileMenuOpen = !isMobileMenuOpen;
-  if (isMobileMenuOpen) {
+  if (!isMobileMenuOpen) {
     openMenu();
   } else {
     closeMenu();
   }
+  isMobileMenuOpen = !isMobileMenuOpen;
 });
 
 navItem.forEach((link) => {
