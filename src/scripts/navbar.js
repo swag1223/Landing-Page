@@ -10,6 +10,41 @@ const open = "nav__menu--open";
 
 let isMobileMenuOpen = false;
 
+/** Handles the active link in the navigation. */
+const handleActiveLink = () => {
+  navItem.forEach((link) => {
+    link.firstElementChild.classList.remove(active);
+  });
+  document.querySelector(`a[href="${document.location.hash}"]`).classList.add(active);
+};
+
+/* Disables tabindex for the navigation items. */
+const disableTabIndex = () => {
+  navItem.forEach((link) => {
+    link.firstElementChild.setAttribute("tabindex", "-1");
+  });
+};
+
+/** Opens the navigation menu and changes the icon of the hamburger to cross icon. */
+const openMenu = () => {
+  body.style.overflow = "hidden";
+  hamburger.firstElementChild.src = "assets/images/cancel-circle.svg";
+  navMenu.classList.add(open);
+  navItem.forEach((link) => {
+    link.firstElementChild.removeAttribute("tabindex");
+  });
+};
+
+/** Opens the navigation menu and changes the icon of the hamburger to hamburger icon. */
+const closeMenu = () => {
+  body.style.overflow = "auto";
+  hamburger.firstElementChild.src = "assets/images/hamburger.svg";
+  navMenu.classList.remove(open);
+  navItem.forEach((link) => {
+    link.firstElementChild.setAttribute("tabindex", "-1");
+  });
+};
+
 // Check if the width of the window is less than the breakpoint
 if (window.innerWidth < BREAKPOINT_XL) {
   //Call disableTabIndex if the condition is met
@@ -41,40 +76,3 @@ navItem.forEach((link) => {
     isMobileMenuOpen = false;
   });
 });
-
-/** Handles the active link in the navigation. */
-const handleActiveLink = () => {
-  navItem.forEach((link) => {
-    link.firstElementChild.classList.remove(active);
-  });
-  document
-    .querySelector(`a[href="${document.location.hash}"]`)
-    .classList.add(active);
-};
-
-/* Disables tabindex for the navigation items. */
-const disableTabIndex = () => {
-  navItem.forEach((link) => {
-    link.firstElementChild.setAttribute("tabindex", "-1");
-  });
-};
-
-/** Opens the navigation menu and changes the icon of the hamburger to cross icon. */
-const openMenu = () => {
-  body.style.overflow = "hidden";
-  hamburger.firstElementChild.src = "assets/images/cancel-circle.svg";
-  navMenu.classList.add(open);
-  navItem.forEach((link) => {
-    link.firstElementChild.removeAttribute("tabindex");
-  });
-};
-
-/** Opens the navigation menu and changes the icon of the hamburger to hamburger icon. */
-const closeMenu = () => {
-  body.style.overflow = "auto";
-  hamburger.firstElementChild.src = "assets/images/hamburger.svg";
-  navMenu.classList.remove(open);
-  navItem.forEach((link) => {
-    link.firstElementChild.setAttribute("tabindex", "-1");
-  });
-};
