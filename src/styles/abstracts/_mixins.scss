@@ -20,7 +20,7 @@
 }
 
 @mixin nav-links-typography {
-  font-weight: $semibold-weight; //600
+  font-weight: $medium-weight;
   font-size: rem(15);
   line-height: rem(22);
   letter-spacing: rem(-0.1);
