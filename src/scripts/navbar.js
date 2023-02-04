@@ -1,63 +1,80 @@
+const BREAKPOINT_XL = 992;
+
 const body = document.querySelector("body");
 const hamburger = document.querySelector(".nav-hamburger-wrapper");
 const navMenu = document.querySelector(".nav__menu");
 const navItem = document.querySelectorAll(".nav__menu-item");
-const breakPointXl = 992;
+
+const active = "menu-item__link--active";
+const open = "nav__menu--open";
 
 let isMobileMenuOpen = false;
 
-if (window.innerWidth < breakPointXl) {
+/** Handles the active link in the navigation. */
+const handleActiveLink = () => {
+  const activeLink = document.querySelector(`.${active}`);
+  if(activeLink) {
+    activeLink.classList.remove(active);
+  }
+  
+  document.querySelector(`a[href="${document.location.hash}"]`).classList.add(active);
+};
+
+/* Disables tabindex for the navigation items. */
+const disableTabIndex = () => {
+  navItem.forEach((link) => {
+    link.firstElementChild.setAttribute("tabindex", "-1");
+  });
+};
+
+/** Opens the navigation menu and changes the icon of the hamburger to cross icon. */
+const openMenu = () => {
+  body.style.overflow = "hidden";
+  hamburger.firstElementChild.src = "assets/images/cancel-circle.svg";
+  navMenu.classList.add(open);
+  navItem.forEach((link) => {
+    link.firstElementChild.removeAttribute("tabindex");
+  });
+};
+
+/** Close the navigation menu and changes the icon of the hamburger to hamburger icon. */
+const closeMenu = () => {
+  body.style.overflow = "auto";
+  hamburger.firstElementChild.src = "assets/images/hamburger.svg";
+  navMenu.classList.remove(open);
+  navItem.forEach((link) => {
+    link.firstElementChild.setAttribute("tabindex", "-1");
+  });
+};
+
+// Check if the width of the window is less than the breakpoint
+if (window.innerWidth < BREAKPOINT_XL) {
+  //Call disableTabIndex if the condition is met
   disableTabIndex();
 }
-window.addEventListener('hashchange', handleActiveLink);
 
+/**
+ * @function handleActiveLink
+ * @description Handles changes to the active link when the URL hash changes
+ * @listens hashchange
+ */
+
+//used hashchange event to detect if URL has changed.
+window.addEventListener("hashchange", handleActiveLink);
+
+/** Closes the navigation menu and changes the state of the mobile menu when a navigation item is clicked. */
 hamburger.addEventListener("click", () => {
-  isMobileMenuOpen = !isMobileMenuOpen;
-  if (isMobileMenuOpen) {
+  if (!isMobileMenuOpen) {
     openMenu();
   } else {
     closeMenu();
   }
+  isMobileMenuOpen = !isMobileMenuOpen;
 });
 
-navItem.forEach((link)=>{
-  link.addEventListener('click', ()=>{
+navItem.forEach((link) => {
+  link.addEventListener("click", () => {
     closeMenu();
-    isMobileMenuOpen=false;
-  })
-  
+    isMobileMenuOpen = false;
+  });
 });
-
-
-function handleActiveLink() {
-  navItem.forEach((link)=>{
-    link.firstElementChild.classList.remove("menu-item__link--active");
-    
-  });
-  document.querySelector(`a[href="${document.location.hash}"]`).classList.add("menu-item__link--active");
-}
-
-function disableTabIndex(){
-  navItem.forEach((link) => {
-    link.firstElementChild.setAttribute("tabindex", "-1");
-  });
-}
-
-function openMenu() {
-  body.style.overflow = "hidden";
-  hamburger.firstElementChild.src = "assets/images/cancel-circle.svg";
-  navMenu.classList.add("nav__menu--open");
-  navItem.forEach((link) => {
-    link.firstElementChild.removeAttribute("tabindex");
-  });
-}
-
-function closeMenu(){
-  body.style.overflow = "auto";
-  hamburger.firstElementChild.src = "assets/images/hamburger.svg";
-  navMenu.classList.remove("nav__menu--open");
-  navItem.forEach((link) => {
-    link.firstElementChild.setAttribute("tabindex", "-1");
-  });
-
-}

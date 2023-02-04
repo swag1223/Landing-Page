@@ -103,7 +103,7 @@
       right: 0;
       z-index: 100;
       transition: 0.5s ease;
-      background-color: #dbdbdb;
+      background-color: $mobile-menu-bg-color;
 
       @include breakpoint(xl) {
         background-color: $base-color;
@@ -112,7 +112,7 @@
       }
       .nav__menu-item {
         @include breakpoint(xl) {
-          border: none;  
+          border: none;
         }
         border-bottom: 1px solid $base-color;
       }
@@ -130,10 +130,9 @@
           color: $primary-color;
         }
       }
-      .menu-item__link--active{
+      .menu-item__link--active {
         color: $primary-color;
       }
-      
     }
   }
   .menu-item__btn {

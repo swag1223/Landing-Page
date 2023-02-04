@@ -1,14 +1,14 @@
-
-.container {
+.main-container {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+.section-container {
     padding: rem(10);
     @include breakpoint(md){
         padding: rem(30);
     }
     @include breakpoint(xl){
         padding: rem(90);
-        margin: 0 auto;
-        max-width: 992px;
-
     }
 
 }
