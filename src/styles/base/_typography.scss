@@ -9,7 +9,7 @@
 @font-face {
   font-family: "Poppins";
   src: url("@fonts/Poppins-Medium.woff") format("woff");
-  font-weight: $medium-weight;
+  font-weight: $md-weight;
 }
 
 @font-face {
@@ -24,71 +24,4 @@
   font-weight: $bold-weight;
 }
 
-h1 {
-  @include typography();
-}
 
-h2 {
-  @include breakpoint(small) {
-    @include typography(
-      $font-size: px2rem(36px),
-      $font-weight: $semibold-weight,
-      $letter-spacing: px2rem(-0.8px),
-      $line-height: px2rem(46px)
-    );
-  }
-  @include breakpoint(medium) {
-    @include typography(
-      $font-size: px2rem(32px),
-      $font-weight: $semibold-weight,
-      $letter-spacing: px2rem(-1.2px),
-      $line-height: px2rem(60px)
-    );
-  }
-  @include breakpoint(large) {
-    @include typography(
-      $font-size: px2rem(32px),
-      $font-weight: $semibold-weight,
-      $letter-spacing: px2rem(-1.2px),
-      $line-height: px2rem(40px)
-    );
-  }
-  @include breakpoint(xlarge) {
-    @include typography(
-      $font-size: px2rem(32px),
-      $font-weight: $semibold-weight,
-      $letter-spacing: px2rem(-1.2px),
-      $line-height: px2rem(60px)
-    );
-  }
-}
-
-h3 {
-  @include breakpoint(small) {
-    @include typography(
-      $font-size: px2rem(13px),
-      $font-weight: $semibold-weight,
-      $letter-spacing: px2rem(1px),
-      $line-height: px2rem(14px)
-    );
-  }
-}
-
-p {
-  @include breakpoint(small) {
-    @include typography(
-      $font-size: px2rem(20px),
-      $font-weight: $regular-weight,
-      $letter-spacing: px2rem(-0.3px),
-      $line-height: px2rem(30px)
-    );
-  }
-  @include breakpoint(medium) {
-    @include typography(
-      $font-size: px2rem(16px),
-      $font-weight: $regular-weight,
-      $letter-spacing: px2rem(-0.3px),
-      $line-height: px2rem(30px)
-    );
-  }
-}

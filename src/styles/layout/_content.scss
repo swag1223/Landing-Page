@@ -1,82 +1,88 @@
 .content {
-  @include breakpoint(large) {
+  @include breakpoint(lg) {
     @include display-flex(
       $align-items: flex-start,
       $flex-direction: row-reverse
     );
-    padding: px2rem(25px);
-    gap: px2rem(30px);
+    padding: rem(25);
+    gap: rem(30);
   }
-  @include breakpoint(xlarge) {
+  @include breakpoint(xl) {
     @include display-flex($flex-direction: row-reverse);
-    padding: 0 0 0 px2rem(100px);
-    gap: px2rem(40px);
+    padding: 0 0 0 rem(100);
+    gap: rem(40);
   }
- 
 
   &__img-wrapper {
     width: 100%;
 
-    @include breakpoint(large) {
-      height: px2rem(436px);
-      width: px2rem(346px);
+    @include breakpoint(lg) {
+      height: rem(436);
+      width: rem(346);
     }
-    @include breakpoint(xlarge) {
-      width: px2rem(496px);
-      height: px2rem(650px);
+    @include breakpoint(xl) {
+      width: rem(496);
+      height: rem(650);
     }
-    .img {
-      width: 100%;
-      height: auto;
-      @include breakpoint(large) {
-        height: 100%;
-        object-fit: cover;
-      }
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+    @include breakpoint(lg) {
+      height: 100%;
+      object-fit: cover;
     }
   }
 
-  &-text {
+  &__text {
     @include display-flex($align-items: flex-start, $flex-direction: column);
-    @include breakpoint(medium) {
-      padding: px2rem(42px) px2rem(46px);
+    @include breakpoint(md) {
+      padding: rem(42) rem(46);
     }
-    @include breakpoint(large) {
+    @include breakpoint(lg) {
       width: 50%;
       padding: 0;
-      gap: px2rem(20px);
+      gap: rem(20);
     }
-    @include breakpoint(xlarge) {
+    @include breakpoint(xl) {
       width: 40%;
-      @include display-flex(
-        $justify-content: space-between,
-        $align-items: flex-start,
-        $flex-direction: column
-      );
+      @include display-flex(space-between, flex-start, column);
     }
-    padding: px2rem(40px) px2rem(15px);
+    padding: rem(40) rem(15);
     text-align: left;
-    gap: px2rem(20px);
-
+    gap: rem(20);
+  }
+  .text {
     &__sub-heading {
-      @include breakpoint(small); //same for landscape
+      @include heading-typography(rem(13), rem(1), rem(14));
       text-transform: uppercase;
     }
 
     &__main-heading {
-      @include breakpoint(small);
-      @include breakpoint(medium);
-      @include breakpoint(large);
-      @include breakpoint(xlarge);
+      @include breakpoint(sm){
+        @include heading-typography(rem(36), rem(-0.8), rem(46));
+      }
+      @include breakpoint(md){
+        @include heading-typography(rem(32), rem(-1.2), rem(60));
+      }
+      @include breakpoint(lg){
+        @include heading-typography(rem(32), rem(-1.2), rem(40));
+      }
+      @include breakpoint(xl){
+        @include heading-typography(rem(32), rem(-1.2), rem(60));
+      }
     }
 
     &__para {
-      @include breakpoint(small);
+      @include description-typography;
+      @include breakpoint(md){
+        @include description-typography(rem(16), rem(-0.3), rem(30));
+      }
+
     }
 
     &__link {
-      @include breakpoint(small) {
-        @include link-typography;
-      }
+      @include button-typography;
 
       color: $primary-color;
       &:hover {
