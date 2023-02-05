@@ -16,7 +16,7 @@ const handleActiveLink = () => {
   if(activeLink) {
     activeLink.classList.remove(active);
   }
-  
+
   document.querySelector(`a[href="${document.location.hash}"]`).classList.add(active);
 };
 
@@ -27,14 +27,20 @@ const disableTabIndex = () => {
   });
 };
 
+/* Enables tabindex for the navigation items. */
+const enableTabIndex = ()=>{
+  navItem.forEach((link) => {
+    link.firstElementChild.removeAttribute("tabindex");
+  });
+
+}
+
 /** Opens the navigation menu and changes the icon of the hamburger to cross icon. */
 const openMenu = () => {
   body.style.overflow = "hidden";
   hamburger.firstElementChild.src = "assets/images/cancel-circle.svg";
   navMenu.classList.add(open);
-  navItem.forEach((link) => {
-    link.firstElementChild.removeAttribute("tabindex");
-  });
+  enableTabIndex(); 
 };
 
 /** Close the navigation menu and changes the icon of the hamburger to hamburger icon. */
@@ -42,9 +48,7 @@ const closeMenu = () => {
   body.style.overflow = "auto";
   hamburger.firstElementChild.src = "assets/images/hamburger.svg";
   navMenu.classList.remove(open);
-  navItem.forEach((link) => {
-    link.firstElementChild.setAttribute("tabindex", "-1");
-  });
+  disableTabIndex();
 };
 
 // Check if the width of the window is less than the breakpoint
@@ -64,6 +68,7 @@ window.addEventListener("hashchange", handleActiveLink);
 
 /** Closes the navigation menu and changes the state of the mobile menu when a navigation item is clicked. */
 hamburger.addEventListener("click", () => {
+  
   if (!isMobileMenuOpen) {
     openMenu();
   } else {
@@ -74,7 +79,12 @@ hamburger.addEventListener("click", () => {
 
 navItem.forEach((link) => {
   link.addEventListener("click", () => {
-    closeMenu();
-    isMobileMenuOpen = false;
+    if (isMobileMenuOpen) {
+      closeMenu();
+      isMobileMenuOpen = false;
+    }
+    else {
+      enableTabIndex();  
+    }
   });
 });
