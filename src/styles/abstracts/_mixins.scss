@@ -20,26 +20,22 @@
 }
 
 @mixin heading-typography(
+  $font-weight,
   $font-size: rem(40),
   $letter-spacing: rem(-1.2),
-  $line-height: rem(60),
+  $line-height: rem(60)
 ) {
-  font-weight: $semibold-weight;
+  font-weight: $font-weight;
   font-size: $font-size;
   letter-spacing: $letter-spacing;
   line-height: $line-height;
 }
 
-@mixin description-typography(
-  $font-size: rem(20),
-  $letter-spacing: rem(-0.3),
-  $line-height: rem(30),
-
-) {
+@mixin description-typography($font-size: rem(16)) {
   font-weight: $regular-weight;
   font-size: $font-size;
-  letter-spacing: $letter-spacing;
-  line-height: $line-height;
+  letter-spacing: rem(-0.3);
+  line-height: rem(30);
 }
 
 @mixin nav-links-typography {
@@ -54,4 +50,11 @@
   font-size: rem(20);
   line-height: rem(26);
   letter-spacing: rem(-0.2);
+}
+
+@mixin ellipsis($line-clamp) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line-clamp;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

@@ -143,5 +143,9 @@
     &-icon {
       @include display-flex;
     }
+
+    &.menu-item__link--active {
+      color: $base-color;
+    }
   }
 }
