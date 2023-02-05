@@ -1,5 +1,11 @@
 .nav {
   @include display-flex(space-between);
+  @include breakpoint(md) {
+    padding: rem(15) rem(30);
+  }
+  @include breakpoint(lg){
+    padding: rem(15) rem(35);
+  }
   @include breakpoint(xl) {
     padding: rem(15) rem(30);
     gap: rem(25);
