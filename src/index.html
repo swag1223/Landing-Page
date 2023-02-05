@@ -1,111 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpack App</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <nav class="nav">
+          <div class="nav-logo-wrapper">
+            <a href="/">
+              <img
+                class="nav-logo-wrapper__logo"
+                src="assets/images/logo.svg"
+                alt="blue oval"/>
+              </a>
+          </div>
+          <div class="nav__menu">
+            <ul class="nav__menu-left">
+              <li class="nav__menu-item">
+                <a class="menu-item__link" href="#firstLink">First Link</a>
+              </li>
+              <li class="nav__menu-item">
+                <a class="menu-item__link" href="#secondLink">Second Link</a>
+              </li>
+              <li class="nav__menu-item">
+                <a class="menu-item__link" href="#thirdLink">Third Link</a>
+              </li>
+              <li class="nav__menu-item">
+                <a class="menu-item__link" href="#fourthLink">Fourth Link</a>
+              </li>
+            </ul>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Webpack App</title>
-</head>
+            <ul class="nav__menu-right">
+              <li class="nav__menu-item">
+                <a class="menu-item__link" href="#fifthLink">Fifth Link</a>
+              </li>
+              <li class="nav__menu-item menu-item__btn-wrapper">
+                <a href="#btn" class="btn menu-item__btn">
+                  <span class="menu-item__btn-text">Button</span>
+                  <span class="menu-item__btn-icon">
+                    <img src="assets/images/button-icon.svg " alt="square" />
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-<body>
-  <header>
-    <nav class="nav">
-      <div class="nav__logo">
-        <img src="./assets/images/logo.svg" alt="blue oval" />
+        <div class="nav-hamburger-wrapper">
+          <img
+            class="nav-hamburger-wrapper__hamburger"
+            src="assets/images/hamburger.svg"
+            alt="open-close nav menu"
+          />
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero" id="firstLink">
+      <div class="hero__container  section-container">
+      <div class="hero__card">
+        <div class="hero__img-wrapper">
+          <img class="hero__image"
+            src="assets/images/hero-flower.png"
+            alt="friends sitting on a car"
+          />
+        </div>
+        <div class="hero__content">
+          <h1 class="content__heading line-clamp-heading ">Two line long header example</h1>
+          <p class="content__description line-clamp-description">
+            Poster can be one of the effective marketing and advertising
+            materials. It is also a great tool to use when you want to present.
+          </p>
+          <button class="btn content__btn">Button</button>
+        </div>
       </div>
-      <div class="nav__menu">
-        <ul class="nav__menu--left">
-          <li class="nav__item nav__item--active">
-            <a href="#firstLink">First Link</a>
+
+      <div class="hero__brands">
+        <p class="hero__brand-partners">Partners</p>
+        <ul class="hero__brands-list">
+          <li>
+            <a><img src="assets/images/logitech.svg" alt="grey logitech logo"/></a>
           </li>
-          <li class="nav__item">
-            <a href="#secondLink">Second Link</a>
+          <li>
+            <a><img src="assets/images/google.svg" alt="grey google logo"/></a>
           </li>
-          <li class="nav__item">
-            <a href="#thirdLink">Third Link</a>
+          <li>
+            <a><img src="assets/images/facebook.svg" alt="grey facebook logo"/></a>
           </li>
-          <li class="nav__item">
-            <a href="#fourthLink">Fourth Link</a>
+          <li>
+            <a><img src="assets/images/linkedin.svg" alt="grey linkedin logo"/></a>
+          </li>
+          <li>
+            <a><img src="assets/images/philips.svg" alt="grey philips logo"/></a>
           </li>
         </ul>
-
-        <ul class="nav__menu--right">
-          <li class="nav__item">
-            <a href="#fifthLink">Fifth Link</a>
-          </li>
-          <li class="nav__item">
-            <button class="nav__btn">
-              <span class="nav__btn-text">Button</span>
-              <span class="nav__btn-icon">
-                <img src="./assets/images/button-icon.svg" alt="square" />
-              </span>
-            </button>
-          </li>
-        </ul>
-      </div>
-
-      <div class="nav__hamburger">
-        <img src="./assets/images/hamburger.svg" alt="open-close nav menu" />
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div class="hero__card-one">
-      <div class="hero__card-one__img">
-        <img src="assets/images/hero-image.svg" alt="friends sitting on a car" />
-      </div>
-      <div class="hero__card-one__content">
-        <h1>Two line long header example</h1>
-        <p>
-          Poster can be one of the effective marketing and advertising
-          materials. It is also a great tool to use when you want to present.
-        </p>
-        <button>Button</button>
       </div>
     </div>
-
-    <div class="hero__card-two">
-      <p>PARTNERS</p>
-      <ul class="hero__card-two__brands">
-        <li>
-          <a><img src="assets/images/logitech.svg" alt="grey color logitech logo" /></a>
-        </li>
-        <li>
-          <a><img src="assets/images/google.svg" alt="grey color google logo" /></a>
-        </li>
-        <li>
-          <a><img src="assets/images/facebook.svg" alt="grey color facebook logo" /></a>
-        </li>
-        <li>
-          <a><img src="assets/images/linkedin.svg" alt="grey color linkedin logo" /></a>
-        </li>
-        <li>
-          <a><img src="assets/images/philips.svg" alt="grey color philips logo" /></a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="content">
-    <div class="content__img">
-      <img src="./assets/images/content-image.svg" alt="computer device" />
+    </section>
+  
+  <section class="content" id="secondLink">
+    <div class="content__img-wrapper">
+      <img class="content__image" src="./assets/images/content-image.svg" alt="computer device" />
     </div>
 
     <div class="content__text">
-      <h4 class="content__sub-heading">caps heading</h4>
+      <h3 class="text__sub-heading">caps heading</h3>
 
-      <h2 class="content__main-heading">Two line long header example</h2>
+      <h2 class="text__main-heading">Two line long header example</h2>
 
-      <p class="content__para">
+      <p class="text__para">
         You will likely be required to install the fixed mounts. These are
         what will keep the apparatus stable and secure with your computer
         monitor in it. Follow directions carefully so that you can be sure to
         get everything.
       </p>
 
-      <a class="content__link" href="#">Learn more</a>
+      <a class="text__link" href="#">Learn more</a>
     </div>
   </section>
 
@@ -123,6 +136,6 @@
       </button>
     </form>
   </section>
-</body>
-
+</div>
+  </body>
 </html>

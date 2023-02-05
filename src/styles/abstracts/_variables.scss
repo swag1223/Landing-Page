@@ -1,9 +1,8 @@
-//Sass Variables
-$html-font-size: 62.5%;
-$base-font-size: 10px;
+$html-font-size: 10px;
 
 $base-color: #ffffff;
 $text-color: #585757;
+$mobile-menu-bg-color: #dbdbdb;
 
 $primary-color: #24afb5;
 $primary-dark-color: #27bec4;
@@ -15,9 +14,9 @@ $medium-weight: 600;
 $semibold-weight: 700;
 $bold-weight: 800;
 
-  $breakpoints: (
-    "small": 320px, //mobile-potrait
-    "medium": 568px,//mobile-landscape
-    "large": 768px, //tablet
-    "wide": 992px,//desktop
-  );
+$breakpoints: (
+  "sm": 320px,
+  "md": 568px,
+  "lg": 768px,
+  "xl": 992px,
+);

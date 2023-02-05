@@ -1,143 +1,158 @@
 .nav {
-  @include display-flex($justify-content: space-between);
-  font-size: px2rem(20px);
-  padding: px2rem(15px);
-  font-weight: $medium-weight;
-
-  @include breakpoint(medium) {
-    padding: px2rem(15px) px2rem(30px);
-
+  @include display-flex(space-between);
+  @include breakpoint(md) {
+    padding: rem(15) rem(30);
   }
-
-  @include breakpoint(wide) {
-    padding: px2rem(15px) px2rem(30px);
-    gap: px2rem(20px);
-    font-size: px2rem(15px);
+  @include breakpoint(lg){
+    padding: rem(15) rem(35);
   }
+  @include breakpoint(xl) {
+    padding: rem(15) rem(30);
+    gap: rem(25);
+  }
+  padding: rem(15) rem(18);
 
-  &__logo {
-    img {
-      width: px2rem(40px);
-      @include breakpoint(wide) {
-        width: px2rem(48px);
-      }
+  &-logo-wrapper {
+    @include breakpoint(xl) {
+      width: rem(52);
+    }
+    width: rem(38);
+    z-index: 101;
+
+    &__logo {
+      max-width: 100%;
+      height: auto;
     }
   }
 
-  &__hamburger {
+  &-hamburger-wrapper {
+    @include breakpoint(xl) {
+      display: none;
+    }
     cursor: pointer;
     display: block;
     z-index: 101;
 
-    img {
-      width: px2rem(28px);
-      height: px2rem(30px);
-    }
+    width: rem(30);
+    text-align: right;
 
-    @include breakpoint(wide) {
-      display: none;
+    &__hamburger {
+      max-width: 100%;
+      height: auto;
     }
   }
 
   &__menu {
+    @include breakpoint(xl) {
+      @include display-flex(space-between, $flex-direction: row);
+      position: relative;
+      right: 0;
+    }
     position: fixed;
     top: 0;
     right: -120%;
     background-color: $base-color;
+
     height: 100%;
     width: 100%;
-    display: flex;
+    display: flex; //given seaparately to handle overflow-y: scroll
     flex-direction: column;
     transition: 0.5s ease;
-    overflow: auto;
 
-    @include breakpoint(wide) {
-      @include display-flex(
-        $justify-content: space-between,
-        $flex-direction: row
-      );
-      position: relative;
-      right: 0;
-    }
+    &-left {
+      @include breakpoint(xl) {
+        width: 60%;
+        margin: 0;
 
-    &--left {
+        @include display-flex(flex-start, $flex-direction: row);
+        gap: rem(7);
+      }
+
+      @include display-flex(space-around, $flex-direction: column);
+
       margin-top: auto;
 
-      @include display-flex(
-        $justify-content: space-around,
-        $flex-direction: column
-      );
-      li {
-        padding: px2rem(10px);
-      }
-
-      @include breakpoint(wide) {
-        width: fit-content;
-        margin: 0;
-
-        @include display-flex(
-          $justify-content: flex-start,
-          $flex-direction: row
-        );
-        gap: px2rem(11px);
+      .nav__menu-item {
+        @include breakpoint(xl) {
+          width: fit-content;
+        }
+        width: 100%;
+        padding: rem(10);
+        text-align: center;
       }
     }
 
-    &--right {
+    &-right {
+      @include display-flex(space-between, $flex-direction: column);
       margin-bottom: auto;
-      @include display-flex(
-        $justify-content: space-between,
-        $flex-direction: column
-      );
 
-      li {
-        padding: px2rem(10px);
-        @include breakpoint(wide) {
-          padding: px2rem(8px) 0;
-        }
-      }
-      @include breakpoint(wide) {
+      @include breakpoint(xl) {
+        @include display-flex(flex-end, $flex-direction: row);
         width: 25%;
         margin: 0;
-        @include display-flex($justify-content: flex-end, $flex-direction: row);
-        gap: px2rem(25px);
+        gap: rem(30);
+      }
+      .nav__menu-item {
+        @include display-flex;
+        @include breakpoint(xl) {
+          padding: rem(8) 0;
+          width: fit-content;
+        }
+        width: 100%;
+        text-align: center;
+        padding: rem(10);
       }
     }
 
     &--open {
+      overflow-y: auto;
+      overflow-x: hidden;
       right: 0;
       z-index: 100;
       transition: 0.5s ease;
-      @include breakpoint(wide) {
+      background-color: $mobile-menu-bg-color;
+
+      @include breakpoint(xl) {
+        background-color: $base-color;
         position: relative;
         z-index: 0;
       }
+      .nav__menu-item {
+        @include breakpoint(xl) {
+          border: none;
+        }
+        border-bottom: 1px solid $base-color;
+      }
+      .menu-item__btn-wrapper {
+        border: none;
+      }
     }
 
-    
-  }
-  &__item--active {
-    a{
-      color: $primary-color;
+    &-item {
+      @include nav-links-typography;
+      .menu-item__link {
+        text-decoration: none;
+        color: $secondary-color;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+      .menu-item__link--active {
+        color: $primary-color;
+      }
     }
-
-      
   }
-
-  &__btn {
-    @include primary-button;
-    gap: px2rem(12px);
-
+  .menu-item__btn {
+    @include display-flex;
+    @include nav-links-typography;
+    gap: rem(12);
     &-text,
     &-icon {
-      @include display-flex();
+      @include display-flex;
+    }
+
+    &.menu-item__link--active {
       color: $base-color;
-      font-size: px2rem(20px);
-      font-weight: $semibold-weight;
-      text-align: center;
-      @include breakpoint(wide) {
-        font-size: px2rem(15px);
-      }
     }
   }
 }

@@ -1,73 +1,93 @@
 .content {
-    @include breakpoint(large){
-        @include display-flex($align-items: flex-start, $flex-direction: row-reverse);
-        padding: px2rem(25px);
-        gap: px2rem(30px);
-        border: none;
+  @include breakpoint(lg) {
+    @include display-flex(
+      $align-items: flex-start,
+      $flex-direction: row-reverse
+    );
+    padding: rem(25);
+    gap: rem(30);
+  }
+  @include breakpoint(xl) {
+    @include display-flex(space-between,$flex-direction: row-reverse);
+    padding: rem(25) 0 0 rem(90);
+  }
+
+  &__img-wrapper {
+    width: 100%;
+
+    @include breakpoint(lg) {
+      height: rem(436);
+      max-width: rem(346);
     }
-    @include breakpoint(wide){
-        @include display-flex($align-items: center, $flex-direction: row-reverse);
-        padding: px2rem(25px);
-        gap: px2rem(30px);
-        border: none;
+    @include breakpoint(xl) {
+      max-width: rem(496);
+      height: rem(650);
     }
-    &__img{
-        // border: 1px solid green;
-        @include breakpoint(large) {
-            @include display-flex($justify-content: flex-start , $align-items: flex-start);
-        }
-        img{
-            width: 100%;
-            @include breakpoint(large) {
-                // max-width: 100%;
-                height: px2rem(436px);
-                width: px2rem(346px);
-                
-            }
-        }
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+    @include breakpoint(lg) {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    @include display-flex($align-items: flex-start, $flex-direction: column);
+    @include breakpoint(md) {
+      padding: rem(42) rem(46);
+    }
+    @include breakpoint(lg) {
+      width: 50%;
+      padding: 0;
+      gap: rem(20);
+    }
+    @include breakpoint(xl) {
+      width: 40%;
+      padding-left: rem(10);
+      @include display-flex(space-between, flex-start, column);
+    }
+    padding: rem(40) rem(15);
+    text-align: left;
+    gap: rem(20);
+  }
+  .text {
+    &__sub-heading {
+      @include heading-typography($semibold-weight,rem(13), rem(1), rem(14));
+      text-transform: uppercase;
     }
 
-    &__text {
-        @include display-flex($align-items:flex-start, $flex-direction:column);
-        @include breakpoint(medium){
-            padding: px2rem(42px) px2rem(46px);
-        }
-        @include breakpoint(large){
-            width: 50%;
-            padding: 0;
-            gap: px2rem(20px);
-
-        }
-        padding: px2rem(30px) px2rem(15px);
-        // border: 1px solid black;
-        text-align: left;
-        gap: px2rem(18px);
+    &__main-heading {
+      @include breakpoint(sm){
+        @include heading-typography($semibold-weight ,rem(36), rem(-0.8), rem(46));
+      }
+      @include breakpoint(md){
+        @include heading-typography($semibold-weight,rem(32), rem(-1.2), rem(60));
+      }
+      @include breakpoint(lg){
+        @include heading-typography($semibold-weight,rem(32), rem(-1.2), rem(40));
+      }
+      @include breakpoint(xl){
+        @include heading-typography($semibold-weight,rem(32), rem(-1.2), rem(60));
+      }
     }
 
-    &__sub-heading{
-        @include breakpoint(small); //same for landscape
-        text-transform: uppercase;
-    }
-
-    &__main-heading{
-        @include breakpoint(small);  
-        @include breakpoint(medium); 
-
-    }
-    
     &__para {
-        @include breakpoint(small);
+      @include description-typography;
+      @include breakpoint(md){
+        @include description-typography;
+      }
+
     }
 
+    &__link {
+      @include button-typography;
 
-    &__link{
-        @include breakpoint(small);
-        @include breakpoint(large);
-        
-        color: $primary-color;
-        &:hover {
-            color: $primary-dark-color;
-        }
+      color: $primary-color;
+      &:hover {
+        color: $primary-dark-color;
+      }
     }
-
+  }
 }
