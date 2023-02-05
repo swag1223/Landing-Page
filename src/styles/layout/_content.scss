@@ -8,9 +8,8 @@
     gap: rem(30);
   }
   @include breakpoint(xl) {
-    @include display-flex($flex-direction: row-reverse);
-    padding: 0 0 0 rem(100);
-    gap: rem(40);
+    @include display-flex(space-between,$flex-direction: row-reverse);
+    padding: rem(25) 0 0 rem(90);
   }
 
   &__img-wrapper {
@@ -18,10 +17,10 @@
 
     @include breakpoint(lg) {
       height: rem(436);
-      width: rem(346);
+      max-width: rem(346);
     }
     @include breakpoint(xl) {
-      width: rem(496);
+      max-width: rem(496);
       height: rem(650);
     }
   }
@@ -46,6 +45,7 @@
     }
     @include breakpoint(xl) {
       width: 40%;
+      padding-left: rem(10);
       @include display-flex(space-between, flex-start, column);
     }
     padding: rem(40) rem(15);
@@ -54,29 +54,29 @@
   }
   .text {
     &__sub-heading {
-      @include heading-typography(rem(13), rem(1), rem(14));
+      @include heading-typography($semibold-weight,rem(13), rem(1), rem(14));
       text-transform: uppercase;
     }
 
     &__main-heading {
       @include breakpoint(sm){
-        @include heading-typography(rem(36), rem(-0.8), rem(46));
+        @include heading-typography($semibold-weight ,rem(36), rem(-0.8), rem(46));
       }
       @include breakpoint(md){
-        @include heading-typography(rem(32), rem(-1.2), rem(60));
+        @include heading-typography($semibold-weight,rem(32), rem(-1.2), rem(60));
       }
       @include breakpoint(lg){
-        @include heading-typography(rem(32), rem(-1.2), rem(40));
+        @include heading-typography($semibold-weight,rem(32), rem(-1.2), rem(40));
       }
       @include breakpoint(xl){
-        @include heading-typography(rem(32), rem(-1.2), rem(60));
+        @include heading-typography($semibold-weight,rem(32), rem(-1.2), rem(60));
       }
     }
 
     &__para {
       @include description-typography;
       @include breakpoint(md){
-        @include description-typography(rem(16), rem(-0.3), rem(30));
+        @include description-typography;
       }
 
     }
