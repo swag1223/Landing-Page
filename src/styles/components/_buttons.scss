@@ -1,14 +1,13 @@
-button {
+//Buttons
+.btn {
   background-color: $primary-color;
   border-radius: rem(6);
   padding: rem(10) rem(12);
   color: $base-color;
   border: none;
   cursor: pointer;
-  @include nav-links-typography;
-
+  @include button-typography;
   &:hover {
     background-color: $primary-dark-color;
   }
-  @include display-flex;
 }

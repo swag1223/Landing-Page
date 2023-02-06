@@ -1,9 +1,17 @@
 html {
   font-size: $html-font-size;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins";
+}
+h1{
+  margin: 0;
+}
+
+p {
+  color: $text-color;
 }
 
 a {
