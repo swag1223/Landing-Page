@@ -1,1 +1,27 @@
-//Sass Mixins
+@mixin breakpoint($name) {
+  @if not map-has-key($breakpoints, $name) {
+    @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+  } @else {
+    @media (min-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  }
+}
+
+@mixin display-flex(
+  $justify-content: center,
+  $align-items: center,
+  $flex-direction: row
+) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+}
+
+@mixin nav-links-typography {
+  font-weight: $medium-weight;
+  font-size: rem(15);
+  line-height: rem(22);
+  letter-spacing: rem(-0.1);
+}

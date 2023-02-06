@@ -1,15 +1,13 @@
-// Typography rules
-
 @font-face {
   font-family: "Poppins";
   src: url("@fonts/Poppins-Regular.woff") format("woff");
-  font-weight: $normal-weight;
+  font-weight: $regular-weight;
 }
 
 @font-face {
   font-family: "Poppins";
   src: url("@fonts/Poppins-Medium.woff") format("woff");
-  font-weight: $semibold-weight;
+  font-weight: $medium-weight;
 }
 
 @font-face {

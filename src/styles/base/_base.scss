@@ -1,11 +1,11 @@
 html {
-  font-size: 62.5%;
+  font-size: $html-font-size;
 }
 
 body {
   font-family: "Poppins";
 }
 
-h1 {
-  font-weight: $bold-weight;
+a {
+  text-decoration: none;
 }

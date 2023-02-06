@@ -1,13 +1,15 @@
 //in order to specify the relative path
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 //exporting a configuration object,
 module.exports = {
   //entry where we will select out main js file (in this case index.js)
   entry: {
+    //relative path to where webpack is run from
     bundle: [
-      path.resolve(__dirname, "src/index.js"), //relative path to where webpack is run from
+      path.resolve(__dirname, "src/index.js"),
       path.resolve(__dirname, "src/styles/main.scss"),
     ],
   },
@@ -19,9 +21,11 @@ module.exports = {
     clean: true,
   },
 
+  //Aliases are a way to let webpack know where to find our code by providing a word or character that represents a partial reference to where the code is located. Once webpack knows this, the code can be properly resolved while it is compiling during development or building the final package.
   resolve: {
     alias: {
-      "@fonts": path.resolve(__dirname, "src/assets/fonts"),
+      "@fonts": path.resolve(__dirname, "/src/assets/fonts"),
+      "@images": path.resolve(__dirname, "/src/assets/images"),
     },
   },
 
@@ -29,9 +33,9 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/, //any files ending with this extension we apply the loaders to them
-        use: ["style-loader", "css-loader", "sass-loader"], //these loaders will run in reverse order
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"], //these loaders will run in reverse order
       },
-      //style-loader: injects the CSS that’s exported by the JavaScript module into a <style> tag at runtime.
+      //MIniCssExtractPlugin: extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
       //css-loader : transforms CSS to a JavaScript module
       //sass-loader: Loads a SASS/SCSS file and compiles it to CSS.
 
@@ -66,5 +70,7 @@ module.exports = {
       filename: "index.html",
       template: "src/index.html",
     }),
+    new MiniCssExtractPlugin(),
+
   ],
 };
