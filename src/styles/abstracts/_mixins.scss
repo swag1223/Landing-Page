@@ -20,7 +20,7 @@
 }
 
 @mixin heading-typography(
-  $font-weight,
+  $font-weight:$semibold-weight,
   $font-size: rem(40),
   $letter-spacing: rem(-1.2),
   $line-height: rem(60)
