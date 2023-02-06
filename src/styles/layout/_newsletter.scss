@@ -1,45 +1,107 @@
 .newsletter {
-    margin-top: px2rem(35px);
-  padding: px2rem(18px);
-  border-bottom: 1px solid #DBDBDB;
-  border-top: 1px solid #DBDBDB;
-//   border: 1px solid red;
-  @include display-flex($align-items:flex-start ,$flex-direction: column);
+  &__container {
+    @include display-flex(flex-start, flex-start, column);
+    @include breakpoint(md) {
+      gap: rem(35);
 
-  gap: px2rem(15px);
+      max-height: rem(320);
+      min-height: fit-content;
+    }
+    @include breakpoint(lg) {
+      gap: rem(25);
+    }
+    @include breakpoint(xl) {
+      @include display-flex(flex-start, flex-start, row);
+      border: none;
+      gap: rem(25);
+    }
+    border-bottom: rem(1) solid $mobile-menu-bg-color;
+    border-top: rem(1) solid $mobile-menu-bg-color;
+    min-height: rem(320);
+    max-width: 100%;
+    gap: rem(10);
+  }
+  &__content {
+    @include display-flex(flex-start, flex-start, column);
+    @include breakpoint(md) {
+      padding: 0;
+    }
+    @include breakpoint(lg) {
+      margin-top: rem(8);
+      padding: 0 rem(5);
+    }
+    @include breakpoint(xl) {
+      margin-top: rem(12);
+      padding: rem(10);
+    }
+    margin-top: rem(25);
+    padding: rem(5);
+    gap: rem(10);
+    width: 100%;
+  }
+
   &__heading {
-    @include breakpoint(small);
+    @include heading-typography($medium-weight, rem(24), rem(-0.4), rem(32));
   }
 
   &__para {
-    @include typography(
-      $font-weight: $regular-weight,
-      $font-size: px2rem(15px),
-      $letter-spacing: px2rem(-0.2px),
-      $line-height: px2rem(22px)
-    );
+    @include heading-typography($regular-weight, rem(15), rem(-0.2), rem(22));
   }
 
   &__form {
-    // border: 1px solid black;
-    @include display-flex($align-items: flex-start,$flex-direction: column);
-    gap: px2rem(10px);
+    @include display-flex($align-items: flex-start, $flex-direction: column);
+    @include breakpoint(md) {
+      @include display-flex(flex-start, $flex-direction: row);
+      gap: rem(30);
+    }
+    @include breakpoint(lg) {
+      @include display-flex(flex-start, $flex-direction: row);
+      gap: rem(30);
+    }
+    @include breakpoint(xl) {
+      @include display-flex(
+        space-between,
+        $align-items: flex-end,
+        $flex-direction: column
+      );
+    }
+    max-width: 100%;
+    padding: rem(5);
+    gap: rem(8);
+  }
+  &__email-wrapper {
+    @include breakpoint(md) {
+      max-width: 55%;
+    }
+    @include breakpoint(lg) {
+      max-width: 50%;
+    }
+    @include breakpoint(xl) {
+      max-width: 100%;
+      text-align: right;
+    }
+    max-width: 82%;
   }
 
-  &__form-input {
-    border: px2rem(1px) solid #dbdbdb;
-    border-radius: px2rem(6px);
-    width: 85%;
-    padding: px2rem(10px) px2rem(20px);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
-    /* identical to box height, or 150% */
+  &__email-input {
+    @include heading-typography($regular-weight, rem(20), rem(-0.3), rem(30));
+    @include breakpoint(md) {
+      max-width: 85%;
+    }
+    @include breakpoint(xl) {
+      max-width: 85%;
+    }
+    border: rem(1) solid $mobile-menu-bg-color;
+    border-radius: rem(6);
+    outline: none;
+    padding: rem(10) rem(20);
+    color: $para-text-color;
+    max-width: 100%;
+  }
 
-    letter-spacing: -0.3px;
-
-    /* 2. On Surface / 200 */
-
-    color: #585757;
+  &__email-field-msg {
+    @include heading-typography($regular-weight, rem(15), rem(-0.2), rem(22));
+    display: none;
+    margin-top: rem(5);
   }
 }
