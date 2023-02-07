@@ -1,15 +1,14 @@
 .statistics {
   display: none;
   @include breakpoint(xl) {
-    display: block;
-  }
-  &__container {
     @include display-flex(space-between);
-    border: 1px solid black;
+    margin: rem(190) 0;
   }
+
   &__graph {
-    width: rem(260);
-    height: rem(260);
+    @include display-flex(center, center);
+    min-width: rem(260);
+    min-height: rem(260);
     border-radius: 50%;
     position: relative;
     background: conic-gradient(
@@ -18,12 +17,12 @@
       $grey-light-color 190deg 260deg,
       $base-dark-color 260deg 360deg
     );
-    @include display-flex(center, center);
   }
+
   .graph {
     &__inner-circle {
-      width: rem(120);
-      height: rem(120);
+      min-width: rem(120);
+      min-height: rem(120);
       border-radius: 50%;
       background: $base-color;
     }
@@ -32,40 +31,79 @@
       position: absolute;
       top: -5%;
       left: 5%;
-      width: rem(100);
-      height: rem(100);
+      min-width: rem(100);
+      min-height: rem(100);
       border: rem(1) dotted black;
     }
   }
 
   &__numbers {
-    border: 1px solid red;
-  }
+    @include display-flex(flex-start, center, column);
+    gap: rem(90);
 
-  .numbers {
-    &__downloads {
-      @include display-flex;
-      &-indicator {
-        width: rem(24);
-        height: rem(24);
-        border-radius: 50%;
-        background-color: $primary-color;
+    .numbers {
+      &__downloads {
+        @include display-flex(flex-start, flex-start);
+        gap: rem(10);
+        &-indicator {
+          min-width: rem(24);
+          min-height: rem(24);
+          border-radius: 50%;
+          background-color: $primary-color;
+          margin-top: rem(15);
+        }
+
+        .downloads {
+          &__heading {
+            @include heading-typography;
+          }
+          &__para {
+            @include description-typography-sm;
+          }
+        }
       }
-    }
 
-    &__subscribers {
-      @include display-flex;
-      &-indicator {
-        width: rem(24);
-        height: rem(24);
-        border-radius: 50%;
-        background-color: $mobile-menu-bg-color;
+      &__subscribers {
+        @include display-flex;
+        gap: rem(10);
+
+        &-indicator {
+          min-width: rem(24);
+          min-height: rem(24);
+          border-radius: 50%;
+          background-color: $grey-light-color;
+          margin-bottom: rem(26);
+        }
+
+        .subscribers {
+          &__heading {
+            @include heading-typography;
+          }
+          &__para {
+            @include description-typography-sm;
+          }
+        }
       }
     }
   }
 
   &__info {
-    border: 1px solid blue;
-    width: 35%;
+    @include display-flex(flex-start, center, column);
+    max-width: 40%;
+
+    .info {
+      &__para-one {
+        @include description-typography-sm;
+        @include ellipsis(5);
+        margin-bottom: rem(30);
+      }
+
+      &__para-two {
+        @include description-typography-xs;
+        @include ellipsis(2);
+        color: $para-xs-text-color;
+        margin-bottom: rem(25);
+      }
+    }
   }
 }
