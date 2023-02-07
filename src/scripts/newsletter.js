@@ -17,16 +17,15 @@ const isEmailValid = (email) => {
  * @function
  * @param {string} msg - The message to show
  * @param {string} [type="error"] - The type of message, either "error" or "success
-
-*/
+ */
 const handleEmailValidation = (msg, type = "error") => {
   const errorText = document.querySelector(".newsletter__email-field-msg");
   errorText.innerText = msg;
   if (type === "error") {
-    errorText.style.display = "inline-block";
+    errorText.style.display = "flex";
     errorText.style.color = "red";
   } else {
-    errorText.style.display = "inline-block";
+    errorText.style.display = "flex";
     errorText.style.color = "green";
     email.value = "";
   }
