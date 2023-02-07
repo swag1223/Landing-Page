@@ -1,102 +1,95 @@
 .content {
   @include breakpoint(lg) {
-    @include display-flex(
-      $align-items: flex-start,
-      $flex-direction: row-reverse
-    );
-    padding: rem(25);
-    gap: rem(30);
+    @include display-flex(space-between, flex-start, row-reverse);
+    padding: rem(35);
   }
   @include breakpoint(xl) {
-    @include display-flex(space-between,$flex-direction: row-reverse);
-    padding: rem(25) 0 0 rem(90);
+    @include display-flex(space-between, $flex-direction: row-reverse);
+    padding: rem(15) 0 0 rem(95);
   }
 
   &__img-wrapper {
-    
+    width: 100%;
+
     @include breakpoint(lg) {
       height: rem(436);
-      max-width: rem(346);
+      max-width: 50%;
     }
     @include breakpoint(xl) {
-      max-width: rem(496);
+      min-width: 55%;
       height: rem(650);
     }
-    width: 100%;
   }
+
   &__image {
+    height: auto;
+    width: 100%;
+
     @include breakpoint(lg) {
       height: 100%;
       object-fit: cover;
     }
-    height: auto;
-    width: 100%;
   }
 
   &__text {
     @include display-flex($align-items: flex-start, $flex-direction: column);
+    padding: rem(35) rem(15);
+    text-align: left;
+    gap: rem(20);
+
     @include breakpoint(md) {
-      padding: rem(22) rem(46) rem(46);
-      gap: rem(20);
+      padding: rem(30);
     }
     @include breakpoint(lg) {
+      @include display-flex(flex-start, flex-start, column);
       width: 50%;
-      padding: rem(12);
+      padding: rem(10) 0;
       gap: rem(20);
     }
     @include breakpoint(xl) {
       width: 40%;
-      padding-left: rem(10);
       @include display-flex(space-between, flex-start, column);
     }
-    padding: rem(40) rem(15);
-    text-align: left;
-    gap: rem(20);
   }
   .text {
     &__sub-heading {
-      @include heading-typography($semibold-weight,rem(13), rem(1), rem(14));
+      @include basic-typography($semibold-weight);
       text-transform: uppercase;
     }
 
     &__main-heading {
-      
-      @include heading-typography($semibold-weight ,rem(36), rem(-0.8), rem(46));
+      @include heading-typography;
       @include ellipsis(2);
 
-      @include breakpoint(md){
-        @include heading-typography($semibold-weight,rem(32), rem(-1.2), rem(60));
-        @include ellipsis(3)
+      @include breakpoint(md) {
+        @include ellipsis(3);
       }
-      @include breakpoint(lg){
-        @include heading-typography($semibold-weight,rem(32), rem(-1.2), rem(40));
+      @include breakpoint(lg) {
         @include ellipsis(2);
       }
-      @include breakpoint(xl){
-        @include heading-typography($semibold-weight,rem(32), rem(-1.2), rem(60));
+      @include breakpoint(xl) {
         @include ellipsis(2);
       }
     }
 
     &__para {
-      @include description-typography(rem(20));
+      @include description-typography;
       @include ellipsis(8);
-      @include breakpoint(md){
+
+      @include breakpoint(md) {
         @include description-typography;
         @include ellipsis(5);
       }
-      @include breakpoint(lg){
+      @include breakpoint(lg) {
         @include ellipsis(6);
       }
-      @include breakpoint(xl){
+      @include breakpoint(xl) {
         @include ellipsis(6);
       }
-
     }
 
     &__link {
       @include button-typography;
-
       color: $primary-color;
       &:hover {
         color: $primary-dark-color;
