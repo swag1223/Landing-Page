@@ -1,23 +1,25 @@
 .nav {
   @include display-flex(space-between);
+  padding: rem(15) rem(15);
+
   @include breakpoint(md) {
     padding: rem(15) rem(30);
   }
-  @include breakpoint(lg){
+  @include breakpoint(lg) {
     padding: rem(15) rem(35);
   }
   @include breakpoint(xl) {
     padding: rem(15) rem(30);
     gap: rem(25);
   }
-  padding: rem(15) rem(18);
 
   &-logo-wrapper {
+    width: rem(38);
+    z-index: 2;
+
     @include breakpoint(xl) {
       width: rem(52);
     }
-    width: rem(38);
-    z-index: 101;
 
     &__logo {
       max-width: 100%;
@@ -31,8 +33,7 @@
     }
     cursor: pointer;
     display: block;
-    z-index: 101;
-
+    z-index: 1;
     width: rem(30);
     text-align: right;
 
@@ -43,42 +44,41 @@
   }
 
   &__menu {
-    @include breakpoint(xl) {
-      @include display-flex(space-between, $flex-direction: row);
-      position: relative;
-      right: 0;
-    }
     position: fixed;
     top: 0;
     right: -120%;
     background-color: $base-color;
-
     height: 100%;
     width: 100%;
     display: flex; //given seaparately to handle overflow-y: scroll
     flex-direction: column;
     transition: 0.5s ease;
 
+    @include breakpoint(xl) {
+      @include display-flex(space-between, $flex-direction: row);
+      position: relative;
+      right: 0;
+    }
+
     &-left {
+      @include display-flex(space-around, $flex-direction: column);
+      margin-top: auto;
+
       @include breakpoint(xl) {
+        @include display-flex(flex-start, $flex-direction: row);
         width: 60%;
         margin: 0;
-
-        @include display-flex(flex-start, $flex-direction: row);
         gap: rem(7);
       }
 
-      @include display-flex(space-around, $flex-direction: column);
-
-      margin-top: auto;
-
       .nav__menu-item {
-        @include breakpoint(xl) {
-          width: fit-content;
-        }
         width: 100%;
         padding: rem(10);
         text-align: center;
+
+        @include breakpoint(xl) {
+          width: fit-content;
+        }
       }
     }
 
@@ -92,15 +92,17 @@
         margin: 0;
         gap: rem(30);
       }
+
       .nav__menu-item {
         @include display-flex;
+        width: 100%;
+        text-align: center;
+        padding: rem(10);
+
         @include breakpoint(xl) {
           padding: rem(8) 0;
           width: fit-content;
         }
-        width: 100%;
-        text-align: center;
-        padding: rem(10);
       }
     }
 
@@ -108,7 +110,7 @@
       overflow-y: auto;
       overflow-x: hidden;
       right: 0;
-      z-index: 100;
+      z-index: 1;
       transition: 0.5s ease;
       background-color: $mobile-menu-bg-color;
 
@@ -117,12 +119,15 @@
         position: relative;
         z-index: 0;
       }
+
       .nav__menu-item {
+        border-bottom: 1px solid $base-color;
+
         @include breakpoint(xl) {
           border: none;
         }
-        border-bottom: 1px solid $base-color;
       }
+
       .menu-item__btn-wrapper {
         border: none;
       }
@@ -142,10 +147,12 @@
       }
     }
   }
+
   .menu-item__btn {
     @include display-flex;
     @include nav-links-typography;
     gap: rem(12);
+
     &-text,
     &-icon {
       @include display-flex;

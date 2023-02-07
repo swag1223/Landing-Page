@@ -13,7 +13,7 @@ let isMobileMenuOpen = false;
 /** Handles the active link in the navigation. */
 const handleActiveLink = () => {
   const activeLink = document.querySelector(`.${active}`);
-  if(activeLink) {
+  if (activeLink) {
     activeLink.classList.remove(active);
   }
 
@@ -28,19 +28,18 @@ const disableTabIndex = () => {
 };
 
 /* Enables tabindex for the navigation items. */
-const enableTabIndex = ()=>{
+const enableTabIndex = () => {
   navItem.forEach((link) => {
     link.firstElementChild.removeAttribute("tabindex");
   });
-
-}
+};
 
 /** Opens the navigation menu and changes the icon of the hamburger to cross icon. */
 const openMenu = () => {
   body.style.overflow = "hidden";
   hamburger.firstElementChild.src = "assets/images/cancel-circle.svg";
   navMenu.classList.add(open);
-  enableTabIndex(); 
+  enableTabIndex();
 };
 
 /** Close the navigation menu and changes the icon of the hamburger to hamburger icon. */
@@ -68,7 +67,6 @@ window.addEventListener("hashchange", handleActiveLink);
 
 /** Closes the navigation menu and changes the state of the mobile menu when a navigation item is clicked. */
 hamburger.addEventListener("click", () => {
-  
   if (!isMobileMenuOpen) {
     openMenu();
   } else {
@@ -77,14 +75,14 @@ hamburger.addEventListener("click", () => {
   isMobileMenuOpen = !isMobileMenuOpen;
 });
 
+/** Adds an event listener to each link in the navigation item list to toggle the mobile menu open/close state. */
 navItem.forEach((link) => {
   link.addEventListener("click", () => {
     if (isMobileMenuOpen) {
       closeMenu();
       isMobileMenuOpen = false;
-    }
-    else {
-      enableTabIndex();  
+    } else {
+      enableTabIndex();
     }
   });
 });
