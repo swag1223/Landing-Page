@@ -1,0 +1,71 @@
+.statistics {
+  display: none;
+  @include breakpoint(xl) {
+    display: block;
+  }
+  &__container {
+    @include display-flex(space-between);
+    border: 1px solid black;
+  }
+  &__graph {
+    width: rem(260);
+    height: rem(260);
+    border-radius: 50%;
+    position: relative;
+    background: conic-gradient(
+      $primary-color 0deg 105deg,
+      $primary-light-color 105deg 190deg,
+      $grey-light-color 190deg 260deg,
+      $base-dark-color 260deg 360deg
+    );
+    @include display-flex(center, center);
+  }
+  .graph {
+    &__inner-circle {
+      width: rem(120);
+      height: rem(120);
+      border-radius: 50%;
+      background: $base-color;
+    }
+
+    &__square {
+      position: absolute;
+      top: -5%;
+      left: 5%;
+      width: rem(100);
+      height: rem(100);
+      border: rem(1) dotted black;
+    }
+  }
+
+  &__numbers {
+    border: 1px solid red;
+  }
+
+  .numbers {
+    &__downloads {
+      @include display-flex;
+      &-indicator {
+        width: rem(24);
+        height: rem(24);
+        border-radius: 50%;
+        background-color: $primary-color;
+      }
+    }
+
+    &__subscribers {
+      @include display-flex;
+      &-indicator {
+        width: rem(24);
+        height: rem(24);
+        border-radius: 50%;
+        background-color: $mobile-menu-bg-color;
+      }
+    }
+  }
+
+  &__info {
+    border: 1px solid blue;
+    width: 35%;
+  }
+}
