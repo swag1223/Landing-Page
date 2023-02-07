@@ -1,4 +1,4 @@
-const form = document.querySelector(".newsletter__form");
+const newsletterForm = document.querySelector(".newsletter__form");
 const email = document.querySelector(".newsletter__email-input");
 const emailWrapper = document.querySelector(".newsletter__email-wrapper");
 
@@ -13,34 +13,46 @@ const isEmailValid = (email) => {
   return emailFormatRegex.test(String(email).toLowerCase());
 };
 
-/** Show the error or success message for email validation
- * @function
- * @param {string} msg - The message to show
- * @param {string} [type="error"] - The type of message, either "error" or "success
+const emailConfig = {
+  empty: {
+    message: "Email is required",
+    textColor: "red",
+  },
+  invalid: {
+    message: "Invalid Email",
+    textColor: "red",
+  },
+  valid: {
+    message: "Subscribed",
+    textColor: "green",
+  },
+};
+
+/** Handles email validation and displays error messages.
+ * @param {string} emailValue - The value of the email input field.
  */
-const handleEmailValidation = (msg, type = "error") => {
+const handleEmailValidation = (emailValue) => {
   const errorText = document.querySelector(".newsletter__email-field-msg");
-  errorText.innerText = msg;
-  if (type === "error") {
-    errorText.style.display = "flex";
-    errorText.style.color = "red";
+  errorText.style.display = "flex";
+
+  if (emailValue === "") {
+    errorText.innerText = emailConfig.empty.message;
+    errorText.style.color = emailConfig.empty.textColor;
+    return;
+  }
+
+  if (isEmailValid(emailValue)) {
+    errorText.innerText = emailConfig.valid.message;
+    errorText.style.color = emailConfig.valid.textColor;
   } else {
-    errorText.style.display = "flex";
-    errorText.style.color = "green";
-    email.value = "";
+    errorText.innerText = emailConfig.invalid.message;
+    console.log(emailValue);
+    errorText.style.color = emailConfig.invalid.textColor;
   }
 };
 
-//listens to fubmit event on form and Validates the email address and show an error or success message
-form.addEventListener("submit", (e) => {
+//listens to submit event on newsletterForm and Validates the email address and show an error or success message
+newsletterForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (email.value == "") {
-    handleEmailValidation("Email is required");
-  } else {
-    if (isEmailValid(email.value)) {
-      handleEmailValidation("Subscribed", "success");
-    } else {
-      handleEmailValidation("Invalid email");
-    }
-  }
+  handleEmailValidation(email.value.trim());
 });
