@@ -1,4 +1,4 @@
-const form = document.querySelector(".newsletter__form");
+const newsletterForm = document.querySelector(".newsletter__form");
 const email = document.querySelector(".newsletter__email-input");
 const emailWrapper = document.querySelector(".newsletter__email-wrapper");
 
@@ -13,34 +13,54 @@ const isEmailValid = (email) => {
   return emailFormatRegex.test(String(email).toLowerCase());
 };
 
-/** Show the error or success message for email validation
- * @function
- * @param {string} msg - The message to show
- * @param {string} [type="error"] - The type of message, either "error" or "success
+const emailConfig = {
+  empty: {
+    message: "Email is required",
+    styleClass: "newsletter__email-field-msg--error",
+  },
+  invalid: {
+    message: "Invalid Email",
+    styleClass: "newsletter__email-field-msg--error",
+  },
+  valid: {
+    message: "Subscribed",
+    styleClass: "newsletter__email-field-msg--success",
+  },
+};
+
+/** Handles email validation and displays error messages.
+ * @param {string} emailValue - The value of the email input field.
  */
-const handleEmailValidation = (msg, type = "error") => {
+const handleEmailValidation = (emailValue) => {
   const errorText = document.querySelector(".newsletter__email-field-msg");
-  errorText.innerText = msg;
-  if (type === "error") {
-    errorText.style.display = "flex";
-    errorText.style.color = "red";
+
+  if (emailValue === "") {
+    errorText.innerText = emailConfig.empty.message;
+    if(errorText.classList.contains(`${emailConfig.valid.styleClass}`)) {
+      errorText.classList.remove(`${emailConfig.valid.styleClass}`);
+    }
+    errorText.classList.add(emailConfig.empty.styleClass);
+    return;
+  }
+
+  if (isEmailValid(emailValue)) {
+    errorText.innerText = emailConfig.valid.message;
+    if(errorText.classList.contains(`${emailConfig.empty.styleClass}`)) {
+      errorText.classList.remove(`${emailConfig.empty.styleClass}`);
+    }
+    errorText.classList.add(emailConfig.valid.styleClass);
+    email.value="";
   } else {
-    errorText.style.display = "flex";
-    errorText.style.color = "green";
-    email.value = "";
+    errorText.innerText = emailConfig.invalid.message;
+    if(errorText.classList.contains(`${emailConfig.valid.styleClass}`)) {
+      errorText.classList.remove(`${emailConfig.valid.styleClass}`);
+    }
+    errorText.classList.add(emailConfig.invalid.styleClass);
   }
 };
 
-//listens to fubmit event on form and Validates the email address and show an error or success message
-form.addEventListener("submit", (e) => {
+//listens to submit event on newsletterForm and Validates the email address and show an error or success message
+newsletterForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (email.value == "") {
-    handleEmailValidation("Email is required");
-  } else {
-    if (isEmailValid(email.value)) {
-      handleEmailValidation("Subscribed", "success");
-    } else {
-      handleEmailValidation("Invalid email");
-    }
-  }
+  handleEmailValidation(email.value.trim());
 });

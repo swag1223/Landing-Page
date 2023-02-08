@@ -117,7 +117,19 @@
     @include description-typography-sm;
     display: none;
     margin-top: rem(5);
+
+    &--error{
+      display: flex;
+      color: red;
+    }
+
+    &--success {
+      display: flex;
+      color: green;
+    }
   }
+
+  
 
   &__subscribe-btn {
     padding: 1rem 1.5rem;
