@@ -39,7 +39,8 @@
 
   &__heading {
     @include heading-typography;
-    @include ellipsis(1);
+    @include ellipsis(2);
+    word-break: break-all;
   }
 
   &__landscape-layout {
