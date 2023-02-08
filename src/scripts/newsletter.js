@@ -16,15 +16,15 @@ const isEmailValid = (email) => {
 const emailConfig = {
   empty: {
     message: "Email is required",
-    textColor: "red",
+    styleClass: "newsletter__email-field-msg--error",
   },
   invalid: {
     message: "Invalid Email",
-    textColor: "red",
+    styleClass: "newsletter__email-field-msg--error",
   },
   valid: {
     message: "Subscribed",
-    textColor: "green",
+    styleClass: "newsletter__email-field-msg--success",
   },
 };
 
@@ -33,21 +33,29 @@ const emailConfig = {
  */
 const handleEmailValidation = (emailValue) => {
   const errorText = document.querySelector(".newsletter__email-field-msg");
-  errorText.style.display = "flex";
 
   if (emailValue === "") {
     errorText.innerText = emailConfig.empty.message;
-    errorText.style.color = emailConfig.empty.textColor;
+    if(errorText.classList.contains(`${emailConfig.valid.styleClass}`)) {
+      errorText.classList.remove(`${emailConfig.valid.styleClass}`);
+    }
+    errorText.classList.add(emailConfig.empty.styleClass);
     return;
   }
 
   if (isEmailValid(emailValue)) {
     errorText.innerText = emailConfig.valid.message;
-    errorText.style.color = emailConfig.valid.textColor;
+    if(errorText.classList.contains(`${emailConfig.empty.styleClass}`)) {
+      errorText.classList.remove(`${emailConfig.empty.styleClass}`);
+    }
+    errorText.classList.add(emailConfig.valid.styleClass);
+    email.value="";
   } else {
     errorText.innerText = emailConfig.invalid.message;
-    console.log(emailValue);
-    errorText.style.color = emailConfig.invalid.textColor;
+    if(errorText.classList.contains(`${emailConfig.valid.styleClass}`)) {
+      errorText.classList.remove(`${emailConfig.valid.styleClass}`);
+    }
+    errorText.classList.add(emailConfig.invalid.styleClass);
   }
 };
 
