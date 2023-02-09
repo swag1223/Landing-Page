@@ -1,7 +1,7 @@
 .newsletter {
   @include display-flex(flex-start, flex-start, column);
-  border-bottom: rem(1) solid $mobile-menu-bg-color;
-  border-top: rem(1) solid $mobile-menu-bg-color;
+  border-bottom: 1px solid $gray;
+  border-top: 1px solid $gray;
   gap: rem(20);
   margin-top: rem(10);
   padding-bottom: rem(45);
@@ -101,11 +101,11 @@
 
   &__email-input {
     @include description-typography;
-    border: 1px solid $mobile-menu-bg-color;
+    border: 1px solid $gray;
     border-radius: rem(6);
     outline: none;
     padding: rem(8) rem(15);
-    color: $para-text-color;
+    color: $text-color;
     width: 100%;
 
     @include breakpoint(xl) {
@@ -118,7 +118,7 @@
     display: none;
     margin-top: rem(5);
 
-    &--error{
+    &--error {
       display: flex;
       color: $red;
     }
@@ -128,8 +128,6 @@
       color: $green;
     }
   }
-
-  
 
   &__subscribe-btn {
     padding: 1rem 1.5rem;
