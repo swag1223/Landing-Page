@@ -11,9 +11,11 @@ h1 {
 }
 
 p {
-  color: $para-text-color;
+  color: $text-color;
 }
 
 a {
   text-decoration: none;
+  display: inline-block;
+  height: 100%;
 }

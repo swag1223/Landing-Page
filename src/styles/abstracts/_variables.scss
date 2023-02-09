@@ -1,17 +1,19 @@
 $html-font-size: 10px;
 
-$base-color: #ffffff;
-$para-text-color: #585757;
-$para-xs-text-color: #969696;
-$mobile-menu-bg-color: #dbdbdb;
-$grey-light-color: #dedede;
-$base-dark-color: #f3f3f3;
+$white: rgba(255, 255, 255, 1);
+$black: rgba(0, 0, 0, 1);
+$red: rgba(255, 0, 0, 1);
+$green: rgba(0, 96, 0, 1);
 
-$primary-color: #24afb5;
-$primary-dark-color: #27bec4;
-$primary-light-color: #24afb533;
+$hover-color: rgba(39, 190, 196, 1);
+$text-color: rgba(88, 87, 87, 1);
+$text-color-light: rgba(150, 150, 150, 1);
+$gray: rgba(219, 219, 219, 1);
 
-$secondary-color: #000000;
+$primary-color: rgba(36, 175, 181, 1);
+$graph-color2: rgba(36, 175, 181, 0.2);
+$graph-color3: rgba(222, 222, 222, 1);
+$graph-color4: rgba(243, 243, 243, 1);
 
 $regular-weight: 400;
 $medium-weight: 600;
