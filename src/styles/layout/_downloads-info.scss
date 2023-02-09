@@ -111,6 +111,7 @@
     width: 100%;
     height: rem(263);
     overflow: hidden;
+    max-width: rem(320);
 
     @include breakpoint(md) {
       width: 58%;
@@ -123,23 +124,16 @@
     @include breakpoint(xl) {
       overflow: visible;
       margin-top: rem(50);
-      width: 35%;
-      min-height: rem(400);
-      position: relative;
+      width: 40%;
     }
   }
 
   &__image {
     min-width: 100%;
+    display: block;
 
     @include breakpoint(md) {
       width: 100%;
-      height: auto;
-    }
-    @include breakpoint(xl) {
-      position: absolute;
-      bottom: 0;
-      height: 100%;
     }
   }
 }
