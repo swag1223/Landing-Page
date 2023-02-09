@@ -36,26 +36,20 @@ const handleEmailValidation = (emailValue) => {
 
   if (emailValue === "") {
     errorText.innerText = emailConfig.empty.message;
-    if(errorText.classList.contains(`${emailConfig.valid.styleClass}`)) {
-      errorText.classList.remove(`${emailConfig.valid.styleClass}`);
-    }
-    errorText.classList.add(emailConfig.empty.styleClass);
+    errorText.classList.toggle(emailConfig.empty.styleClass, true);
+    errorText.classList.toggle(emailConfig.valid.styleClass, false);
     return;
   }
 
   if (isEmailValid(emailValue)) {
     errorText.innerText = emailConfig.valid.message;
-    if(errorText.classList.contains(`${emailConfig.empty.styleClass}`)) {
-      errorText.classList.remove(`${emailConfig.empty.styleClass}`);
-    }
-    errorText.classList.add(emailConfig.valid.styleClass);
-    email.value="";
+    errorText.classList.toggle(emailConfig.valid.styleClass, true);
+    errorText.classList.toggle(emailConfig.empty.styleClass, false);
+    email.value = "";
   } else {
     errorText.innerText = emailConfig.invalid.message;
-    if(errorText.classList.contains(`${emailConfig.valid.styleClass}`)) {
-      errorText.classList.remove(`${emailConfig.valid.styleClass}`);
-    }
-    errorText.classList.add(emailConfig.invalid.styleClass);
+    errorText.classList.toggle(emailConfig.invalid.styleClass, true);
+    errorText.classList.toggle(emailConfig.valid.styleClass, false);
   }
 };
 
