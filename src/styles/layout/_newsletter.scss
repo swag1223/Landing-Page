@@ -1,7 +1,7 @@
 .newsletter {
   @include display-flex(flex-start, flex-start, column);
-  border-bottom: 1px solid $gainsboro;
-  border-top: 1px solid $gainsboro;
+  border-bottom: 1px solid $gray;
+  border-top: 1px solid $gray;
   gap: rem(20);
   margin-top: rem(10);
   padding-bottom: rem(45);
@@ -101,11 +101,11 @@
 
   &__email-input {
     @include description-typography;
-    border: 1px solid $gainsboro;
+    border: 1px solid $gray;
     border-radius: rem(6);
     outline: none;
     padding: rem(8) rem(15);
-    color: $matter-horn;
+    color: $text-color;
     width: 100%;
 
     @include breakpoint(xl) {

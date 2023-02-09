@@ -12,10 +12,10 @@
     border-radius: 50%;
     position: relative;
     background: conic-gradient(
-      $primary-light-sea-green 0deg 105deg,
-      $light-sea-green 105deg 190deg,
-      $gainsboro-dark 190deg 255deg,
-      $white-smoke 255deg 360deg
+      $primary-color 0deg 105deg,
+      $graph-color2 105deg 190deg,
+      $graph-color3 190deg 255deg,
+      $graph-color4 255deg 360deg
     );
   }
 
@@ -33,56 +33,44 @@
       left: 5%;
       min-width: rem(100);
       min-height: rem(100);
-      border: 1px dashed $nobel;
+      border: 1px dashed $text-color-light;
     }
   }
 
   &__numbers {
     @include display-flex(flex-start, center, column);
-    gap: rem(90);
+    gap: rem(80);
 
     .numbers {
-      &__downloads {
-        @include display-flex(flex-start, flex-start);
+      &__downloads,
+      &__subscribers {
+        @include display-flex(flex-start, flex-end, $flex-direction: column);
+      }
+      &__layout {
+        @include display-flex(space-between, center);
         gap: rem(10);
-        &-indicator {
-          min-width: rem(24);
-          min-height: rem(24);
-          border-radius: 50%;
-          background-color: $primary-light-sea-green;
-          margin-top: rem(15);
+      }
+      &__indicator {
+        width: rem(24);
+        height: rem(24);
+        border-radius: 50%;
+
+        &--downloads {
+          background-color: $primary-color;
         }
 
-        .downloads {
-          &__heading {
-            @include heading-typography;
-          }
-          &__para {
-            @include description-typography-sm;
-          }
+        &--subscribers {
+          background-color: $graph-color3;
         }
       }
 
-      &__subscribers {
-        @include display-flex;
-        gap: rem(10);
+      &__para {
+        @include description-typography-sm;
+      }
 
-        &-indicator {
-          min-width: rem(24);
-          min-height: rem(24);
-          border-radius: 50%;
-          background-color: $gainsboro-dark;
-          margin-bottom: rem(26);
-        }
-
-        .subscribers {
-          &__heading {
-            @include heading-typography;
-          }
-          &__para {
-            @include description-typography-sm;
-          }
-        }
+      &__heading {
+        @include heading-typography;
+        color: $black;
       }
     }
   }
@@ -101,7 +89,7 @@
       &__para-two {
         @include description-typography-xs;
         @include ellipsis(2);
-        color: $nobel;
+        color: $text-color-light;
         margin-bottom: rem(25);
       }
     }

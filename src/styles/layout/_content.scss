@@ -90,9 +90,9 @@
 
     &__link {
       @include button-typography;
-      color: $primary-light-sea-green;
+      color: $primary-color;
       &:hover {
-        color: $dark-light-sea-green;
+        color: $hover-color;
       }
     }
   }
