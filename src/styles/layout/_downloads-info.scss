@@ -13,7 +13,7 @@
   }
   @include breakpoint(xl) {
     @include display-flex(space-between, center, row);
-    border-bottom: rem(1) solid $mobile-menu-bg-color;
+    border-bottom: 1px solid $gray;
     margin-top: 0;
   }
 
@@ -43,7 +43,7 @@
     word-break: break-all;
   }
 
-  &__landscape-layout {
+  &__content {
     @include display-flex(space-between, flex-start, column);
 
     @include breakpoint(md) {
