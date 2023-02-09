@@ -101,7 +101,7 @@
 
   &__email-input {
     @include description-typography;
-    border: rem(1) solid $mobile-menu-bg-color;
+    border: 1px solid $mobile-menu-bg-color;
     border-radius: rem(6);
     outline: none;
     padding: rem(8) rem(15);
@@ -120,12 +120,12 @@
 
     &--error{
       display: flex;
-      color: red;
+      color: $red;
     }
 
     &--success {
       display: flex;
-      color: green;
+      color: $green;
     }
   }
 
