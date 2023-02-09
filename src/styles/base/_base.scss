@@ -6,14 +6,16 @@ html {
 body {
   font-family: "Poppins";
 }
-h1{
+h1 {
   margin: 0;
 }
 
 p {
-  color: $text-color;
+  color: $para-text-color;
 }
 
 a {
   text-decoration: none;
+  display: inline-block;
+  height: 100%;
 }
