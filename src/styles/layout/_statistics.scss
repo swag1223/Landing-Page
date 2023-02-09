@@ -12,10 +12,10 @@
     border-radius: 50%;
     position: relative;
     background: conic-gradient(
-      $primary-color 0deg 105deg,
-      $primary-light-color 105deg 190deg,
-      $grey-light-color 190deg 260deg,
-      $base-dark-color 260deg 360deg
+      $primary-light-sea-green 0deg 105deg,
+      $light-sea-green 105deg 190deg,
+      $gainsboro-dark 190deg 255deg,
+      $white-smoke 255deg 360deg
     );
   }
 
@@ -24,7 +24,7 @@
       min-width: rem(120);
       min-height: rem(120);
       border-radius: 50%;
-      background: $base-color;
+      background: $white;
     }
 
     &__square {
@@ -33,7 +33,7 @@
       left: 5%;
       min-width: rem(100);
       min-height: rem(100);
-      border: rem(1) dotted black;
+      border: 1px dashed $nobel;
     }
   }
 
@@ -49,7 +49,7 @@
           min-width: rem(24);
           min-height: rem(24);
           border-radius: 50%;
-          background-color: $primary-color;
+          background-color: $primary-light-sea-green;
           margin-top: rem(15);
         }
 
@@ -71,7 +71,7 @@
           min-width: rem(24);
           min-height: rem(24);
           border-radius: 50%;
-          background-color: $grey-light-color;
+          background-color: $gainsboro-dark;
           margin-bottom: rem(26);
         }
 
@@ -101,7 +101,7 @@
       &__para-two {
         @include description-typography-xs;
         @include ellipsis(2);
-        color: $para-xs-text-color;
+        color: $nobel;
         margin-bottom: rem(25);
       }
     }

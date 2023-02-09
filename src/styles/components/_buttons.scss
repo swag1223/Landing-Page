@@ -1,13 +1,13 @@
 //Buttons
 .btn {
-  background-color: $primary-color;
+  background-color: $primary-light-sea-green;
   border-radius: rem(6);
   padding: rem(10) rem(12);
-  color: $base-color;
+  color: $white;
   border: none;
   cursor: pointer;
   @include button-typography;
   &:hover {
-    background-color: $primary-dark-color;
+    background-color: $dark-light-sea-green;
   }
 }

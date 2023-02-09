@@ -47,7 +47,7 @@
     position: fixed;
     top: 0;
     right: -120%;
-    background-color: $base-color;
+    background-color: $white;
     height: 100%;
     width: 100%;
     display: flex; //given seaparately to handle overflow-y: scroll
@@ -112,16 +112,16 @@
       right: 0;
       z-index: 1;
       transition: 0.5s ease;
-      background-color: $mobile-menu-bg-color;
+      background-color: $gainsboro;
 
       @include breakpoint(xl) {
-        background-color: $base-color;
+        background-color: $white;
         position: relative;
         z-index: 0;
       }
 
       .nav__menu-item {
-        border-bottom: 1px solid $base-color;
+        border-bottom: 1px solid $white;
 
         @include breakpoint(xl) {
           border: none;
@@ -137,13 +137,13 @@
       @include nav-links-typography;
       .menu-item__link {
         text-decoration: none;
-        color: $secondary-color;
+        color: $black;
         &:hover {
-          color: $primary-color;
+          color: $primary-light-sea-green;
         }
       }
       .menu-item__link--active {
-        color: $primary-color;
+        color: $primary-light-sea-green;
       }
     }
   }
@@ -159,7 +159,7 @@
     }
 
     &.menu-item__link--active {
-      color: $base-color;
+      color: $white;
     }
   }
 }
