@@ -1,0 +1,137 @@
+.newsletter {
+  @include display-flex(flex-start, flex-start, column);
+  border-bottom: rem(1) solid $mobile-menu-bg-color;
+  border-top: rem(1) solid $mobile-menu-bg-color;
+  gap: rem(20);
+  margin-top: rem(10);
+  padding-bottom: rem(45);
+  margin-bottom: rem(10);
+
+  @include breakpoint(md) {
+    gap: rem(41);
+    margin-top: rem(30);
+  }
+  @include breakpoint(lg) {
+    gap: rem(35);
+    margin-top: rem(20);
+    border: none;
+  }
+  @include breakpoint(xl) {
+    @include display-flex(flex-start, flex-start, row);
+    margin-top: rem(110);
+    gap: 0;
+  }
+
+  &__content {
+    @include display-flex(flex-start, flex-start, column);
+    padding-top: rem(35);
+    gap: rem(10);
+    max-width: 100%;
+
+    @include breakpoint(md) {
+      padding-top: rem(30);
+    }
+    @include breakpoint(lg) {
+      margin-top: rem(8);
+      padding: 0 rem(5);
+    }
+    @include breakpoint(xl) {
+      max-width: 50%;
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+
+  &__heading {
+    @include heading-typography-sm;
+    @include ellipsis(1);
+
+    @include breakpoint(md) {
+      margin-top: rem(15);
+    }
+    @include breakpoint(xl) {
+      margin-top: 0;
+    }
+  }
+
+  &__para {
+    @include description-typography-sm;
+    @include ellipsis(3);
+    width: 100%;
+
+    @include breakpoint(md) {
+      @include ellipsis(2);
+    }
+    @include breakpoint(xl) {
+      max-width: 80%;
+      @include ellipsis(3);
+    }
+  }
+
+  &__form {
+    @include display-flex($align-items: flex-start, $flex-direction: column);
+    gap: rem(10);
+
+    @include breakpoint(md) {
+      @include display-flex(flex-start, flex-start, row);
+      gap: rem(25);
+    }
+    @include breakpoint(lg) {
+      gap: rem(30);
+    }
+    @include breakpoint(xl) {
+      @include display-flex(space-between, flex-end, column);
+      min-width: 50%;
+      gap: rem(20);
+    }
+  }
+  &__email-wrapper {
+    @include breakpoint(md) {
+      max-width: 57%;
+    }
+    @include breakpoint(xl) {
+      min-width: 100%;
+      text-align: right;
+    }
+  }
+  &__input-wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  &__email-input {
+    @include description-typography;
+    border: 1px solid $mobile-menu-bg-color;
+    border-radius: rem(6);
+    outline: none;
+    padding: rem(8) rem(15);
+    color: $para-text-color;
+    width: 100%;
+
+    @include breakpoint(xl) {
+      min-width: 90%;
+    }
+  }
+
+  &__email-field-msg {
+    @include description-typography-sm;
+    display: none;
+    margin-top: rem(5);
+
+    &--error{
+      display: flex;
+      color: $red;
+    }
+
+    &--success {
+      display: flex;
+      color: $green;
+    }
+  }
+
+  
+
+  &__subscribe-btn {
+    padding: 1rem 1.5rem;
+  }
+}

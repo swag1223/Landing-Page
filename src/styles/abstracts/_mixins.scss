@@ -8,22 +8,46 @@
   }
 }
 
-@mixin display-flex(
-  $justify-content: center,
-  $align-items: center,
-  $flex-direction: row
-) {
+@mixin display-flex($justify-content: center, $align-items: center, $flex-direction: row) {
   display: flex;
   justify-content: $justify-content;
   align-items: $align-items;
   flex-direction: $flex-direction;
 }
 
-@mixin heading-typography(
-  $font-weight:$semibold-weight,
-  $font-size: rem(40),
-  $letter-spacing: rem(-1.2),
-  $line-height: rem(60)
+@mixin heading-typography {
+  font-weight: $semibold-weight;
+  font-size: rem(36);
+  letter-spacing: rem(-0.8);
+  line-height: rem(46);
+
+  @include breakpoint(md) {
+    font-size: rem(40);
+    letter-spacing: rem(-1.2);
+    line-height: rem(60);
+  }
+  @include breakpoint(lg) {
+    font-size: rem(32);
+    line-height: rem(40);
+  }
+  @include breakpoint(xl) {
+    font-size: rem(40);
+    letter-spacing: rem(-1.2);
+    line-height: rem(60);
+  }
+}
+@mixin heading-typography-sm {
+  font-weight: $medium-weight;
+  font-size: rem(24);
+  letter-spacing: rem(-0.4);
+  line-height: rem(32);
+}
+
+@mixin basic-typography(
+  $font-weight: $regular-weight,
+  $font-size: rem(13),
+  $letter-spacing: rem(1),
+  $line-height: rem(14)
 ) {
   font-weight: $font-weight;
   font-size: $font-size;
@@ -31,11 +55,22 @@
   line-height: $line-height;
 }
 
-@mixin description-typography($font-size: rem(16)) {
+@mixin description-typography {
   font-weight: $regular-weight;
-  font-size: $font-size;
+  font-size: rem(20);
   letter-spacing: rem(-0.3);
   line-height: rem(30);
+
+  @include breakpoint(md) {
+    font-size: rem(16);
+  }
+}
+
+@mixin description-typography-sm {
+  font-weight: $regular-weight;
+  font-size: rem(15);
+  letter-spacing: rem(-0.2);
+  line-height: rem(22);
 }
 
 @mixin nav-links-typography {
