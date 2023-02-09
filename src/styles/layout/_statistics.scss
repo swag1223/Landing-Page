@@ -1,0 +1,97 @@
+.statistics {
+  display: none;
+  @include breakpoint(xl) {
+    @include display-flex(space-between);
+    margin: rem(190) 0;
+  }
+
+  &__graph {
+    @include display-flex(center, center);
+    min-width: rem(260);
+    min-height: rem(260);
+    border-radius: 50%;
+    position: relative;
+    background: conic-gradient(
+      $primary-color 0deg 105deg,
+      $graph-color2 105deg 190deg,
+      $graph-color3 190deg 255deg,
+      $graph-color4 255deg 360deg
+    );
+  }
+
+  .graph {
+    &__inner-circle {
+      min-width: rem(120);
+      min-height: rem(120);
+      border-radius: 50%;
+      background: $white;
+    }
+
+    &__square {
+      position: absolute;
+      top: -5%;
+      left: 5%;
+      min-width: rem(100);
+      min-height: rem(100);
+      border: 1px dashed $text-color-light;
+    }
+  }
+
+  &__numbers {
+    @include display-flex(flex-start, center, column);
+    gap: rem(80);
+
+    .numbers {
+      &__downloads,
+      &__subscribers {
+        @include display-flex(flex-start, flex-end, $flex-direction: column);
+      }
+      &__layout {
+        @include display-flex(space-between, center);
+        gap: rem(10);
+      }
+      &__indicator {
+        width: rem(24);
+        height: rem(24);
+        border-radius: 50%;
+
+        &--downloads {
+          background-color: $primary-color;
+        }
+
+        &--subscribers {
+          background-color: $graph-color3;
+        }
+      }
+
+      &__para {
+        @include description-typography-sm;
+      }
+
+      &__heading {
+        @include heading-typography;
+        color: $black;
+      }
+    }
+  }
+
+  &__info {
+    @include display-flex(flex-start, center, column);
+    max-width: 40%;
+
+    .info {
+      &__para-one {
+        @include description-typography-sm;
+        @include ellipsis(5);
+        margin-bottom: rem(30);
+      }
+
+      &__para-two {
+        @include description-typography-xs;
+        @include ellipsis(2);
+        color: $text-color-light;
+        margin-bottom: rem(25);
+      }
+    }
+  }
+}

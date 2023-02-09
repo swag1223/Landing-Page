@@ -72,6 +72,12 @@
   letter-spacing: rem(-0.2);
   line-height: rem(22);
 }
+@mixin description-typography-xs {
+  font-weight: $regular-weight;
+  font-size: rem(13);
+  letter-spacing: rem(-0.1);
+  line-height: rem(18);
+}
 
 @mixin nav-links-typography {
   font-weight: $medium-weight;

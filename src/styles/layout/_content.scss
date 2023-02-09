@@ -92,7 +92,7 @@
       @include button-typography;
       color: $primary-color;
       &:hover {
-        color: $primary-dark-color;
+        color: $hover-color;
       }
     }
   }
