@@ -1,7 +1,7 @@
 .slider {
   margin-top: rem(40);
   @include breakpoint(md) {
-    margin-top: rem(66);
+    margin-top: rem(70);
   }
   @include breakpoint(lg) {
     margin-top: rem(120);
@@ -18,28 +18,48 @@
   &__para {
     @include description-typography;
     @include ellipsis(3);
-    margin-top: rem(15);
+    margin-top: rem(20);
     text-align: center;
-
-
+    
+    
     @include breakpoint(md){
+      margin-top: rem(15);
         
         @include ellipsis(2);
     }
-    @include breakpoint(lg) {
-      margin-top: rem(25);
-    }
+    
   }
 }
 
 .glide {
-    margin-top: rem(80);
-    text-align: center;
+  margin-top: rem(30);
+  // border: 1px solid black;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // padding: rem(10);
+  // @include display-flex($flex-direction:column);
+  // max-width: 80%;
+    @include breakpoint(md){
+      margin-top: rem(80);
+      text-align: center;
+    }
+    @include breakpoint(lg){
+      margin-top: rem(60);
+    }
     // @include display-flex(center
     // , center,column);
 
     &__track{
+      // border: 1px solid red;
+      margin-bottom: rem(30);
+      @include breakpoint(md){
+
         margin-bottom: rem(60);
+      }
+    }
+    &__bullets {
+      text-align: center;
     }
     &__bullet{
         border: none;
@@ -50,22 +70,30 @@
         margin-right: rem(5);
     }
     &__bullet--active {
-        background-color: blue;
+        background-color: $primary-color;
         transition: 1s ease-in;
     }
 
  
     &__slide{
-      @include display-flex(space-between);
+      // @include display-flex(space-between,flex-start,column);
+      max-width: rem(290);
 
       @include breakpoint(md) {
         @include display-flex(flex-start, flex-start);
+        padding: rem(30) rem(20);
+        max-width: rem(540);
+      }
+
+      @include breakpoint(xl){
+
+        max-width: rem(570);
       }
       border: rem(1) solid $primary-color;
       border-radius: rem(8);
       min-height: rem(260);
-      padding: rem(30) rem(20);
-      // width: rem(370);
+      padding: rem(30);
+      
     }
 
     .card {
@@ -75,41 +103,66 @@
       &__text {
         // border: 1px solid red;
         @include display-flex(space-between, flex-start, column);
-
-        width: 70%;
+        width: 100%;
+        position: relative;
+        
+        
+        @include breakpoint(md) {
+          // width: 70%;
+          position: static;
+          margin-top: rem(15);
+          margin-left: rem(30);
+        }
+      }
+      &__quotes-wrapper{
+        position: absolute;
+        right: 0;
+        top: -37px;
 
         @include breakpoint(md) {
-            margin-top: rem(15);
-            margin-left: rem(30);
+          position: static;
         }
       }
       &__para {
         @include description-typography;
+        @include ellipsis(4);
 
         margin: rem(18) 0;
+        text-align: left;
         @include breakpoint(md) {
-            text-align: left;
 
         }
       }
 
       &__auth-icons {
-        @include display-flex(space-between);
-        width: 100%;
+        @include display-flex(space-between,flex-start,column);
+        width: 55%;
+
+        @include breakpoint(md){
+        @include display-flex(space-between,center);
+
+          width: 100%;
+        }
         // border: 1px solid green;
       }
 
       &__auth-para {
         @include button-typography;
-        color: $secondary-color;
+        color: $black;
+        text-align: left;
       }
       &__socialmedia-wrapper {
         // border: 1px solid blue;
         @include display-flex(space-between);
         gap: rem(15);
+        margin-top: rem(23);
+
+        @include breakpoint(md) {
+          margin-top: 0;
+        }
       }
       &__socialmedia-icons {
-        color: $para-xs-text-color;
+        color: $text-color-light;
         font-size: rem(20);
 
         // border: 1px solid blue;

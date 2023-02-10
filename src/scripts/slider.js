@@ -1,31 +1,41 @@
 
 import Glide, { Controls, Breakpoints , Swipe, Autoplay , Keyboard} from '@glidejs/glide/dist/glide.modular.esm'
 
-new Glide('.glide',{
+const carousel = new Glide('.glide',{
     type: 'carousel',
     autoplay:3000,
     keyboard:true,
     animationDuration: 1000,
     animationTimingFunc: 'linear',
+    touchRatio:0.5,
     perView: 1,
-    gap:  20,
+    gap:  30,
+    // peek: {
+    //           before: 50,
+    //           after: 50
+    //         }
     
-    // peek: { before: 100, after: 100 },
-    // startAt: 0,
-    // perView: 3,
 
-      breakpoints:{ 
-        992: {
-        peek: { before: 100, after: 100 },
+    Breakpoints:{ 
+      568:{
+        perView:1,
+      },
+      768:{
+        perView:1,
+
+      },
+      992: {
+        gap:50,
         startAt: 0,
         perView: 1,
+        peek: {
+          before: 50,
+          after: 50
+        }
       },
-
-      568: {
-        perView:1,
-      }
     }
     
 
-}).mount({ Controls, Breakpoints , Swipe, Autoplay , Keyboard})
+});
+carousel.mount({ Controls, Breakpoints , Swipe, Autoplay , Keyboard})
 
