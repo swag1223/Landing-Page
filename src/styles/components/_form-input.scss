@@ -1,0 +1,15 @@
+.form {
+    &__email-input {
+        font-weight: 400;
+        font-size: 1.3rem;
+        letter-spacing: -0.03rem;
+        line-height: 3rem;
+        border: 1px solid rgb(219, 219, 219);
+        border-radius: 0.6rem;
+        outline: none;
+        padding: 0.3rem 0.8rem;
+        color: rgb(88, 87, 87);
+        width: 100%;
+
+    }
+}

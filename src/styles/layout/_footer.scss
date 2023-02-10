@@ -1,1 +1,118 @@
-//Footer
+.footer {
+    margin-top: rem(38);
+    // border: 1px solid red;
+
+    @include breakpoint(md) {
+        margin-top: 0;
+        padding-top:rem(8);
+    }
+    &__sections {
+        // border: 1px solid orange;
+        display: none;
+
+        @include breakpoint(md) {
+            @include display-flex(flex-start);
+
+        }
+    }
+
+
+    .sections {
+        
+        &__heading {
+            @include basic-typography($semibold-weight, rem(32),rem(-0.8));
+            margin-left: rem(10);
+            
+        }
+    }
+
+
+    &__categories{
+        // border: 1px solid green;
+        margin-top: rem(30);
+        @include display-flex(column);
+        @include breakpoint(md) {
+            @include display-flex(space-between,flex-start);
+        }
+    }
+    &__category {
+        // border: 1px solid blue;
+        @include display-flex(center, flex-start, column);
+        gap: rem(8);
+        margin-bottom: rem(22);
+    }
+
+    // &__category-list {
+
+    // }
+
+    &__list-item {
+        margin-bottom: rem(10);
+        @include description-typography-sm;
+        color: $text-color;
+    }
+    &__heading {
+        @include nav-links-typography;
+        
+    }
+
+    // &__form-container {
+    //     border: 1px solid green;
+    // }
+
+    &__form-container {
+        @include breakpoint(md){
+            display: none;
+        }
+    }
+
+    &__form {
+        // border: 1px solid red;
+        @include display-flex;
+
+    }
+
+    &__para {
+        @include basic-typography;
+    }
+
+    &__links-container {
+        background-color: $graph-color4;
+        @include breakpoint(md){
+            @include display-flex(space-between);
+            padding: rem(15);
+            margin-top: rem(80);
+        }
+    }
+
+    &__links {
+        // border: 1px solid red;
+        width: 50%;
+        @include breakpoint(md){
+            @include display-flex(space-between);
+
+        }
+
+        .links {
+            &__item{
+                @include description-typography-sm;
+            }
+        }
+    }
+
+    &__social-media-links {
+        @include breakpoint(md){
+            @include display-flex(space-between);
+            // border: 1px solid red;
+            gap: rem(15);
+        }
+
+        .social-media{
+            &__item {
+                color: $text-color-light;
+                font-size: rem(20);
+            }
+        }
+    }
+
+}
