@@ -188,7 +188,7 @@
         </div>
       </div>
 
-      <section class="downloads-info section-container" id="fifthLink">
+      <section class="downloads-info section-container" id="fourthLink">
         <div class="downloads-info__text">
           <h2 class="downloads-info__heading">Heading</h2>
           <div class="downloads-info__content">
@@ -222,7 +222,7 @@
         </div>
       </section>
 
-      <section class="slider section-container">
+      <section class="slider section-container" id="fifthLink">
         <div class="slider__text">
           <h2 class="slider__heading">Heading</h2>
           <p class="slider__para">
@@ -405,98 +405,132 @@
         </div>
       </section>
 
-      <section class="pre-footer section-container">
+      <section class="pre-footer section-container" id="btn">
         <div class="pre-footer__content">
           <h2 class="pre-footer__heading">Two line header example with text description</h2>
           <button class="btn pre-footer__btn">
-            <span class="menu-item__btn-text">Button</span>
-            <span class="menu-item__btn-icon">
-              <img src="assets/images/button-icon.svg " alt="square" />
+            <span class="pre-footer__btn-text">Button</span>
+            <span class="pre-footer__btn-icon-wrapper">
+              <img
+                class="pre-footer__btn-icon"
+                src="assets/images/button-icon.svg "
+                alt="hollow white square with black border"
+              />
             </span>
           </button>
         </div>
       </section>
 
-      <footer class="footer section-container">
-        <div class="footer__sections">
-          <div class="sections__logo-wrapper">
-            <img class="sections__logo" src="./assets/images/logo.svg"/>
-          </div>
-          <h2 class="sections__heading">Sections</h2>
-        </div>
-
-
-        <div class="footer__categories">
-          <div class="footer__category">
-            <h3 class="footer__heading">Category</h3>
-            <ul class="footer__category-list">
-              <li class="footer__list-item"><a>First Link</a></li>
-              <li class="footer__list-item"><a>Second Long Link</a></li>
-              <li class="footer__list-item"><a>ThirdLink</a></li>
-            </ul>
-          </div>
-
-          <div class="footer__category">
-            <h3 class="footer__heading">Category</h3>
-            <ul class="footer__category-list">
-              <li class="footer__list-item"><a>First Link</a></li>
-              <li class="footer__list-item"><a>Second Long Link</a></li>
-              <li class="footer__list-item"><a>ThirdLink</a></li>
-              <li class="footer__list-item"><a>First Link</a></li>
-              <li class="footer__list-item"><a>Second Long Link</a></li>
-              <li class="footer__list-item"><a>ThirdLink</a></li>
-            </ul>
-          </div>
-
-          <div class="footer__category">
-            <h3 class="footer__heading">Category</h3>
-            <ul class="footer__category-list">
-              <li class="footer__list-item"><a>First Link</a></li>
-              <li class="footer__list-item"><a>Second Long Link</a></li>
-              <li class="footer__list-item"><a>ThirdLink</a></li>
-              <li class="footer__list-item"><a>Fourth Link</a></li>
-            </ul>
-          </div>
-        </div>
-
-
-        <div class="footer__form-container">
-          <h2 class="footer__heading">Subscribe</h2>
-          <form class="newsletter__form footer__form">
-            <div class="newsletter__email-wrapper form__email-wrapper">
-              <div class="newsletter__input-wrapper form__input-wrapper">
-                <input
-                  name="email"
-                  class="form__email-input"
-                  type="text"
-                  placeholder="Email *"
-                />
-              </div>
-              <span class="newsletter__email-field-msg form__email-field-msg" ></span>
+      <footer class="footer">
+        <div class="footer__common-container section-container">
+          <div class="common-container__sections">
+            <div class="common-container__logo-wrapper">
+              <img class="common-container__logo" src="./assets/images/logo.svg" alt="brand logo" />
             </div>
-            <button type="submit" class="newsletter__subscribe-btn btn"><img src="./assets/images/footer-formbutton-img.svg"/></button>
-          </form>
+            <h2 class="common-container__sections-heading">Sections</h2>
+          </div>
 
-          <p class="footer__para">No spam, notifications only about new products, updates and freebies. You can always unsubscribe.</p>
+          <div class="common-container__categories">
+            <div class="common-container__category">
+              <h3 class="common-container__heading">Category</h3>
+              <ul class="common-container__category-list">
+                <li class="common-container__list-item"><a href="#">First Link</a></li>
+                <li class="common-container__list-item"><a href="#">Second Long Link</a></li>
+                <li class="common-container__list-item"><a href="#">ThirdLink</a></li>
+              </ul>
+            </div>
 
+            <div class="common-container__category">
+              <h3 class="common-container__heading">Category</h3>
+              <ul class="common-container__category-list">
+                <li class="common-container__list-item"><a href="#">First Link</a></li>
+                <li class="common-container__list-item"><a href="#">Second Long Link</a></li>
+                <li class="common-container__list-item"><a href="#">ThirdLink</a></li>
+                <li class="common-container__list-item"><a href="#">First Link</a></li>
+                <li class="common-container__list-item"><a href="#">Second Long Link</a></li>
+                <li class="common-container__list-item"><a href="#">ThirdLink</a></li>
+              </ul>
+            </div>
+
+            <div class="common-container__category">
+              <h3 class="common-container__heading">Category</h3>
+              <ul class="common-container__category-list">
+                <li class="common-container__list-item"><a href="#">First Link</a></li>
+                <li class="common-container__list-item"><a href="#">Second Long Link</a></li>
+                <li class="common-container__list-item"><a href="#">ThirdLink</a></li>
+                <li class="common-container__list-item"><a href="#">Fourth Link</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__form-container">
+            <h2 class="footer__form-heading">Subscribe</h2>
+            <form class="footer__form">
+              <div class="form__email-wrapper">
+                <div class="form__input-wrapper">
+                  <input name="email" class="form__email-input" type="text" placeholder="Email *" />
+                </div>
+                <span class="form__email-field-msg"></span>
+              </div>
+              <button type="submit" class="footer__subscribe-btn btn">
+                <img src="./assets/images/footer-formbutton-img.svg" alt="send-message" />
+              </button>
+            </form>
+
+            <p class="footer__form-para">
+              No spam, notifications only about new products, updates and freebies. You can always
+              unsubscribe.
+            </p>
+          </div>
         </div>
 
+        <div class="footer__copyright">
+          <div class="copyright__container section-container">
+            <div class="copyright__logo-wrapper">
+              <img class="copyright__logo" src="./assets/images/logo.svg" alt="brand logo" />
+            </div>
+            <p class="copyright__para">
+              &#169; Copyright 2020 Pixsellz Premium UI Goods for Designers
+            </p>
+            <ul class="copyright__social-media-links">
+              <li class="social-media__item">
+                <a class="social-media__link" href="#"><i class="icon-facebook"></i></a>
+              </li>
+              <li class="social-media__item">
+                <a class="social-media__link" href="#"><i class="icon-instagram"></i></a>
+              </li>
+              <li class="social-media__item">
+                <a class="social-media__link" href="#"><i class="icon-twitter"></i></a>
+              </li>
+              <li class="social-media__item">
+                <a class="social-media__link" href="#"><i class="icon-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        
+        <div class="footer__links-container">
+          <ul class="footer__links">
+            <li class="links__item"><a href="#">First Link</a></li>
+            <li class="links__item"><a href="#">Second Link</a></li>
+            <li class="links__item"><a href="#">Third Link</a></li>
+          </ul>
+          <ul class="footer__social-media-links">
+            <li class="social-media__item">
+              <a class="social-media__link" href="#"><i class="icon-facebook"></i></a>
+            </li>
+            <li class="social-media__item">
+              <a class="social-media__link" href="#"><i class="icon-instagram"></i></a>
+            </li>
+            <li class="social-media__item">
+              <a class="social-media__link" href="#"><i class="icon-twitter"></i></a>
+            </li>
+            <li class="social-media__item">
+              <a class="social-media__link" href="#"><i class="icon-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
       </footer>
-      <div class="footer__links-container">
-        <ul class="footer__links">
-          <li class="links__item"><a>First Link</a></li>
-          <li class="links__item"><a>Second Link</a></li>
-          <li class="links__item"><a>Third Link</a></li>
-        </ul>
-      <ul class="footer__social-media-links">
-        <li><a class="social-media__item"><i class="icon-facebook"></i></a></li>
-        <li><a class="social-media__item"><i class="icon-instagram"></i></a></li>
-        <li><a class="social-media__item"><i class="icon-twitter"></i></a></li>
-        <li><a class="social-media__item"><i class="icon-youtube"></i></a></li>
-      </ul>
-    </div>
     </div>
   </body>
 </html>

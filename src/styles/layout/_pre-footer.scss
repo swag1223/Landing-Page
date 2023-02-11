@@ -1,40 +1,50 @@
 .pre-footer {
-    margin-top: rem(36);
-    border-top: 1px solid $gray;
-    border-bottom: 1px solid $gray;
-    padding-top: rem(45);
-    padding-bottom:rem(45);
+  margin-top: rem(36);
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  padding-top: rem(45);
+  padding-bottom: rem(45);
+
+  @include breakpoint(md) {
+    margin-top: rem(50);
+    border-bottom: none;
+  }
+  @include breakpoint(lg) {
+    margin-top: rem(120);
+    padding-top: rem(35);
+    padding-bottom: rem(35);
+  }
+  @include breakpoint(xl) {
+    margin-top: rem(110);
+    padding-top: rem(83);
+    padding-bottom: rem(83);
+  }
+
+  &__content {
+    @include breakpoint(md) {
+      @include display-flex(space-between);
+    }
+  }
+
+  &__heading {
+    @include heading-typography;
+    @include breakpoint(md) {
+      width: 65%;
+    }
+  }
+
+  &__btn {
+    margin-top: rem(32);
+    padding: rem(11) rem(16);
 
     @include breakpoint(md) {
-        margin-top: rem(50);
-        border-bottom:none;
+      margin-top: 0;
     }
 
-    &__content {
-        // border: 1px solid green;
-        @include breakpoint(md) {
-            @include display-flex(space-between);
-        }
+    &-icon-wrapper {
+      margin-left: rem(12);
+      display: inline-block;
+      vertical-align: middle;
     }
-
-
-    &__heading {
-        @include heading-typography;
-        @include breakpoint(md) {
-            width: 65%;
-        }
-    }
-    &__btn{
-        margin-top: rem(32);
-        width: 46%;
-
-        @include breakpoint(md) {
-            width: 26%;
-            margin-top:0;
-        }
-
-
-    }
-
-
+  }
 }
