@@ -61,8 +61,10 @@
       }
 
       &__list-item {
-        @include description-typography-sm;
         margin-bottom: rem(10);
+      }
+      &__list-link {
+        @include description-typography-sm;
         color: $text-color;
       }
     }
@@ -70,7 +72,6 @@
 
   &__form-container {
     @include display-flex(space-between, flex-start, column);
-    // border: 1px solid black;
     @include breakpoint(md) {
       display: none;
     }
@@ -80,7 +81,7 @@
   }
 
   &__form {
-    @include display-flex;
+    @include display-flex(center, flex-start);
     gap: rem(10);
     margin: rem(20) 0;
   }
@@ -88,6 +89,9 @@
   &__form-para {
     @include basic-typography($line-height: rem(18));
     color: $text-color-light;
+  }
+  &__email-field-msg {
+    margin-top: rem(7);
   }
 
   &__subscribe-btn {
@@ -147,7 +151,6 @@
   }
 
   &__links {
-    // border: 1px solid red;
     width: 50%;
     @include breakpoint(md) {
       @include display-flex(space-between);
@@ -162,7 +165,7 @@
     }
 
     .links {
-      &__item {
+      &__link {
         @include description-typography-xs;
         color: $text-color-light;
       }
