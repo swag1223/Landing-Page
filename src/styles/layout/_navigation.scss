@@ -29,7 +29,6 @@
 
   &-hamburger-wrapper {
     border: none;
-    outline: none;
     background-color: transparent;
     @include breakpoint(xl) {
       display: none;
