@@ -164,5 +164,8 @@
     &.menu-item__link--active {
       color: $white;
     }
+    &:hover {
+      color: $white;
+    }
   }
 }

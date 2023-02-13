@@ -66,6 +66,9 @@
       &__list-link {
         @include description-typography-sm;
         color: $text-color;
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
   }
@@ -127,6 +130,10 @@
             color: $text-color-light;
             font-size: rem(20);
           }
+
+          &:hover {
+            color: $primary-color;
+          }
         }
       }
     }
@@ -168,6 +175,10 @@
       &__link {
         @include description-typography-xs;
         color: $text-color-light;
+
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
   }
@@ -197,6 +208,10 @@
       &__link {
         color: $text-color;
         font-size: rem(20);
+
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
   }
