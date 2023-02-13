@@ -1,0 +1,139 @@
+.downloads-info {
+  @include display-flex(flex-start, center, column);
+  margin-bottom: rem(100);
+  gap: rem(30);
+
+  @include breakpoint(md) {
+    gap: rem(85);
+  }
+  @include breakpoint(lg) {
+    @include display-flex(space-between, flex-start, row);
+    gap: 0;
+    margin-top: rem(50);
+  }
+  @include breakpoint(xl) {
+    @include display-flex(space-between, center, row);
+    border-bottom: 1px solid $gray;
+    margin-top: 0;
+  }
+
+  &__text {
+    @include display-flex(space-between, flex-start, column);
+    margin-top: rem(30);
+    gap: rem(20);
+    max-width: 100%;
+
+    @include breakpoint(md) {
+      margin-top: rem(2);
+      gap: rem(1);
+    }
+    @include breakpoint(lg) {
+      max-width: 52%;
+      gap: rem(22);
+    }
+    @include breakpoint(xl) {
+      margin-top: rem(30);
+      gap: 0;
+    }
+  }
+
+  &__heading {
+    @include heading-typography;
+    @include ellipsis(2);
+    word-break: break-all;
+  }
+
+  &__content {
+    @include display-flex(space-between, flex-start, column);
+
+    @include breakpoint(md) {
+      @include display-flex(space-between, center, row);
+    }
+    @include breakpoint(lg) {
+      @include display-flex(space-between, flex-start, column);
+    }
+    @include breakpoint(xl) {
+      margin: rem(20) 0;
+    }
+  }
+
+  &__para {
+    @include description-typography;
+    @include ellipsis(5);
+    margin-bottom: rem(30);
+
+    @include breakpoint(md) {
+      max-width: 50%;
+      margin-bottom: 0;
+    }
+    @include breakpoint(lg) {
+      @include ellipsis(3);
+      max-width: 100%;
+      margin-bottom: rem(30);
+    }
+    @include breakpoint(xl) {
+      max-width: 80%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__apps {
+    @include display-flex(flex-start, flex-start, column);
+    gap: rem(7);
+
+    @include breakpoint(md) {
+      gap: rem(10);
+    }
+
+    @include breakpoint(lg) {
+      @include display-flex(flex-start, flex-start, row-reverse);
+      gap: rem(20);
+    }
+    @include breakpoint(xl) {
+      margin-top: rem(30);
+    }
+  }
+
+  &__sub-para {
+    @include description-typography-xs;
+    @include ellipsis(3);
+
+    @include breakpoint(md) {
+      display: none;
+    }
+    @include breakpoint(lg) {
+      display: block;
+      @include ellipsis(2);
+    }
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    height: rem(263);
+    overflow: hidden;
+    max-width: rem(320);
+
+    @include breakpoint(md) {
+      width: 58%;
+      height: auto;
+      margin-top: rem(40);
+    }
+    @include breakpoint(lg) {
+      width: 30%;
+    }
+    @include breakpoint(xl) {
+      overflow: visible;
+      margin-top: rem(50);
+      width: 40%;
+    }
+  }
+
+  &__image {
+    min-width: 100%;
+    display: block;
+
+    @include breakpoint(md) {
+      width: 100%;
+    }
+  }
+}
