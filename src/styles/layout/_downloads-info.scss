@@ -94,7 +94,7 @@
     }
   }
 
-  &__para-xs {
+  &__sub-para {
     @include description-typography-xs;
     @include ellipsis(3);
 
