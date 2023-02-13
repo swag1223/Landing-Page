@@ -8,20 +8,20 @@ const carousel = new Glide(".glide", {
   animationTimingFunc: "linear",
   touchRatio: 0.5,
   gap: 30,
+  perView: 1,
 
   breakpoints: {
-    568: {
-      perView: 1,
-      peek: 0,
+    1300: {
+      peek: 250,
+    },
+    992: {
+      peek: 118,
     },
     768: {
       peek: 100,
     },
-    992: {
-      peek: 120,
-    },
-    4000: {
-      peek: 200,
+    568: {
+      peek: 0,
     },
   },
 });

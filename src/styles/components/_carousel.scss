@@ -44,7 +44,7 @@
     }
 
     @include breakpoint(xl) {
-      max-width: rem(570);
+      min-width: rem(570);
     }
 
     &--active {
