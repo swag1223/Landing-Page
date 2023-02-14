@@ -101,35 +101,14 @@
 
   &__email-input {
     @include description-typography;
-    border: 1px solid $gray;
-    border-radius: rem(6);
-    outline: none;
     padding: rem(8) rem(15);
-    color: $text-color;
-    width: 100%;
 
     @include breakpoint(xl) {
       min-width: 90%;
     }
   }
 
-  &__email-field-msg {
-    @include description-typography-sm;
-    display: none;
-    margin-top: rem(5);
-
-    &--error {
-      display: flex;
-      color: $red;
-    }
-
-    &--success {
-      display: flex;
-      color: $green;
-    }
-  }
-
   &__subscribe-btn {
-    padding: 1rem 1.5rem;
+    padding: rem(10) rem(15);
   }
 }

@@ -140,9 +140,6 @@
       .menu-item__link {
         text-decoration: none;
         color: $black;
-        &:hover {
-          color: $primary-color;
-        }
       }
       .menu-item__link--active {
         color: $primary-color;
@@ -151,18 +148,13 @@
   }
 
   .menu-item__btn {
-    @include display-flex;
     @include nav-links-typography;
-    gap: rem(12);
     height: fit-content;
-
-    &-text,
-    &-icon {
-      @include display-flex;
-    }
-
     &.menu-item__link--active {
       color: $white;
+    }
+    &:hover {
+      color: $white !important;
     }
   }
 }

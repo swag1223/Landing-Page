@@ -13,9 +13,9 @@
     position: relative;
     background: conic-gradient(
       $primary-color 0deg 105deg,
-      $graph-color2 105deg 190deg,
-      $graph-color3 190deg 255deg,
-      $graph-color4 255deg 360deg
+      $graph-color-2 105deg 190deg,
+      $graph-color-3 190deg 255deg,
+      $graph-color-4 255deg 360deg
     );
   }
 
@@ -60,7 +60,7 @@
         }
 
         &--subscribers {
-          background-color: $graph-color3;
+          background-color: $graph-color-3;
         }
       }
 

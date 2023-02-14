@@ -1,1 +1,194 @@
-//Footer
+.social-media-links {
+  @include display-flex(space-between);
+  gap: rem(15);
+
+  .social-media {
+    &__link {
+      font-size: rem(20);
+    }
+  }
+}
+.footer {
+  @include display-flex(space-between, normal, column);
+  gap: rem(35);
+  @include breakpoint(md) {
+    gap: rem(105);
+  }
+
+  &__common-container {
+    @include display-flex(space-between, flex-start, column);
+    padding-top: rem(37);
+    gap: rem(30);
+
+    @include breakpoint(md) {
+      padding-top: rem(8);
+    }
+    @include breakpoint(lg) {
+      padding-top: rem(30);
+    }
+    @include breakpoint(xl) {
+      @include display-flex(space-between, flex-start);
+      padding-top: rem(100);
+    }
+
+    .common-container {
+      &__sections {
+        display: none;
+        @include breakpoint(md) {
+          @include display-flex(flex-start);
+        }
+      }
+      &__sections-heading {
+        @include basic-typography($semibold-weight, rem(32), rem(-0.8));
+        margin-left: rem(10);
+      }
+
+      &__categories {
+        @include display-flex(space-between, flex-start, column);
+        gap: rem(30);
+
+        @include breakpoint(md) {
+          @include display-flex(space-between, flex-start);
+          gap: rem(50);
+        }
+        @include breakpoint(lg) {
+          gap: rem(85);
+        }
+        @include breakpoint(xl) {
+          gap: 0;
+          min-width: 68%;
+        }
+      }
+
+      &__category {
+        @include display-flex(center, flex-start, column);
+        gap: rem(10);
+      }
+
+      &__heading {
+        @include nav-links-typography;
+      }
+      &__category-list {
+        @include display-flex(space-between, flex-start, column);
+        gap: rem(10);
+      }
+
+      &__list-link {
+        @include description-typography-sm;
+        color: $text-color;
+        word-break: break-all;
+      }
+    }
+  }
+
+  &__form-container {
+    @include display-flex(space-between, flex-start, column);
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+  &__form-heading {
+    @include nav-links-typography;
+  }
+
+  &__form {
+    @include display-flex(center, flex-start);
+    gap: rem(10);
+    margin: rem(20) 0;
+  }
+
+  &__form-para {
+    @include basic-typography($line-height: rem(18));
+    color: $text-color-light;
+  }
+  &__email-input {
+    @include basic-typography(
+      $font-size: rem(15),
+      $letter-spacing: rem(-0.3),
+      $line-height: rem(30)
+    );
+    padding: rem(4) rem(8);
+  }
+  &__email-field-msg {
+    margin-top: rem(7);
+  }
+
+  &__subscribe-btn {
+    padding: rem(7) rem(12);
+  }
+
+  &__copyright {
+    background-color: $graph-color-4;
+    @include breakpoint(md) {
+      display: none;
+    }
+
+    .copyright {
+      &__container {
+        padding-block: rem(18);
+        @include display-flex(space-between, flex-start, column);
+      }
+
+      &__para {
+        @include basic-typography($line-height: rem(18));
+        margin: rem(20) 0;
+        color: $text-color-light;
+      }
+
+      &__social-media-links {
+        .social-media {
+          &__link {
+            color: $text-color-light;
+          }
+        }
+      }
+    }
+  }
+
+  &__links-container {
+    background-color: $graph-color-4;
+    display: none;
+
+    @include breakpoint(md) {
+      @include display-flex(center);
+      gap: rem(70);
+      padding: rem(20) rem(30);
+    }
+    @include breakpoint(lg) {
+      @include display-flex;
+      padding: rem(20) rem(35);
+    }
+    @include breakpoint(xl) {
+      @include display-flex(flex-end);
+      padding: rem(20) rem(95);
+    }
+  }
+
+  &__links {
+    @include display-flex(space-between);
+    gap: rem(30);
+
+    .links {
+      &__link {
+        @include description-typography-xs;
+        color: $text-color-light;
+        word-break: break-all;
+      }
+    }
+  }
+
+  &__social-media-links {
+    @include breakpoint(lg) {
+      @include display-flex;
+    }
+    @include breakpoint(xl) {
+      @include display-flex(space-between);
+    }
+
+    .social-media {
+      &__link {
+        color: $text-color;
+      }
+    }
+  }
+}

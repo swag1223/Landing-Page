@@ -1,0 +1,25 @@
+.input-wrapper {
+  display: flex;
+}
+
+.email-input {
+  border: 1px solid $gray;
+  border-radius: rem(6);
+  color: $text-color;
+  width: 100%;
+}
+.email-field-msg {
+  @include description-typography-sm;
+  display: none;
+  margin-top: rem(5);
+
+  &--error {
+    display: flex;
+    color: $red;
+  }
+
+  &--success {
+    display: flex;
+    color: $green;
+  }
+}
