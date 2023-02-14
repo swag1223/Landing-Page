@@ -38,14 +38,14 @@
     @include display-flex(space-between, flex-start, column);
     border: 1px solid $gray;
     border-radius: rem(8);
-    min-height: rem(260);
+    min-height: rem(370);
+
     padding: rem(30);
     @include breakpoint(md) {
       @include display-flex(flex-start, flex-start);
-    }
-
-    @include breakpoint(xl) {
-      min-width: rem(570);
+      height: rem(260);
+      min-height: unset;
+      gap: rem(30);
     }
 
     &--active {
@@ -56,20 +56,20 @@
   .card {
     &__text {
       @include display-flex(space-between, flex-start, column);
-      width: 100%;
       position: relative;
+      margin-top: rem(15);
+      flex: 1;
 
       @include breakpoint(md) {
-        width: 70%;
+        margin-top: 0;
+        gap: rem(18);
         position: static;
-        margin-top: rem(15);
-        margin-left: rem(30);
       }
     }
     &__quotes-wrapper {
       position: absolute;
       right: 0;
-      top: -37px;
+      top: rem(-53);
 
       @include breakpoint(md) {
         position: static;
@@ -78,16 +78,19 @@
     &__para {
       @include description-typography;
       @include ellipsis(4);
-
-      margin: rem(18) 0;
+      min-height: rem(120);
       text-align: left;
+
       @include breakpoint(md) {
+        @include ellipsis(3);
+        min-height: rem(90);
       }
+
     }
 
     &__auth-info {
       @include display-flex(space-between, flex-start, column);
-      width: 55%;
+      min-width: 55%;
 
       @include breakpoint(md) {
         @include display-flex(space-between, center);
