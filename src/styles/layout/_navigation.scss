@@ -28,13 +28,15 @@
   }
 
   &-hamburger-wrapper {
+    border: none;
+    background-color: transparent;
     @include breakpoint(xl) {
       display: none;
     }
     cursor: pointer;
     display: block;
     z-index: 1;
-    width: rem(30);
+    width: rem(40);
     text-align: right;
 
     &__hamburger {
@@ -152,6 +154,7 @@
     @include display-flex;
     @include nav-links-typography;
     gap: rem(12);
+    height: fit-content;
 
     &-text,
     &-icon {

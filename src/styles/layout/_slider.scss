@@ -1,0 +1,30 @@
+.slider {
+  margin-top: rem(40);
+  @include breakpoint(md) {
+    margin-top: rem(70);
+  }
+  @include breakpoint(lg) {
+    margin-top: rem(120);
+  }
+  &__text {
+    @include display-flex(center, center, column);
+  }
+  &__heading {
+    @include heading-typography;
+    @include ellipsis(2);
+    word-break: break-all;
+  }
+
+  &__para {
+    @include description-typography;
+    @include ellipsis(3);
+    margin-top: rem(20);
+    text-align: center;
+
+    @include breakpoint(md) {
+      margin-top: rem(15);
+
+      @include ellipsis(2);
+    }
+  }
+}
