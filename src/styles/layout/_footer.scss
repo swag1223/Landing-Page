@@ -1,24 +1,37 @@
-.footer {
-  margin-top: rem(38);
+.social-media-links {
+  @include display-flex(space-between);
+  gap: rem(15);
 
+  .social-media {
+    &__link {
+      font-size: rem(20);
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+.footer {
+  @include display-flex(space-between, normal, column);
+  gap: rem(35);
   @include breakpoint(md) {
-    margin-top: 0;
-    padding-top: rem(8);
-  }
-  @include breakpoint(lg) {
-    margin-top: rem(18);
-    padding-top: rem(13);
-  }
-  @include breakpoint(xl) {
-    margin-top: rem(75);
-    padding-top: rem(30);
+    gap: rem(105);
   }
 
   &__common-container {
     @include display-flex(space-between, flex-start, column);
+    padding-top: rem(37);
+    gap: rem(30);
 
+    @include breakpoint(md) {
+      padding-top: rem(8);
+    }
+    @include breakpoint(lg) {
+      padding-top: rem(30);
+    }
     @include breakpoint(xl) {
       @include display-flex(space-between, flex-start);
+      padding-top: rem(100);
     }
 
     .common-container {
@@ -35,37 +48,38 @@
 
       &__categories {
         @include display-flex(space-between, flex-start, column);
+        gap: rem(30);
 
         @include breakpoint(md) {
           @include display-flex(space-between, flex-start);
-          width: 96%;
-          margin-top: rem(29);
+          gap: rem(50);
         }
         @include breakpoint(lg) {
-          width: 78%;
+          gap: rem(85);
         }
         @include breakpoint(xl) {
-          width: 68%;
-          margin-top: 0;
+          gap: 0;
+          min-width: 68%;
         }
       }
 
       &__category {
         @include display-flex(center, flex-start, column);
         gap: rem(10);
-        margin-bottom: rem(20);
       }
 
       &__heading {
         @include nav-links-typography;
       }
-
-      &__list-item {
-        margin-bottom: rem(10);
+      &__category-list {
+        @include display-flex(space-between, flex-start, column);
+        gap: rem(10);
       }
+
       &__list-link {
         @include description-typography-sm;
         color: $text-color;
+        word-break: break-all;
         &:hover {
           color: $primary-color;
         }
@@ -93,25 +107,31 @@
     @include basic-typography($line-height: rem(18));
     color: $text-color-light;
   }
+  &__email-input {
+    @include basic-typography(
+      $font-size: rem(15),
+      $letter-spacing: rem(-0.3),
+      $line-height: rem(30)
+    );
+    padding: rem(4) rem(8);
+  }
   &__email-field-msg {
     margin-top: rem(7);
   }
 
   &__subscribe-btn {
-    padding: rem(6) rem(12);
+    padding: rem(7) rem(12);
   }
 
   &__copyright {
-    margin-top: rem(36);
-    background-color: $graph-color4;
+    background-color: $graph-color-4;
     @include breakpoint(md) {
       display: none;
     }
 
     .copyright {
       &__container {
-        padding-top: rem(18);
-        padding-bottom: rem(18);
+        padding-block: rem(18);
         @include display-flex(space-between, flex-start, column);
       }
 
@@ -122,17 +142,9 @@
       }
 
       &__social-media-links {
-        @include display-flex(space-between);
-        gap: rem(15);
-
         .social-media {
           &__link {
             color: $text-color-light;
-            font-size: rem(20);
-          }
-
-          &:hover {
-            color: $primary-color;
           }
         }
       }
@@ -140,41 +152,33 @@
   }
 
   &__links-container {
-    background-color: $graph-color4;
+    background-color: $graph-color-4;
     display: none;
+
     @include breakpoint(md) {
-      @include display-flex(space-around);
-      padding: rem(20);
-      margin-top: rem(75);
+      @include display-flex(center);
+      gap: rem(70);
+      padding: rem(20) rem(30);
     }
     @include breakpoint(lg) {
       @include display-flex;
-      padding: rem(20) rem(40);
+      padding: rem(20) rem(35);
     }
     @include breakpoint(xl) {
       @include display-flex(flex-end);
-      padding: rem(20) rem(80);
+      padding: rem(20) rem(95);
     }
   }
 
   &__links {
-    width: 50%;
-    @include breakpoint(md) {
-      @include display-flex(space-between);
-    }
-    @include breakpoint(lg) {
-      width: 40%;
-      margin-right: rem(50);
-    }
-    @include breakpoint(xl) {
-      width: 30%;
-      margin-right: rem(60);
-    }
+    @include display-flex(space-between);
+    gap: rem(30);
 
     .links {
       &__link {
         @include description-typography-xs;
         color: $text-color-light;
+        word-break: break-all;
 
         &:hover {
           color: $primary-color;
@@ -184,9 +188,6 @@
   }
 
   &__social-media-links {
-    @include breakpoint(md) {
-      @include display-flex(space-between);
-    }
     @include breakpoint(lg) {
       @include display-flex;
     }
@@ -195,23 +196,8 @@
     }
 
     .social-media {
-      &__item {
-        margin-right: rem(16);
-        @include breakpoint(lg) {
-          margin-right: rem(12);
-        }
-        @include breakpoint(xl) {
-          margin-right: rem(16);
-        }
-      }
-
       &__link {
         color: $text-color;
-        font-size: rem(20);
-
-        &:hover {
-          color: $primary-color;
-        }
       }
     }
   }

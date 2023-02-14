@@ -11,3 +11,13 @@
     background-color: $hover-color;
   }
 }
+
+.btn--icon {
+  @extend .btn;
+  @include display-flex;
+  gap: rem(12);
+  &-text,
+  &-wrapper {
+    @include display-flex;
+  }
+}

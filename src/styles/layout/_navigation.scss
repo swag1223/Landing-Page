@@ -151,16 +151,8 @@
   }
 
   .menu-item__btn {
-    @include display-flex;
     @include nav-links-typography;
-    gap: rem(12);
     height: fit-content;
-
-    &-text,
-    &-icon {
-      @include display-flex;
-    }
-
     &.menu-item__link--active {
       color: $white;
     }

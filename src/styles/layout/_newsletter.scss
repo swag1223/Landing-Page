@@ -101,12 +101,7 @@
 
   &__email-input {
     @include description-typography;
-    border: 1px solid $gray;
-    border-radius: rem(6);
-    outline: none;
     padding: rem(8) rem(15);
-    color: $text-color;
-    width: 100%;
 
     @include breakpoint(xl) {
       min-width: 90%;
@@ -114,6 +109,6 @@
   }
 
   &__subscribe-btn {
-    padding: 1rem 1.5rem;
+    padding: rem(10) rem(15);
   }
 }
