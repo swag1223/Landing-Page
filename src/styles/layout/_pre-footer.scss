@@ -2,49 +2,44 @@
   margin-top: rem(36);
   border-top: 1px solid $gray;
   border-bottom: 1px solid $gray;
-  padding-top: rem(45);
-  padding-bottom: rem(45);
+  padding-block: rem(45);
 
   @include breakpoint(md) {
     margin-top: rem(50);
     border-bottom: none;
   }
   @include breakpoint(lg) {
-    margin-top: rem(120);
-    padding-top: rem(35);
-    padding-bottom: rem(35);
+    margin-top: rem(110);
+    padding-block: rem(35);
   }
   @include breakpoint(xl) {
     margin-top: rem(110);
-    padding-top: rem(83);
-    padding-bottom: rem(83);
+    padding-block: rem(83);
   }
 
   &__content {
+    @include display-flex(space-between, flex-start, column);
+    gap: rem(32);
+
     @include breakpoint(md) {
       @include display-flex(space-between);
+      gap: rem(50);
+    }
+    @include breakpoint(md) {
+      gap: rem(110);
     }
   }
 
   &__heading {
     @include heading-typography;
-    @include breakpoint(md) {
-      width: 65%;
+    @include ellipsis(3);
+
+    @include breakpoint(lg) {
+      @include ellipsis(2);
     }
   }
 
   &__btn {
-    margin-top: rem(32);
     padding: rem(11) rem(16);
-
-    @include breakpoint(md) {
-      margin-top: 0;
-    }
-
-    &-icon-wrapper {
-      margin-left: rem(12);
-      display: inline-block;
-      vertical-align: middle;
-    }
   }
 }
