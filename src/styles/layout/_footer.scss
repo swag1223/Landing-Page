@@ -5,9 +5,6 @@
   .social-media {
     &__link {
       font-size: rem(20);
-      &:hover {
-        color: $primary-color;
-      }
     }
   }
 }
@@ -80,9 +77,6 @@
         @include description-typography-sm;
         color: $text-color;
         word-break: break-all;
-        &:hover {
-          color: $primary-color;
-        }
       }
     }
   }
@@ -179,10 +173,6 @@
         @include description-typography-xs;
         color: $text-color-light;
         word-break: break-all;
-
-        &:hover {
-          color: $primary-color;
-        }
       }
     }
   }
