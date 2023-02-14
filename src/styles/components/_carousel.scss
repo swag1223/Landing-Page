@@ -18,15 +18,16 @@
     }
   }
   &__bullets {
-    text-align: center;
+    @include display-flex;
+    gap: rem(5);
   }
   &__bullet {
     border: none;
     border-radius: 50%;
-    height: rem(8);
-    width: rem(8);
+    height: rem(10);
+    width: rem(10);
     padding: 0;
-    margin-right: rem(5);
+    cursor: pointer;
   }
   &__bullet--active {
     background-color: $primary-color;
@@ -84,7 +85,7 @@
       }
     }
 
-    &__auth-icons {
+    &__auth-info {
       @include display-flex(space-between, flex-start, column);
       width: 55%;
 
@@ -94,12 +95,12 @@
       }
     }
 
-    &__auth-para {
+    &__auth-name {
       @include button-typography;
       color: $black;
       text-align: left;
     }
-    &__socialmedia-wrapper {
+    &__social-media-wrapper {
       @include display-flex(space-between);
       gap: rem(15);
       margin-top: rem(23);
@@ -108,7 +109,7 @@
         margin-top: 0;
       }
     }
-    &__socialmedia-icons {
+    &__social-media-icon {
       color: $text-color-light;
       font-size: rem(20);
 

@@ -1,26 +1,35 @@
 import Glide from "@glidejs/glide";
 
-const carousel = new Glide(".glide", {
+const bp = {
+  xxl: 1300,
+  xl: 992,
+  lg: 768,
+  md: 568,
+  sm: 320,
+};
+
+const carousel = new Glide("#glide", {
   type: "carousel",
   autoplay: 5000,
   keyboard: true,
   animationDuration: 1000,
   animationTimingFunc: "linear",
+  focusAt: 0,
   touchRatio: 0.5,
   gap: 30,
   perView: 1,
 
   breakpoints: {
-    1300: {
+    [bp.xxl]: {
       peek: 250,
     },
-    992: {
+    [bp.xl]: {
       peek: 118,
     },
-    768: {
+    [bp.lg]: {
       peek: 100,
     },
-    568: {
+    [bp.md]: {
       peek: 0,
     },
   },
