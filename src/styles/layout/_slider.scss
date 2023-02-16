@@ -1,11 +1,13 @@
 .slider {
   margin-top: rem(40);
+
   @include breakpoint(md) {
     margin-top: rem(70);
   }
   @include breakpoint(lg) {
     margin-top: rem(120);
   }
+
   &__text {
     @include display-flex(center, center, column);
   }
@@ -16,9 +18,8 @@
     text-align: center;
 
     @include breakpoint(md) {
-      margin-top: rem(15);
-
       @include ellipsis(2);
+      margin-top: rem(15);
     }
   }
 }

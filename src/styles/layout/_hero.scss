@@ -1,12 +1,10 @@
 .hero {
   @include display-flex($flex-direction: column);
   gap: rem(28);
-  margin-top: rem(15);
-  margin-bottom: rem(50);
+  margin: rem(15) 0 rem(50);
 
   @include breakpoint(md) {
-    margin-top: rem(35);
-    margin-bottom: rem(40);
+    margin: rem(35) 0 rem(40);
     gap: rem(8);
   }
   @include breakpoint(lg) {
@@ -16,8 +14,7 @@
   }
   @include breakpoint(xl) {
     @include display-flex($flex-direction: column);
-    margin-top: rem(98);
-    margin-bottom: rem(100);
+    margin: rem(98) 0 rem(100);
     gap: rem(50);
   }
 
@@ -73,8 +70,8 @@
     max-width: 100%;
 
     @include breakpoint(md) {
-      width: 78%;
       @include display-flex(flex-start, flex-start, column);
+      width: 78%;
       gap: rem(20);
       padding: 0;
     }
@@ -139,12 +136,9 @@
       gap: rem(25);
     }
     @include breakpoint(lg) {
+      @include display-flex(space-between, center);
       padding: 0;
-      @include display-flex(space-between, center);
       gap: 0;
-    }
-    @include breakpoint(xl) {
-      @include display-flex(space-between, center);
     }
   }
 }

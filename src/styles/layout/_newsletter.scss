@@ -59,8 +59,8 @@
       @include ellipsis(2);
     }
     @include breakpoint(xl) {
-      max-width: 80%;
       @include ellipsis(3);
+      max-width: 80%;
     }
   }
 

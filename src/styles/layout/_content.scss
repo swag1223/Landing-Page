@@ -47,8 +47,8 @@
       gap: rem(20);
     }
     @include breakpoint(xl) {
-      width: 40%;
       @include display-flex(space-between, flex-start, column);
+      width: 40%;
     }
   }
   .text {
