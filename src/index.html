@@ -7,36 +7,55 @@
     <title>Webpack App</title>
   </head>
   <body>
-    <div class="main-container">
+    <div class="app-container">
       <header>
         <nav class="nav">
           <div class="nav-logo-wrapper">
-            <a href="/">
+            <a href="/" class="nav-el">
               <img class="nav-logo-wrapper__logo" src="assets/images/logo.svg" alt="blue oval" />
             </a>
           </div>
+
+          <button class="nav-hamburger-wrapper nav-el">
+            <img
+              class="nav-hamburger-wrapper__hamburger"
+              src="assets/images/hamburger.svg"
+              alt="open-close nav menu"
+            />
+          </button>
+
           <div class="nav__menu">
             <ul class="nav__menu-left">
               <li class="nav__menu-item">
-                <a class="menu-item__link" href="#firstLink">First Link</a>
+                <a class="menu-item__link nav-el nav-links-typography" href="#firstLink">
+                  First Link
+                </a>
               </li>
               <li class="nav__menu-item">
-                <a class="menu-item__link" href="#secondLink">Second Link</a>
+                <a class="menu-item__link nav-el nav-links-typography" href="#secondLink">
+                  Second Link
+                </a>
               </li>
               <li class="nav__menu-item">
-                <a class="menu-item__link" href="#thirdLink">Third Link</a>
+                <a class="menu-item__link nav-el nav-links-typography" href="#thirdLink">
+                  Third Link
+                </a>
               </li>
               <li class="nav__menu-item">
-                <a class="menu-item__link" href="#fourthLink">Fourth Link</a>
+                <a class="menu-item__link nav-el nav-links-typography" href="#fourthLink">
+                  Fourth Link
+                </a>
               </li>
             </ul>
 
             <ul class="nav__menu-right">
               <li class="nav__menu-item">
-                <a class="menu-item__link" href="#fifthLink">Fifth Link</a>
+                <a class="menu-item__link nav-el nav-links-typography" href="#fifthLink">
+                  Fifth Link
+                </a>
               </li>
               <li class="nav__menu-item menu-item__btn-wrapper">
-                <a href="#btn" class="btn--icon menu-item__btn">
+                <a href="#btn" class="btn--icon menu-item__btn nav-el nav-links-typography">
                   <span class="btn--icon-text">Button</span>
                   <span class="btn--icon-wrapper">
                     <img src="assets/images/button-icon.svg " alt="square" />
@@ -45,491 +64,559 @@
               </li>
             </ul>
           </div>
-
-          <button class="nav-hamburger-wrapper">
-            <img
-              class="nav-hamburger-wrapper__hamburger"
-              src="assets/images/hamburger.svg"
-              alt="open-close nav menu"
-            />
-          </button>
         </nav>
       </header>
 
-      <section class="hero section-container" id="firstLink">
-        <div class="hero__card">
-          <div class="hero__img-wrapper">
-            <img
-              class="hero__image"
-              src="assets/images/hero-flower.png"
-              alt="friends sitting on a car"
-            />
-          </div>
-          <div class="hero__content">
-            <h1 class="content__heading">Two line long header example for web</h1>
-            <p class="content__description">
-              Poster can be one of the effective marketing and advertising materials. It is also a
-              great tool to use when you want to present.
-            </p>
-            <button class="btn content__btn">Button</button>
-          </div>
-        </div>
-
-        <div class="hero__brands">
-          <p class="hero__brand-partners">Partners</p>
-          <ul class="hero__brands-list">
-            <li>
-              <a href="#">
-                <img src="assets/images/logitech.svg" alt="grey logitech logo" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="assets/images/google.svg" alt="grey google logo" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="assets/images/facebook.svg" alt="grey facebook logo" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="assets/images/linkedin.svg" alt="grey linkedin logo" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="assets/images/philips.svg" alt="grey philips logo" />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="content" id="secondLink">
-        <div class="content__img-wrapper">
-          <img
-            class="content__image"
-            src="./assets/images/content-image.svg"
-            alt="computer device"
-          />
-        </div>
-
-        <div class="content__text">
-          <h3 class="text__sub-heading">caps heading</h3>
-          <h2 class="text__main-heading">Two line long header example for web</h2>
-          <p class="text__para">
-            You will likely be required to install the fixed mounts. These are what will keep the
-            apparatus stable and secure with your computer monitor in it. Follow directions
-            carefully so that you can be sure to get everything.
-          </p>
-          <a class="text__link" href="#">Learn more</a>
-        </div>
-      </section>
-
-      <section class="newsletter section-container" id="thirdLink">
-        <div class="newsletter__content">
-          <h3 class="newsletter__heading">Heading</h3>
-          <p class="newsletter__para">
-            In the history of modern astronomy, there is probably no one greater leap forward than
-          </p>
-        </div>
-
-        <form class="newsletter__form">
-          <div class="newsletter__email-wrapper">
-            <div class="newsletter__input-wrapper input-wrapper">
-              <input
-                name="email"
-                class="newsletter__email-input email-input"
-                type="text"
-                placeholder="Email *"
-              />
-            </div>
-            <span class="newsletter__email-field-msg email-field-msg"></span>
-          </div>
-          <button type="submit" class="newsletter__subscribe-btn btn">Subscribe</button>
-        </form>
-      </section>
-
-      <div class="statistics section-container">
-        <div class="statistics__graph">
-          <div class="graph__square"></div>
-          <div class="graph__inner-circle"></div>
-        </div>
-
-        <div class="statistics__numbers">
-          <div class="numbers__downloads">
-            <div class="numbers__layout">
-              <div class="numbers__indicator numbers__indicator--downloads"></div>
-              <p class="numbers__heading">28%</p>
-            </div>
-            <p class="numbers__para">Downloads</p>
-          </div>
-          <div class="numbers__subscribers">
-            <div class="numbers__layout">
-              <div class="numbers__indicator numbers__indicator--subscribers"></div>
-              <p class="numbers__heading">29%</p>
-            </div>
-            <p class="numbers__para">Subscribers</p>
-          </div>
-        </div>
-
-        <div class="statistics__info">
-          <p class="info__para-one">
-            The quality of today's video game was not at all there when video game first
-            conceptualized and played ever. During the formulative years, video games were created
-            by using various interactive electronic devices with various display.
-          </p>
-          <p class="info__para-two">
-            Video games were created by using various interactive electronic devices with various
-            display.
-          </p>
-        </div>
-      </div>
-
-      <section class="downloads-info section-container" id="fourthLink">
-        <div class="downloads-info__text">
-          <h2 class="downloads-info__heading">Heading</h2>
-          <div class="downloads-info__content">
-            <p class="downloads-info__para">
-              With so many different ways today to find information online, it can sometimes be hard
-              to know where to go to first.
-            </p>
-            <div class="downloads-info__apps">
-              <a href="#">
-                <img
-                  src="assets/images/downloads-info-playstore.svg"
-                  alt="google play store link"
-                />
-              </a>
-              <a href="#">
-                <img src="assets/images/downloads-info-appstore.svg" alt="appstore link" />
-              </a>
-            </div>
-          </div>
-          <p class="downloads-info__sub-para">
-            When you think about it, we regard the moon with such powerful significance that unlike
-            the moons.
-          </p>
-        </div>
-        <div class="downloads-info__img-wrapper">
-          <img
-            class="downloads-info__image"
-            src="assets/images/downloads-info-devices.svg"
-            alt="two grey color mobile phones"
-          />
-        </div>
-      </section>
-
-      <section class="slider section-container" id="fifthLink">
-        <div class="slider__text">
-          <h2 class="slider__heading">Heading</h2>
-          <p class="slider__para">
-            Poster can be one of the effective marketing and advertising materials.Poster can be one
-            of the effective marketing and advertising materials.
-          </p>
-        </div>
-
-        <div id="glide" class="glide">
-          <div class="glide__track" data-glide-el="track">
-            <div class="glide__slides">
-              <div class="glide__slide">
-                <div class="card__profile-pic-wrapper">
-                  <img
-                    class="card__profile-pic"
-                    src="assets/images/slider-profile-pic.svg"
-                    alt="profile picture"
-                  />
-                </div>
-                <div class="card__text">
-                  <div class="card__quotes-wrapper">
-                    <img
-                      class="card__quotes-image"
-                      src="assets/images/slider-quotes.svg"
-                      alt="quotation marks"
-                    />
-                  </div>
-                  <p class="card__para">
-                    Moment in the life of any aspiring astronomer of that it is time to buy that
-                    first telescope.
-                  </p>
-
-                  <div class="card__auth-info">
-                    <p class="card__auth-name">Bertha Blake</p>
-
-                    <div class="card__social-media-wrapper">
-                      <a class="card__social-media-icon" href="#"><i class="icon-twitter"></i></a>
-                      <a class="card__social-media-icon" href="#"><i class="icon-facebook"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="glide__slide">
-                <div class="card__profile-pic-wrapper">
-                  <img
-                    class="card__profile-pic"
-                    src="assets/images/slider-profile-pic.svg"
-                    alt="profile picture"
-                  />
-                </div>
-                <div class="card__text">
-                  <div class="card__quotes-wrapper">
-                    <img
-                      class="card__quotes-image"
-                      src="assets/images/slider-quotes.svg"
-                      alt="quotation marks"
-                    />
-                  </div>
-                  <p class="card__para">
-                    Moment in the life of any aspiring astronomer of that it is time to buy that
-                    first telescope.
-                  </p>
-
-                  <div class="card__auth-info">
-                    <p class="card__auth-name">Bertha Blake</p>
-
-                    <div class="card__social-media-wrapper">
-                      <a class="card__social-media-icon" href="#"><i class="icon-twitter"></i></a>
-                      <a class="card__social-media-icon" href="#"><i class="icon-facebook"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="glide__slide">
-                <div class="card__profile-pic-wrapper">
-                  <img
-                    class="card__profile-pic"
-                    src="assets/images/slider-profile-pic.svg"
-                    alt="profile picture"
-                  />
-                </div>
-                <div class="card__text">
-                  <div class="card__quotes-wrapper">
-                    <img
-                      class="card__quotes-image"
-                      src="assets/images/slider-quotes.svg"
-                      alt="quotation marks"
-                    />
-                  </div>
-                  <p class="card__para">
-                    Moment in the life of any aspiring astronomer of that it is time to buy that
-                    first telescope.
-                  </p>
-
-                  <div class="card__auth-info">
-                    <p class="card__auth-name">Bertha Blake</p>
-
-                    <div class="card__social-media-wrapper">
-                      <a class="card__social-media-icon" href="#"><i class="icon-twitter"></i></a>
-                      <a class="card__social-media-icon" href="#"><i class="icon-facebook"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="glide__slide">
-                <div class="card__profile-pic-wrapper">
-                  <img
-                    class="card__profile-pic"
-                    src="assets/images/slider-profile-pic.svg"
-                    alt="profile picture"
-                  />
-                </div>
-                <div class="card__text">
-                  <div class="card__quotes-wrapper">
-                    <img
-                      class="card__quotes-image"
-                      src="assets/images/slider-quotes.svg"
-                      alt="quotation marks"
-                    />
-                  </div>
-                  <p class="card__para">
-                    Moment in the life of any aspiring astronomer of that it is time to buy that
-                    first telescope.
-                  </p>
-
-                  <div class="card__auth-info">
-                    <p class="card__auth-name">Bertha Blake</p>
-
-                    <div class="card__social-media-wrapper">
-                      <a class="card__social-media-icon" href="#"><i class="icon-twitter"></i></a>
-                      <a class="card__social-media-icon" href="#"><i class="icon-facebook"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="glide__bullets" data-glide-el="controls[nav]">
-            <button class="glide__bullet" data-glide-dir="=0"></button>
-            <button class="glide__bullet" data-glide-dir="=1"></button>
-            <button class="glide__bullet" data-glide-dir="=2"></button>
-            <button class="glide__bullet" data-glide-dir="=3"></button>
-          </div>
-        </div>
-      </section>
-
-      <section class="pre-footer section-container" id="btn">
-        <div class="pre-footer__content">
-          <h2 class="pre-footer__heading">Two line header example with text description</h2>
-          <button class="btn--icon pre-footer__btn">
-            <span class="btn--icon-text">Button</span>
-            <span class="btn--icon-wrapper">
+      <main class="main-container">
+        <section class="hero section-container" id="firstLink">
+          <div class="hero__card">
+            <div class="hero__img-wrapper">
               <img
-                class="pre-footer__btn-icon"
-                src="assets/images/button-icon.svg"
-                alt="hollow white square with black border"
+                class="hero__image"
+                src="assets/images/hero-flower.png"
+                alt="friends sitting on a car"
               />
-            </span>
-          </button>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <div class="footer__common-container section-container">
-          <div class="common-container__sections">
-            <a href="#" class="common-container__logo-wrapper">
-              <img class="common-container__logo" src="./assets/images/logo.svg" alt="brand logo" />
-            </a>
-            <h2 class="common-container__sections-heading">Sections</h2>
-          </div>
-
-          <div class="common-container__categories">
-            <div class="common-container__category">
-              <h3 class="common-container__heading">Category</h3>
-              <ul class="common-container__category-list">
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#firstLink">First Link</a>
-                </li>
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#secondLink">Second Long Link</a>
-                </li>
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#thirdLink">Third Link</a>
-                </li>
-              </ul>
             </div>
-
-            <div class="common-container__category">
-              <h3 class="common-container__heading">Category</h3>
-              <ul class="common-container__category-list">
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#firstLink">First Link</a>
-                </li>
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#secondLink">Second Long Link</a>
-                </li>
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#thirdLink">Third Link</a>
-                </li>
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#fourthLink">Fourth Long Link</a>
-                </li>
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#fifthLink">Fifth Link</a>
-                </li>
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#btn">Sixth Long Link</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="common-container__category">
-              <h3 class="common-container__heading">Category</h3>
-              <ul class="common-container__category-list">
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#firstLink">First Link</a>
-                </li>
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#secondLink">Second Long Link</a>
-                </li>
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#thirdLink">Third Link</a>
-                </li>
-                <li class="common-container__list-item">
-                  <a class="common-container__list-link" href="#fourthLink">Fourth Long Link</a>
-                </li>
-              </ul>
+            <div class="hero__content">
+              <h1 class="content__heading primary-heading">Two line long header example for web</h1>
+              <p class="content__description primary-description">
+                Poster can be one of the effective marketing and advertising materials. It is also a
+                great tool to use when you want to present.
+              </p>
+              <button class="btn content__btn button-typography">Button</button>
             </div>
           </div>
 
-          <div class="footer__form-container">
-            <h2 class="footer__form-heading">Subscribe</h2>
-            <form class="footer__form">
-              <div class="footer__email-wrapper">
-                <div class="footer__input-wrapper input-wrapper">
-                  <input
-                    name="email"
-                    class="footer__email-input email-input"
-                    type="text"
-                    placeholder="Email *"
-                  />
-                </div>
-                <span class="footer__email-field-msg"></span>
-              </div>
-              <button type="submit" class="footer__subscribe-btn btn">
-                <img src="./assets/images/footer-formbutton-img.svg" alt="send-message" />
-              </button>
-            </form>
-
-            <p class="footer__form-para">
-              No spam, notifications only about new products, updates and freebies. You can always
-              unsubscribe.
-            </p>
-          </div>
-        </div>
-
-        <div class="footer__copyright">
-          <div class="copyright__container section-container">
-            <a class="copyright__logo-wrapper">
-              <img class="copyright__logo" src="./assets/images/logo.svg" alt="brand logo" />
-            </a>
-            <p class="copyright__para">
-              &#169; Copyright 2020 Pixsellz Premium UI Goods for Designers
-            </p>
-            <ul class="copyright__social-media-links social-media-links">
-              <li class="social-media__item">
-                <a class="social-media__link" href="#"><i class="icon-facebook"></i></a>
+          <div class="hero__brands">
+            <p class="hero__brand-partners">Partners</p>
+            <ul class="hero__brands-list">
+              <li>
+                <a href="https://www.logitech.com">
+                  <img src="assets/images/logitech.svg" alt="grey logitech logo" />
+                </a>
               </li>
-              <li class="social-media__item">
-                <a class="social-media__link" href="#"><i class="icon-instagram"></i></a>
+              <li>
+                <a href="https://www.google.com">
+                  <img src="assets/images/google.svg" alt="grey google logo" />
+                </a>
               </li>
-              <li class="social-media__item">
-                <a class="social-media__link" href="#"><i class="icon-twitter"></i></a>
+              <li>
+                <a href="https://www.facebook.com/">
+                  <img src="assets/images/facebook.svg" alt="grey facebook logo" />
+                </a>
               </li>
-              <li class="social-media__item">
-                <a class="social-media__link" href="#"><i class="icon-youtube"></i></a>
+              <li>
+                <a href="https://in.linkedin.com">
+                  <img src="assets/images/linkedin.svg" alt="grey linkedin logo" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.philips.co.in">
+                  <img src="assets/images/philips.svg" alt="grey philips logo" />
+                </a>
               </li>
             </ul>
           </div>
+        </section>
+
+        <section class="content" id="secondLink">
+          <div class="content__img-wrapper">
+            <img
+              class="content__image"
+              src="./assets/images/content-image.svg"
+              alt="computer device"
+            />
+          </div>
+
+          <div class="content__text">
+            <h3 class="text__sub-heading">caps heading</h3>
+            <h2 class="text__main-heading primary-heading">Two line long header example for web</h2>
+            <p class="text__para primary-description">
+              You will likely be required to install the fixed mounts. These are what will keep the
+              apparatus stable and secure with your computer monitor in it. Follow directions
+              carefully so that you can be sure to get everything.
+            </p>
+            <a class="text__link button-typography" href="#">Learn more</a>
+          </div>
+        </section>
+
+        <section class="newsletter section-container" id="thirdLink">
+          <div class="newsletter__content">
+            <h3 class="newsletter__heading secondary-heading">Heading</h3>
+            <p class="newsletter__para secondary-description">
+              In the history of modern astronomy, there is probably no one greater leap forward than
+            </p>
+          </div>
+
+          <form class="newsletter__form">
+            <div class="newsletter__email-wrapper">
+              <div class="newsletter__input-wrapper input-wrapper">
+                <input
+                  name="email"
+                  class="newsletter__email-input email-input primary-description"
+                  type="text"
+                  placeholder="Email *"
+                />
+              </div>
+              <span
+                class="newsletter__email-field-msg email-field-msg secondary-description"
+              ></span>
+            </div>
+            <button type="submit" class="newsletter__subscribe-btn btn button-typography">
+              Subscribe
+            </button>
+          </form>
+        </section>
+
+        <div class="statistics section-container">
+          <div class="statistics__graph">
+            <div class="graph__square"></div>
+            <div class="graph__inner-circle"></div>
+          </div>
+
+          <div class="statistics__numbers">
+            <div class="numbers__downloads">
+              <div class="numbers__layout">
+                <div class="numbers__indicator numbers__indicator--downloads"></div>
+                <p class="numbers__heading primary-heading">28%</p>
+              </div>
+              <p class="numbers__para secondary-description">Downloads</p>
+            </div>
+            <div class="numbers__subscribers">
+              <div class="numbers__layout">
+                <div class="numbers__indicator numbers__indicator--subscribers"></div>
+                <p class="numbers__heading primary-heading">29%</p>
+              </div>
+              <p class="numbers__para secondary-description">Subscribers</p>
+            </div>
+          </div>
+
+          <div class="statistics__info">
+            <p class="info__para-one secondary-description">
+              The quality of today's video game was not at all there when video game first
+              conceptualized and played ever. During the formulative years, video games were created
+              by using various interactive electronic devices with various display.
+            </p>
+            <p class="info__para-two secondary-description">
+              Video games were created by using various interactive electronic devices with various
+              display.
+            </p>
+          </div>
         </div>
 
-        <div class="footer__links-container">
-          <ul class="footer__links">
-            <li class="links__item"><a class="links__link" href="#firstLink">First Link</a></li>
-            <li class="links__item"><a class="links__link" href="#secondLink">Second Link</a></li>
-            <li class="links__item"><a class="links__link" href="#thirdLink">Third Link</a></li>
-          </ul>
-          <ul class="footer__social-media-links social-media-links">
-            <li class="social-media__item">
-              <a class="social-media__link" href="#"><i class="icon-facebook"></i></a>
-            </li>
-            <li class="social-media__item">
-              <a class="social-media__link" href="#"><i class="icon-instagram"></i></a>
-            </li>
-            <li class="social-media__item">
-              <a class="social-media__link" href="#"><i class="icon-twitter"></i></a>
-            </li>
-            <li class="social-media__item">
-              <a class="social-media__link" href="#"><i class="icon-youtube"></i></a>
-            </li>
-          </ul>
-        </div>
-      </footer>
+        <section class="downloads-info section-container" id="fourthLink">
+          <div class="downloads-info__text">
+            <h2 class="downloads-info__heading primary-heading">Heading</h2>
+            <div class="downloads-info__content">
+              <p class="downloads-info__para primary-description">
+                With so many different ways today to find information online, it can sometimes be
+                hard to know where to go to first.
+              </p>
+              <div class="downloads-info__apps">
+                <a href="#">
+                  <img
+                    src="assets/images/downloads-info-playstore.svg"
+                    alt="google play store link"
+                  />
+                </a>
+                <a href="#">
+                  <img src="assets/images/downloads-info-appstore.svg" alt="appstore link" />
+                </a>
+              </div>
+            </div>
+            <p class="downloads-info__sub-para tertiary-description">
+              When you think about it, we regard the moon with such powerful significance that
+              unlike the moons.
+            </p>
+          </div>
+          <div class="downloads-info__img-wrapper">
+            <img
+              class="downloads-info__image"
+              src="assets/images/downloads-info-devices.svg"
+              alt="two grey color mobile phones"
+            />
+          </div>
+        </section>
+
+        <section class="slider section-container" id="fifthLink">
+          <div class="slider__text">
+            <h2 class="slider__heading primary-heading">Heading</h2>
+            <p class="slider__para primary-description">
+              Poster can be one of the effective marketing and advertising materials.Poster can be
+              one of the effective marketing and advertising materials.
+            </p>
+          </div>
+
+          <div id="glide" class="glide">
+            <div class="glide__track" data-glide-el="track">
+              <div class="glide__slides">
+                <div class="glide__slide">
+                  <div class="card__profile-pic-wrapper">
+                    <img
+                      class="card__profile-pic"
+                      src="assets/images/slider-profile-pic.svg"
+                      alt="profile picture"
+                    />
+                  </div>
+                  <div class="card__text">
+                    <div class="card__quotes-wrapper">
+                      <img
+                        class="card__quotes-image"
+                        src="assets/images/slider-quotes.svg"
+                        alt="quotation marks"
+                      />
+                    </div>
+                    <p class="card__para primary-description">
+                      Moment in the life of any aspiring astronomer of that it is time to buy that
+                      first telescope.
+                    </p>
+
+                    <div class="card__auth-info">
+                      <p class="card__auth-name button-typography">Bertha Blake</p>
+
+                      <div class="card__social-media-wrapper">
+                        <a class="card__social-media-icon" href="https://twitter.com">
+                          <i class="icon-twitter"></i>
+                        </a>
+                        <a class="card__social-media-icon" href="https://www.facebook.com/">
+                          <i class="icon-facebook"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="glide__slide">
+                  <div class="card__profile-pic-wrapper">
+                    <img
+                      class="card__profile-pic"
+                      src="assets/images/slider-profile-pic.svg"
+                      alt="profile picture"
+                    />
+                  </div>
+                  <div class="card__text">
+                    <div class="card__quotes-wrapper">
+                      <img
+                        class="card__quotes-image"
+                        src="assets/images/slider-quotes.svg"
+                        alt="quotation marks"
+                      />
+                    </div>
+                    <p class="card__para primary-description">
+                      Moment in the life of any aspiring astronomer of that it is time to buy that
+                      first telescope.
+                    </p>
+
+                    <div class="card__auth-info">
+                      <p class="card__auth-name button-typography">Bertha Blake</p>
+
+                      <div class="card__social-media-wrapper">
+                        <a class="card__social-media-icon" href="https://twitter.com">
+                          <i class="icon-twitter"></i>
+                        </a>
+                        <a class="card__social-media-icon" href="https://www.facebook.com/">
+                          <i class="icon-facebook"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="glide__slide">
+                  <div class="card__profile-pic-wrapper">
+                    <img
+                      class="card__profile-pic"
+                      src="assets/images/slider-profile-pic.svg"
+                      alt="profile picture"
+                    />
+                  </div>
+                  <div class="card__text">
+                    <div class="card__quotes-wrapper">
+                      <img
+                        class="card__quotes-image"
+                        src="assets/images/slider-quotes.svg"
+                        alt="quotation marks"
+                      />
+                    </div>
+                    <p class="card__para primary-description">
+                      Moment in the life of any aspiring astronomer of that it is time to buy that
+                      first telescope.
+                    </p>
+
+                    <div class="card__auth-info">
+                      <p class="card__auth-name button-typography">Bertha Blake</p>
+
+                      <div class="card__social-media-wrapper">
+                        <a class="card__social-media-icon" href="https://twitter.com">
+                          <i class="icon-twitter"></i>
+                        </a>
+                        <a class="card__social-media-icon" href="https://www.facebook.com/">
+                          <i class="icon-facebook"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="glide__slide">
+                  <div class="card__profile-pic-wrapper">
+                    <img
+                      class="card__profile-pic"
+                      src="assets/images/slider-profile-pic.svg"
+                      alt="profile picture"
+                    />
+                  </div>
+                  <div class="card__text">
+                    <div class="card__quotes-wrapper">
+                      <img
+                        class="card__quotes-image"
+                        src="assets/images/slider-quotes.svg"
+                        alt="quotation marks"
+                      />
+                    </div>
+                    <p class="card__para primary-description">
+                      Moment in the life of any aspiring astronomer of that it is time to buy that
+                      first telescope.
+                    </p>
+
+                    <div class="card__auth-info">
+                      <p class="card__auth-name button-typography">Bertha Blake</p>
+
+                      <div class="card__social-media-wrapper">
+                        <a class="card__social-media-icon" href="https://twitter.com">
+                          <i class="icon-twitter"></i>
+                        </a>
+                        <a class="card__social-media-icon" href="https://www.facebook.com/">
+                          <i class="icon-facebook"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+              <button class="glide__bullet" data-glide-dir="=0"></button>
+              <button class="glide__bullet" data-glide-dir="=1"></button>
+              <button class="glide__bullet" data-glide-dir="=2"></button>
+              <button class="glide__bullet" data-glide-dir="=3"></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="pre-footer section-container" id="btn">
+          <div class="pre-footer__content">
+            <h2 class="pre-footer__heading primary-heading">
+              Two line header example with text description
+            </h2>
+            <button class="btn--icon pre-footer__btn">
+              <span class="btn--icon-text button-typography">Button</span>
+              <span class="btn--icon-wrapper">
+                <img
+                  class="pre-footer__btn-icon"
+                  src="assets/images/button-icon.svg"
+                  alt="hollow white square with black border"
+                />
+              </span>
+            </button>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div class="footer__common-container section-container">
+            <div class="common-container__sections">
+              <a href="#" class="common-container__logo-wrapper">
+                <img
+                  class="common-container__logo"
+                  src="./assets/images/logo.svg"
+                  alt="brand logo"
+                />
+              </a>
+              <h2 class="common-container__sections-heading">Sections</h2>
+            </div>
+
+            <div class="common-container__categories">
+              <div class="common-container__category">
+                <h3 class="common-container__heading nav-links-typography">Category</h3>
+                <ul class="common-container__category-list">
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#firstLink">
+                      First Link
+                    </a>
+                  </li>
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#secondLink">
+                      Second Long Link
+                    </a>
+                  </li>
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#thirdLink">
+                      Third Link
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="common-container__category">
+                <h3 class="common-container__heading nav-links-typography">Category</h3>
+                <ul class="common-container__category-list">
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#firstLink">
+                      First Link
+                    </a>
+                  </li>
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#secondLink">
+                      Second Long Link
+                    </a>
+                  </li>
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#thirdLink">
+                      Third Link
+                    </a>
+                  </li>
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#fourthLink">
+                      Fourth Long Link
+                    </a>
+                  </li>
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#fifthLink">
+                      Fifth Link
+                    </a>
+                  </li>
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#btn">
+                      Sixth Long Link
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="common-container__category">
+                <h3 class="common-container__heading nav-links-typography">Category</h3>
+                <ul class="common-container__category-list">
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#firstLink">
+                      First Link
+                    </a>
+                  </li>
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#secondLink">
+                      Second Long Link
+                    </a>
+                  </li>
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#thirdLink">
+                      Third Link
+                    </a>
+                  </li>
+                  <li class="common-container__list-item">
+                    <a class="common-container__list-link secondary-description" href="#fourthLink">
+                      Fourth Long Link
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer__form-container">
+              <h2 class="footer__form-heading nav-links-typography">Subscribe</h2>
+              <form class="footer__form">
+                <div class="footer__email-wrapper">
+                  <div class="footer__input-wrapper input-wrapper">
+                    <input
+                      name="email"
+                      class="footer__email-input email-input"
+                      type="text"
+                      placeholder="Email *"
+                    />
+                  </div>
+                  <span class="footer__email-field-msg secondary-description"></span>
+                </div>
+                <button type="submit" class="footer__subscribe-btn btn button-typography">
+                  <img src="./assets/images/footer-formbutton-img.svg" alt="send-message" />
+                </button>
+              </form>
+
+              <p class="footer__form-para">
+                No spam, notifications only about new products, updates and freebies. You can always
+                unsubscribe.
+              </p>
+            </div>
+          </div>
+
+          <div class="footer__copyright">
+            <div class="copyright__container section-container">
+              <a href="#" class="copyright__logo-wrapper">
+                <img class="copyright__logo" src="./assets/images/logo.svg" alt="brand logo" />
+              </a>
+              <p class="copyright__para">
+                &#169; Copyright 2020 Pixsellz Premium UI Goods for Designers
+              </p>
+              <ul class="copyright__social-media-links social-media-links">
+                <li class="social-media__item">
+                  <a class="social-media__link" href="https://www.facebook.com/">
+                    <i class="icon-facebook"></i>
+                  </a>
+                </li>
+                <li class="social-media__item">
+                  <a class="social-media__link" href="https://www.instagram.com/">
+                    <i class="icon-instagram"></i>
+                  </a>
+                </li>
+                <li class="social-media__item">
+                  <a class="social-media__link" href="https://twitter.com">
+                    <i class="icon-twitter"></i>
+                  </a>
+                </li>
+                <li class="social-media__item">
+                  <a class="social-media__link" href="https://www.youtube.com">
+                    <i class="icon-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__links-container">
+            <ul class="footer__links">
+              <li class="links__item">
+                <a class="links__link tertiary-description" href="#firstLink">First Link</a>
+              </li>
+              <li class="links__item">
+                <a class="links__link tertiary-description" href="#secondLink">Second Link</a>
+              </li>
+              <li class="links__item">
+                <a class="links__link tertiary-description" href="#thirdLink">Third Link</a>
+              </li>
+            </ul>
+            <ul class="footer__social-media-links social-media-links">
+              <li class="social-media__item">
+                <a class="social-media__link" href="https://www.facebook.com/">
+                  <i class="icon-facebook"></i>
+                </a>
+              </li>
+              <li class="social-media__item">
+                <a class="social-media__link" href="https://www.instagram.com/">
+                  <i class="icon-instagram"></i>
+                </a>
+              </li>
+              <li class="social-media__item">
+                <a class="social-media__link" href="https://twitter.com">
+                  <i class="icon-twitter"></i>
+                </a>
+              </li>
+              <li class="social-media__item">
+                <a class="social-media__link" href="https://www.youtube.com">
+                  <i class="icon-youtube"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </footer>
+      </main>
     </div>
   </body>
 </html>
