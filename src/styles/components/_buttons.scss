@@ -6,7 +6,6 @@
   color: $white;
   border: none;
   cursor: pointer;
-  @include button-typography;
   &:hover {
     background-color: $hover-color;
   }

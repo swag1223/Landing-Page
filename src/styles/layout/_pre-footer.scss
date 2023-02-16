@@ -31,7 +31,6 @@
   }
 
   &__heading {
-    @include heading-typography;
     @include ellipsis(3);
 
     @include breakpoint(lg) {

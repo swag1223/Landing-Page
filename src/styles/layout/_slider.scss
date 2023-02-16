@@ -10,13 +10,11 @@
     @include display-flex(center, center, column);
   }
   &__heading {
-    @include heading-typography;
     @include ellipsis(2);
     word-break: break-all;
   }
 
   &__para {
-    @include description-typography;
     @include ellipsis(3);
     margin-top: rem(20);
     text-align: center;

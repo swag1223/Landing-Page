@@ -1,4 +1,4 @@
-.main-container {
+.app-container {
   margin: 0 auto;
   max-width: 1300px;
 }
@@ -15,4 +15,18 @@
   @include breakpoint(xl) {
     padding: 0 rem(95);
   }
+}
+
+.main-container {
+  @include breakpoint(xl) {
+    display: block;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.display-none {
+  display: none;
 }

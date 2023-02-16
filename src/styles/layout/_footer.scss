@@ -65,16 +65,12 @@
         gap: rem(10);
       }
 
-      &__heading {
-        @include nav-links-typography;
-      }
       &__category-list {
         @include display-flex(space-between, flex-start, column);
         gap: rem(10);
       }
 
       &__list-link {
-        @include description-typography-sm;
         color: $text-color;
         word-break: break-all;
       }
@@ -86,9 +82,6 @@
     @include breakpoint(md) {
       display: none;
     }
-  }
-  &__form-heading {
-    @include nav-links-typography;
   }
 
   &__form {
@@ -170,7 +163,6 @@
 
     .links {
       &__link {
-        @include description-typography-xs;
         color: $text-color-light;
         word-break: break-all;
       }

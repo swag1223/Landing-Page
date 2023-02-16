@@ -90,7 +90,6 @@
 
   .content {
     &__heading {
-      @include heading-typography;
       @include ellipsis(2);
 
       @include breakpoint(md) {
@@ -105,7 +104,6 @@
     }
 
     &__description {
-      @include description-typography;
       @include ellipsis(5);
 
       @include breakpoint(md) {

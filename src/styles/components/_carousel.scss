@@ -76,7 +76,6 @@
       }
     }
     &__para {
-      @include description-typography;
       @include ellipsis(4);
       min-height: rem(120);
       text-align: left;
@@ -85,7 +84,6 @@
         @include ellipsis(3);
         min-height: rem(90);
       }
-
     }
 
     &__auth-info {
@@ -99,7 +97,6 @@
     }
 
     &__auth-name {
-      @include button-typography;
       color: $black;
       text-align: left;
     }

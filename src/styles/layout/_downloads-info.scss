@@ -1,6 +1,5 @@
 .downloads-info {
   @include display-flex(flex-start, center, column);
-  // margin-bottom: rem(100);
   gap: rem(30);
 
   @include breakpoint(md) {
@@ -38,7 +37,6 @@
   }
 
   &__heading {
-    @include heading-typography;
     @include ellipsis(2);
     word-break: break-all;
   }
@@ -58,7 +56,6 @@
   }
 
   &__para {
-    @include description-typography;
     @include ellipsis(5);
     margin-bottom: rem(30);
 
@@ -95,7 +92,6 @@
   }
 
   &__sub-para {
-    @include description-typography-xs;
     @include ellipsis(3);
 
     @include breakpoint(md) {

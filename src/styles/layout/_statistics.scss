@@ -64,12 +64,7 @@
         }
       }
 
-      &__para {
-        @include description-typography-sm;
-      }
-
       &__heading {
-        @include heading-typography;
         color: $black;
       }
     }
@@ -81,13 +76,11 @@
 
     .info {
       &__para-one {
-        @include description-typography-sm;
         @include ellipsis(5);
         margin-bottom: rem(30);
       }
 
       &__para-two {
-        @include description-typography-xs;
         @include ellipsis(2);
         color: $text-color-light;
         margin-bottom: rem(25);

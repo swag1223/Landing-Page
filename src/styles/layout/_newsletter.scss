@@ -43,7 +43,6 @@
   }
 
   &__heading {
-    @include heading-typography-sm;
     @include ellipsis(1);
 
     @include breakpoint(md) {
@@ -55,7 +54,6 @@
   }
 
   &__para {
-    @include description-typography-sm;
     @include ellipsis(3);
     width: 100%;
 
@@ -100,7 +98,6 @@
   }
 
   &__email-input {
-    @include description-typography;
     padding: rem(8) rem(15);
 
     @include breakpoint(xl) {

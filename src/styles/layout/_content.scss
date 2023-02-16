@@ -58,7 +58,6 @@
     }
 
     &__main-heading {
-      @include heading-typography;
       @include ellipsis(2);
 
       @include breakpoint(md) {
@@ -73,11 +72,9 @@
     }
 
     &__para {
-      @include description-typography;
       @include ellipsis(8);
 
       @include breakpoint(md) {
-        @include description-typography;
         @include ellipsis(5);
       }
       @include breakpoint(lg) {
@@ -89,11 +86,7 @@
     }
 
     &__link {
-      @include button-typography;
       color: $primary-color;
-      &:hover {
-        color: $hover-color;
-      }
     }
   }
 }
