@@ -43,8 +43,6 @@
   }
 
   &__heading {
-    @include ellipsis(1);
-
     @include breakpoint(md) {
       margin-top: rem(15);
     }

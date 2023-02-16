@@ -89,20 +89,6 @@
   }
 
   .content {
-    &__heading {
-      @include ellipsis(2);
-
-      @include breakpoint(md) {
-        @include ellipsis(3);
-      }
-      @include breakpoint(lg) {
-        @include ellipsis(2);
-      }
-      @include breakpoint(xl) {
-        @include ellipsis(2);
-      }
-    }
-
     &__description {
       @include ellipsis(5);
 

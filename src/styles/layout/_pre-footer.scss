@@ -30,14 +30,6 @@
     }
   }
 
-  &__heading {
-    @include ellipsis(3);
-
-    @include breakpoint(lg) {
-      @include ellipsis(2);
-    }
-  }
-
   &__btn {
     padding: rem(11) rem(16);
   }

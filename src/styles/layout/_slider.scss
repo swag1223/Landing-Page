@@ -9,10 +9,6 @@
   &__text {
     @include display-flex(center, center, column);
   }
-  &__heading {
-    @include ellipsis(2);
-    word-break: break-all;
-  }
 
   &__para {
     @include ellipsis(3);

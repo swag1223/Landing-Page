@@ -36,11 +36,6 @@
     }
   }
 
-  &__heading {
-    @include ellipsis(2);
-    word-break: break-all;
-  }
-
   &__content {
     @include display-flex(space-between, flex-start, column);
 

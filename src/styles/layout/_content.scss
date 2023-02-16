@@ -57,20 +57,6 @@
       text-transform: uppercase;
     }
 
-    &__main-heading {
-      @include ellipsis(2);
-
-      @include breakpoint(md) {
-        @include ellipsis(3);
-      }
-      @include breakpoint(lg) {
-        @include ellipsis(2);
-      }
-      @include breakpoint(xl) {
-        @include ellipsis(2);
-      }
-    }
-
     &__para {
       @include ellipsis(8);
 
