@@ -1,12 +1,12 @@
 const BREAKPOINT_XL = 992;
 
 const body = document.querySelector("body");
-const hamburger = document.querySelector(".nav-hamburger-wrapper");
+const hamburger = document.querySelector(".nav__hamburger-wrapper");
 const navMenu = document.querySelector(".nav__menu");
-const navItem = document.querySelectorAll(".nav__menu-item");
+const navItem = document.querySelectorAll(".nav__item");
 const mainContainer = document.querySelector(".main-container");
 
-const active = "menu-item__link--active";
+const active = "nav__link--active";
 const open = "nav__menu--open";
 
 const hidden = "hidden";

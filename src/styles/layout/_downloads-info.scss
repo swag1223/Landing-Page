@@ -78,7 +78,7 @@
     }
 
     @include breakpoint(lg) {
-      @include display-flex(flex-start, flex-start, row-reverse);
+      @include display-flex(flex-start, flex-start);
       gap: rem(20);
     }
     @include breakpoint(xl) {
