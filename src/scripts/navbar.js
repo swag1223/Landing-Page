@@ -17,6 +17,7 @@ const firstFocusElement = focusElementSelectors[0];
 const lastFocusElement = focusElementSelectors[focusElementSelectors.length - 1];
 
 let isMobileMenuOpen = false;
+let enableTabTrapping = false;
 
 /** Handles the active link in the navigation. */
 const handleActiveLink = () => {
@@ -31,6 +32,9 @@ const handleActiveLink = () => {
 
 /** Opens the navigation menu and displays a close icon and main container is hidden when the navigation menu is open. */
 const openMenu = () => {
+  if(!enableTabTrapping) {
+    enabletabTrap();
+  }
   hamburger.firstElementChild.src = "assets/images/cancel-circle.svg";
   navMenu.classList.add(open);
   navMenu.classList.remove(hidden);
@@ -73,7 +77,8 @@ const handleResize = () => {
   }
 };
 
-const tabTrap = () => {
+const enabletabTrap = () => {
+  enableTabTrapping=true;
   //The keydown event is being listened for on the document object and the function passed as the second parameter is called whenever the event is triggered. The e parameter represents the event object that is passed to the function.
   document.addEventListener("keydown", (e) => {
     const isTabPressed = e.key === "Tab";
@@ -137,6 +142,4 @@ navItem.forEach((link) => {
   });
 });
 
-if (!isMobileMenuOpen) {
-  tabTrap();
-}
+
