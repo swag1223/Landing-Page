@@ -45,4 +45,10 @@ npm run dev
 npm run build:prod
 ```
 
-\_
+**Deployed Link**
+https://fe-assignment1.netlify.app/
+
+**Carousel was impleted using glide.js**  
+https://glidejs.com/
+
+
