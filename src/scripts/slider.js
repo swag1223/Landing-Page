@@ -2,8 +2,9 @@ import Glide from "@glidejs/glide";
 
 const bp = {
   xxl: 1300,
-  xl: 993,
-  lg: 767,
+  xl: 1100,
+  lg: 993,
+  md: 568,
 };
 
 const carousel = new Glide("#glide", {
@@ -16,16 +17,19 @@ const carousel = new Glide("#glide", {
   touchRatio: 0.5,
   gap: 30,
   perView: 1,
-  peek: 150,
+  peek: 250,
 
   breakpoints: {
     [bp.xxl]: {
-      peek: 118,
+      peek: 250,
     },
     [bp.xl]: {
-      peek: 100,
+      peek: 180,
     },
     [bp.lg]: {
+      peek: 150,
+    },
+    [bp.md]: {
       peek: 0,
     },
   },

@@ -6,7 +6,6 @@ const navMenu = document.querySelector(".nav__menu");
 const navItem = document.querySelectorAll(".nav__item");
 const mainContainer = document.querySelector(".main-container");
 
-const active = "nav__link--active";
 const open = "nav__menu--open";
 
 const hidden = "hidden";
@@ -18,17 +17,6 @@ const lastFocusElement = focusElementSelectors[focusElementSelectors.length - 1]
 
 let isMobileMenuOpen = false;
 let enableTabTrapping = false;
-
-/** Handles the active link in the navigation. */
-const handleActiveLink = () => {
-  // Select the currently active link and remove the active class.
-  const activeLink = document.querySelector(`.${active}`);
-  if (activeLink) {
-    activeLink.classList.remove(active);
-  }
-
-  document.querySelector(`a[href="${document.location.hash}"]`).classList.add(active);
-};
 
 /** Opens the navigation menu and displays a close icon and main container is hidden when the navigation menu is open. */
 const openMenu = () => {
@@ -118,9 +106,6 @@ window.addEventListener("resize", handleResize);
  * @description Handles changes to the active link when the URL hash changes
  * @listens hashchange
  */
-
-//used hashchange event to detect if URL has changed.
-window.addEventListener("hashchange", handleActiveLink);
 
 /** Closes the navigation menu and changes the state of the mobile menu when a navigation item is clicked. */
 hamburger.addEventListener("click", () => {
