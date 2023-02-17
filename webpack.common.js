@@ -33,7 +33,7 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/, //any files ending with this extension we apply the loaders to them
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"], //these loaders will run in reverse order
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader", "postcss-loader"],
       },
       //MIniCssExtractPlugin: extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
       //css-loader : transforms CSS to a JavaScript module
@@ -71,6 +71,5 @@ module.exports = {
       template: "src/index.html",
     }),
     new MiniCssExtractPlugin(),
-
   ],
 };
