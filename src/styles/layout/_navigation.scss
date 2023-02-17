@@ -1,4 +1,10 @@
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  z-index: 1;
   @include display-flex(space-between);
   padding: rem(15) rem(15);
 
@@ -66,7 +72,7 @@
       right: 0;
       z-index: 1;
       transition: 0.5s ease;
-      background-color: $gray;
+      background-color: $gray-2;
 
       @include breakpoint(xl) {
         background-color: $white;
@@ -134,17 +140,18 @@
   }
 
   &__link {
-    text-decoration: none;
     color: $black;
-    &--active {
-      color: $primary-color;
-    }
+    max-width: rem(100);
+    @include ellipsis(1);
+    word-break: break-all;
   }
 
   .nav__btn {
     height: fit-content;
-    &.nav__link--active {
-      color: $white;
+    color: $white !important;
+
+    &.active-link {
+      border: 1px solid $black;
     }
     &:hover {
       color: $white !important;

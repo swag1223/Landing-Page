@@ -1,3 +1,7 @@
+// A mixin for defining media query breakpoints based on a map of named sizes
+// It takes a breakpoint name as an argument and checks if it exists in the $breakpoints map
+// If the name is valid, it generates a media query using the corresponding size and includes any content passed as an argument
+// If the name is not valid, it generates a warning message
 @mixin breakpoint($name) {
   @if not map-has-key($breakpoints, $name) {
     @warn "Warning: `#{$name}` is not a valid breakpoint name.";
@@ -8,6 +12,7 @@
   }
 }
 
+//display-flex mixin sets the display property to flex and allows for custom values for the justify-content, align-items, and flex-direction properties.
 @mixin display-flex($justify-content: center, $align-items: center, $flex-direction: row) {
   display: flex;
   justify-content: $justify-content;
@@ -15,6 +20,7 @@
   flex-direction: $flex-direction;
 }
 
+//sets the basic typography properties like font-weight, font-size, letter-spacing and line-height.
 @mixin basic-typography(
   $font-weight: $regular-weight,
   $font-size: rem(13),
@@ -27,6 +33,7 @@
   line-height: $line-height;
 }
 
+//creates an ellipsis effect on text by using the -webkit-line-clamp property to truncate text that exceeds a certain number of lines, and hiding the overflow.
 @mixin ellipsis($line-clamp) {
   display: -webkit-box;
   -webkit-line-clamp: $line-clamp;
