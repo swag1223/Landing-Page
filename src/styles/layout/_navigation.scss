@@ -144,6 +144,7 @@
     max-width: rem(100);
     @include ellipsis(1);
     word-break: break-all;
+    margin: 0 auto;
   }
 
   .nav__btn {
