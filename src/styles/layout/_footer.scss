@@ -71,7 +71,9 @@
       }
 
       &__list-link {
-        color: $text-color;
+        color: $gray-4;
+        max-width: rem(150);
+        @include ellipsis(1);
         word-break: break-all;
       }
     }
@@ -92,7 +94,7 @@
 
   &__form-para {
     @include basic-typography($line-height: rem(18));
-    color: $text-color-light;
+    // color: $text-color-light;
   }
   &__email-input {
     @include basic-typography(
@@ -111,7 +113,7 @@
   }
 
   &__copyright {
-    background-color: $graph-color-4;
+    background-color: $gray-0;
     @include breakpoint(md) {
       display: none;
     }
@@ -125,13 +127,13 @@
       &__para {
         @include basic-typography($line-height: rem(18));
         margin: rem(20) 0;
-        color: $text-color-light;
+        // color: $text-color-light;
       }
 
       &__social-media-links {
         .social-media {
           &__link {
-            color: $text-color-light;
+            color: $gray-3;
           }
         }
       }
@@ -139,7 +141,7 @@
   }
 
   &__links-container {
-    background-color: $graph-color-4;
+    background-color: $gray-0;
     display: none;
 
     @include breakpoint(md) {
@@ -163,8 +165,8 @@
 
     .links {
       &__link {
-        color: $text-color-light;
-        word-break: break-all;
+        color: $gray-3;
+        @include ellipsis(1);
       }
     }
   }
@@ -179,7 +181,7 @@
 
     .social-media {
       &__link {
-        color: $text-color;
+        color: $gray-4;
       }
     }
   }

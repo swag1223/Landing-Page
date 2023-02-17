@@ -1,7 +1,7 @@
 .pre-footer {
   margin-top: rem(36);
-  border-top: 1px solid $gray;
-  border-bottom: 1px solid $gray;
+  border-top: 1px solid $gray-2;
+  border-bottom: 1px solid $gray-2;
   padding-block: rem(45);
 
   @include breakpoint(md) {

@@ -1,7 +1,7 @@
 .newsletter {
   @include display-flex(flex-start, flex-start, column);
-  border-bottom: 1px solid $gray;
-  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray-2;
+  border-top: 1px solid $gray-2;
   gap: rem(20);
   margin-top: rem(10);
   padding-bottom: rem(45);

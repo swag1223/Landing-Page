@@ -1,22 +1,22 @@
 //Buttons
 .btn {
-  background-color: $primary-color;
+  background-color: $blue-2;
   border-radius: rem(6);
   padding: rem(10) rem(12);
   color: $white;
   border: none;
   cursor: pointer;
   &:hover {
-    background-color: $hover-color;
+    background-color: $blue-1;
   }
-}
 
-.btn--icon {
-  @extend .btn;
-  @include display-flex;
-  gap: rem(12);
-  &-text,
-  &-wrapper {
+  &--icon {
+    @extend .btn;
     @include display-flex;
+    gap: rem(12);
+    &-text,
+    &-wrapper {
+      @include display-flex;
+    }
   }
 }

@@ -1,8 +1,10 @@
-.app-container {
+// The app-container utility class sets the left and right margins to auto, centering the element horizontally within its parent container. The max-width property limits the width of the element to 1300 pixels.
+app-container {
   margin: 0 auto;
   max-width: 1300px;
 }
 
+//This section container has responsive left and right padding that adjusts according to the screen size.
 .section-container {
   padding: 0 rem(15);
 
@@ -17,16 +19,54 @@
   }
 }
 
+//sets the margin-top for the container containing all sections acc to different screen-size
 .main-container {
+  margin-top: rem(85);
+
+  @include breakpoint(md) {
+    margin-top: rem(105);
+  }
+  @include breakpoint(lg) {
+    margin-top: rem(120);
+  }
   @include breakpoint(xl) {
-    display: block;
+    margin-top: rem(185);
   }
 }
 
+// Hide the element without removing it from the element from the flow directly
 .hidden {
   visibility: hidden;
 }
 
+// to remove the element completely from the page
 .display-none {
   display: none;
+}
+
+// to style the currently active link with a specific color
+.active-link {
+  color: $blue-2 !important;
+}
+
+//for uniform styling of all links
+.link-style {
+  text-decoration: none;
+  display: inline-block;
+  height: 100%;
+  cursor: pointer;
+
+  &:hover {
+    color: $blue-2 !important;
+  }
+}
+
+//sets the color of the text to gray-4 color
+.text-color {
+  color: $gray-4;
+}
+
+//sets the color of the text to gray-4 color
+.text-color-light {
+  color: $gray-3;
 }
