@@ -11,6 +11,9 @@
   "keywords": [],
   "author": "swaijot",
   "license": "ISC",
+  "browserslist": [
+    "last 2 versions"
+  ],
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "css-loader": "^6.7.3",

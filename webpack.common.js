@@ -33,11 +33,12 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/, //any files ending with this extension we apply the loaders to them
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader", "postcss-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
-      //MIniCssExtractPlugin: extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
-      //css-loader : transforms CSS to a JavaScript module
       //sass-loader: Loads a SASS/SCSS file and compiles it to CSS.
+      //postcss-loader: applies PostCSS transformations to the CSS output from the previous loader.
+      //css-loader : transforms CSS to a JavaScript module
+      //MIniCssExtractPlugin: extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
 
       //the Webpack config needs two additional module rules to get images working.
       {
