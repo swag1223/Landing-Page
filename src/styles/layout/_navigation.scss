@@ -6,7 +6,7 @@
   background-color: $white;
   z-index: 1;
   @include display-flex(space-between);
-  padding: rem(15) rem(15);
+  padding: rem(15);
 
   @include breakpoint(md) {
     padding: rem(15) rem(30);
@@ -152,7 +152,7 @@
     color: $white !important;
 
     &.active-link {
-      border: 1px solid $black;
+      background-color: $blue-3;
     }
     &:hover {
       color: $white !important;
