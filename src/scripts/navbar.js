@@ -10,10 +10,6 @@ const open = "nav__menu--open";
 const hidden = "visibility-hidden";
 const noScroll = "no-scroll";
 
-const focusElementSelectors = document.querySelectorAll(".js-nav-el");
-const firstFocusElement = focusElementSelectors[0];
-const lastFocusElement = focusElementSelectors[focusElementSelectors.length - 1];
-
 let isMobileMenuOpen = false;
 let enableTabTrapping = false;
 
@@ -63,6 +59,9 @@ const handleResize = () => {
 };
 
 const enabletabTrap = () => {
+  const focusElementSelectors = document.querySelectorAll(".js-nav-el");
+  const firstFocusElement = focusElementSelectors[0];
+  const lastFocusElement = focusElementSelectors[focusElementSelectors.length - 1];
   enableTabTrapping = true;
   //The keydown event is being listened for on the document object and the function passed as the second parameter is called whenever the event is triggered. The e parameter represents the event object that is passed to the function.
   document.addEventListener("keydown", (e) => {
