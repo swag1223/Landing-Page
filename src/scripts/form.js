@@ -1,10 +1,12 @@
-const newsletterForm = document.querySelector(".newsletter__form");
-const newsletterEmailInput = document.querySelector(".newsletter__email-input");
-const newsletterErrorText = document.querySelector(".newsletter__email-field-msg");
+import { EMAIL_FORMAT_REGEX, EMAIL_CONFIG } from "./constants";
 
-const footerForm = document.querySelector(".footer__form");
-const footerEmailInput = document.querySelector(".footer__email-input");
-const footerErrorText = document.querySelector(".footer__email-field-msg");
+const newsletterForm = document.querySelector(".js-newsletter-form");
+const newsletterEmailInput = document.querySelector(".js-newsletter-email-input");
+const newsletterErrorText = document.querySelector(".js-newsletter-email-field-msg");
+
+const footerForm = document.querySelector(".js-footer-form");
+const footerEmailInput = document.querySelector(".js-footer-email-input");
+const footerErrorText = document.querySelector(".js-footer-email-field-msg");
 
 /** Check if email address is in a valid format
  * @function
@@ -12,24 +14,7 @@ const footerErrorText = document.querySelector(".footer__email-field-msg");
  * @returns {boolean} - Returns true if the email address is in a valid format, otherwise false
  */
 const isEmailValid = (email) => {
-  const emailFormatRegex =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return emailFormatRegex.test(String(email).toLowerCase());
-};
-
-const emailConfig = {
-  empty: {
-    message: "Email is required",
-    styleClass: "email-field-msg--error",
-  },
-  invalid: {
-    message: "Invalid Email",
-    styleClass: "email-field-msg--error",
-  },
-  valid: {
-    message: "Subscribed",
-    styleClass: "email-field-msg--success",
-  },
+  return EMAIL_FORMAT_REGEX.test(String(email).toLowerCase());
 };
 
 /**
@@ -41,27 +26,27 @@ const emailConfig = {
 const handleEmailValidation = (emailValue, errorText, emailInput) => {
   // Check if email value is empty
   if (emailValue === "") {
-    // Update error message with the message from emailConfig.empty and toggle its styleClass to true
-    errorText.innerText = emailConfig.empty.message;
-    errorText.classList.toggle(emailConfig.empty.styleClass, true);
-    errorText.classList.toggle(emailConfig.valid.styleClass, false);
+    // Update error message with the message from EMAIL_CONFIG.empty and toggle its styleClass to true
+    errorText.innerText = EMAIL_CONFIG.empty.message;
+    errorText.classList.toggle(EMAIL_CONFIG.empty.styleClass, true);
+    errorText.classList.toggle(EMAIL_CONFIG.valid.styleClass, false);
     return;
   }
 
   // Check if email value is valid
   if (isEmailValid(emailValue)) {
     // Update error message with the message from emailConfig.valid and toggle its styleClass to true
-    errorText.innerText = emailConfig.valid.message;
-    errorText.classList.toggle(emailConfig.valid.styleClass, true);
-    errorText.classList.toggle(emailConfig.empty.styleClass, false);
+    errorText.innerText = EMAIL_CONFIG.valid.message;
+    errorText.classList.toggle(EMAIL_CONFIG.valid.styleClass, true);
+    errorText.classList.toggle(EMAIL_CONFIG.empty.styleClass, false);
 
     // Clear the email input value
     emailInput.value = "";
   } else {
     // Update error message with the message from emailConfig.invalid and toggle its styleClass to true
-    errorText.innerText = emailConfig.invalid.message;
-    errorText.classList.toggle(emailConfig.invalid.styleClass, true);
-    errorText.classList.toggle(emailConfig.valid.styleClass, false);
+    errorText.innerText = EMAIL_CONFIG.invalid.message;
+    errorText.classList.toggle(EMAIL_CONFIG.invalid.styleClass, true);
+    errorText.classList.toggle(EMAIL_CONFIG.valid.styleClass, false);
   }
 };
 

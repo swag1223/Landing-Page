@@ -1,20 +1,20 @@
 .hero {
   @include display-flex($flex-direction: column);
   gap: rem(28);
-  margin: rem(15) 0 rem(50);
+  margin: rem(85) 0 rem(50);
 
   @include breakpoint(md) {
-    margin: rem(35) 0 rem(40);
+    margin: rem(105) 0 rem(40);
     gap: rem(8);
   }
   @include breakpoint(lg) {
     @include display-flex(space-between, $flex-direction: column);
-    margin-top: rem(48);
+    margin-top: rem(118);
     gap: rem(35);
   }
   @include breakpoint(xl) {
     @include display-flex($flex-direction: column);
-    margin: rem(98) 0 rem(100);
+    margin: rem(185) 0 rem(100);
     gap: rem(50);
   }
 
@@ -85,25 +85,24 @@
     }
   }
 
-  .content {
-    &__description {
-      @include ellipsis(5);
+  &__description {
+    //Ellipses are handled at different breakpoints to adhere to pixel perfect design.
+    @include ellipsis(5);
 
-      @include breakpoint(md) {
-        @include ellipsis(2);
-      }
-      @include breakpoint(lg) {
-        @include ellipsis(3);
-      }
-      @include breakpoint(xl) {
-        @include ellipsis(2);
-      }
+    @include breakpoint(md) {
+      @include ellipsis(2);
     }
+    @include breakpoint(lg) {
+      @include ellipsis(3);
+    }
+    @include breakpoint(xl) {
+      @include ellipsis(2);
+    }
+  }
 
-    &__btn {
-      margin-top: rem(13);
-      padding: 1.2rem 1.5rem;
-    }
+  &__btn {
+    margin-top: rem(13);
+    padding: rem(12) rem(15);
   }
 
   &__brands {
@@ -115,7 +114,9 @@
   }
 
   &__brand-partners {
-    @include basic-typography;
+    @include custom-typography;
+    color: $matterhorn;
+
     text-transform: uppercase;
     margin-bottom: rem(30);
 

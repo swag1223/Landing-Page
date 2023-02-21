@@ -19,54 +19,29 @@
   }
 }
 
-//sets the margin-top for the container containing all sections acc to different screen-size
-.main-container {
-  margin-top: rem(85);
-
-  @include breakpoint(md) {
-    margin-top: rem(105);
-  }
-  @include breakpoint(lg) {
-    margin-top: rem(120);
-  }
-  @include breakpoint(xl) {
-    margin-top: rem(185);
-  }
-}
-
 // Hide the element without removing it from the element from the flow directly
-.hidden {
+.visibility-hidden {
   visibility: hidden;
 }
 
-// to remove the element completely from the page
-.display-none {
-  display: none;
+// to prevent the content behind mobile menu from scrolling
+.no-scroll {
+  overflow: hidden;
 }
 
 // to style the currently active link with a specific color
 .active-link {
-  color: $blue-2 !important;
+  color: $light-sea-green-1;
 }
 
 //for uniform styling of all links
-.link-style {
+.link {
   text-decoration: none;
   display: inline-block;
   height: 100%;
   cursor: pointer;
 
   &:hover {
-    color: $blue-2 !important;
+    color: $light-sea-green-1;
   }
-}
-
-//sets the color of the text to gray-4 color
-.text-color {
-  color: $gray-4;
-}
-
-//sets the color of the text to gray-4 color
-.text-color-light {
-  color: $gray-3;
 }

@@ -1,13 +1,14 @@
 .input-wrapper {
-  display: flex;
+  @include display-flex(flex-start,normal);
 }
 
 .email-input {
-  border: 1px solid $gray-2;
+  border: 1px solid $gainsboro-1;
   border-radius: rem(6);
-  color: $gray-4;
+  color: $matterhorn;
   width: 100%;
 }
+
 .email-field-msg {
   display: none;
   margin-top: rem(5);

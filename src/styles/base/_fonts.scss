@@ -1,23 +1,7 @@
-@font-face {
-  font-family: "Poppins";
-  src: url("@fonts/Poppins-Regular.woff") format("woff");
-  font-weight: $regular-weight;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("@fonts/Poppins-Medium.woff") format("woff");
-  font-weight: $medium-weight;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("@fonts/Poppins-SemiBold.woff") format("woff");
-  font-weight: $semibold-weight;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("@fonts/Poppins-Bold.woff") format("woff");
-  font-weight: $bold-weight;
+@each $name, $weight in $weights {
+  @font-face {
+    font-family: "Poppins";
+    src: url("#{$font-path}Poppins-#{$name}.woff") format("woff");
+    font-weight: $weight;
+  }
 }

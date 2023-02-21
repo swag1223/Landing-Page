@@ -12,7 +12,7 @@
   }
   @include breakpoint(xl) {
     @include display-flex(space-between, center, row);
-    border-bottom: 1px solid $gray-2;
+    border-bottom: 1px solid $gainsboro-1;
     margin-top: 0;
   }
 
@@ -93,8 +93,8 @@
       display: none;
     }
     @include breakpoint(lg) {
-      display: block;
       @include ellipsis(2);
+      display: block;
     }
   }
 

@@ -48,7 +48,5 @@ npm run build:prod
 **Deployed Link**
 https://fe-assignment1.netlify.app/
 
-**Carousel was impleted using glide.js**  
+**Carousel was implemented using glide.js**  
 https://glidejs.com/
-
-

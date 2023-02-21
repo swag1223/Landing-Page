@@ -4,7 +4,6 @@ const active = "active-link";
 const handleActiveLink = () => {
   // Select the currently active links and remove the active class.
   const activeLinks = document.querySelectorAll(`.${active}`);
-  console.log(activeLinks);
   activeLinks.forEach((link) => {
     link.classList.remove(active);
   });

@@ -51,28 +51,30 @@
       width: 40%;
     }
   }
-  .text {
-    &__sub-heading {
-      @include basic-typography($semibold-weight);
-      text-transform: uppercase;
+
+  &__sub-heading {
+    @include custom-typography($semibold-weight);
+    text-transform: uppercase;
+  }
+
+  &__para {
+    @include ellipsis(8);
+
+    @include breakpoint(md) {
+      @include ellipsis(5);
     }
-
-    &__para {
-      @include ellipsis(8);
-
-      @include breakpoint(md) {
-        @include ellipsis(5);
-      }
-      @include breakpoint(lg) {
-        @include ellipsis(6);
-      }
-      @include breakpoint(xl) {
-        @include ellipsis(6);
-      }
+    @include breakpoint(lg) {
+      @include ellipsis(6);
     }
+    @include breakpoint(xl) {
+      @include ellipsis(6);
+    }
+  }
 
-    &__link {
-      color: $blue-2;
+  &__link {
+    color: $light-sea-green-1;
+    &:hover {
+      color: $matterhorn;
     }
   }
 }

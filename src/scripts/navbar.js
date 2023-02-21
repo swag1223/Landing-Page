@@ -1,39 +1,38 @@
-const BREAKPOINT_XL = 992;
+import { BREAKPOINT_XL } from "./constants";
 
-const body = document.querySelector("body");
-const hamburger = document.querySelector(".nav__hamburger-wrapper");
-const navMenu = document.querySelector(".nav__menu");
-const navItem = document.querySelectorAll(".nav__item");
-const mainContainer = document.querySelector(".main-container");
+const body = document.querySelector(".js-body");
+const hamburger = document.querySelector(".js-nav-hamburger-wrapper");
+const navMenu = document.querySelector(".js-nav-menu");
+const navItem = document.querySelectorAll(".js-nav-item");
 
 const open = "nav__menu--open";
 
-const hidden = "hidden";
-const displayNone = "display-none";
+const hidden = "visibility-hidden";
+const noScroll = "no-scroll";
 
-const focusElementSelectors = document.querySelectorAll(".nav-el");
+const focusElementSelectors = document.querySelectorAll(".js-nav-el");
 const firstFocusElement = focusElementSelectors[0];
 const lastFocusElement = focusElementSelectors[focusElementSelectors.length - 1];
 
 let isMobileMenuOpen = false;
 let enableTabTrapping = false;
 
-/** Opens the navigation menu and displays a close icon and main container is hidden when the navigation menu is open. */
+/** Opens the navigation menu and displays a close icon when the navigation menu is open. */
 const openMenu = () => {
   if (!enableTabTrapping) {
     enabletabTrap();
   }
+  body.classList.add(noScroll);
   hamburger.firstElementChild.src = "assets/images/cancel-circle.svg";
   navMenu.classList.add(open);
   navMenu.classList.remove(hidden);
-  mainContainer.classList.add(displayNone);
 };
 
-/** Closes navigation menu and changes the hamburger icon to the default hamburger icon and displays the main container */
+/** Closes navigation menu and changes the hamburger icon to the default hamburger icon */
 const closeMenu = () => {
+  body.classList.remove(noScroll);
   hamburger.firstElementChild.src = "assets/images/hamburger.svg";
   navMenu.classList.remove(open);
-  mainContainer.classList.remove(displayNone);
   navMenu.classList.add(hidden);
 };
 
@@ -51,17 +50,15 @@ const handleResize = () => {
   if (isMobileScreen) {
     // If the mobile menu is open
     if (isMobileMenuOpen) {
-      // Show the navigation menu and hide the main content
+      // Show the navigation menu
       navMenu.classList.remove(hidden);
-      mainContainer.classList.add(displayNone);
     } else {
       // Hide the navigation menu
       navMenu.classList.add(hidden);
     }
   } else {
-    // If the screen is in desktop view, show the navigation menu and main content
+    // If the screen is in desktop view, show the navigation menu
     navMenu.classList.remove(hidden);
-    mainContainer.classList.remove(displayNone);
   }
 };
 

@@ -6,84 +6,79 @@
   }
 
   &__graph {
+    @include position(relative);
     @include display-flex(center, center);
     min-width: rem(260);
     min-height: rem(260);
     border-radius: 50%;
-    position: relative;
     background: conic-gradient(
-      $blue-2 0deg 105deg,
-      $blue-0 105deg 190deg,
-      $gray-1 190deg 255deg,
-      $gray-0 255deg 360deg
+      $light-sea-green-1 0deg 105deg,
+      $light-sea-green-0 105deg 190deg,
+      $gainsboro-0 190deg 255deg,
+      $white-smoke 255deg 360deg
     );
   }
 
-  .graph {
-    &__inner-circle {
-      min-width: rem(120);
-      min-height: rem(120);
-      border-radius: 50%;
-      background: $white;
-    }
+  &__inner-circle {
+    min-width: rem(120);
+    min-height: rem(120);
+    border-radius: 50%;
+    background: $white;
+  }
 
-    &__square {
-      position: absolute;
-      top: -5%;
-      left: 5%;
-      min-width: rem(100);
-      min-height: rem(100);
-      border: 1px dashed $gray-3;
-    }
+  &__square {
+    @include position(absolute, -5%, $left: 5%);
+    min-width: rem(100);
+    min-height: rem(100);
+    border: 1px dashed $nobel;
   }
 
   &__numbers {
     @include display-flex(flex-start, center, column);
     gap: rem(80);
+  }
 
-    .numbers {
-      &__downloads,
-      &__subscribers {
-        @include display-flex(flex-start, flex-end, $flex-direction: column);
-      }
-      &__layout {
-        @include display-flex(space-between, center);
-        gap: rem(10);
-      }
-      &__indicator {
-        width: rem(24);
-        height: rem(24);
-        border-radius: 50%;
+  &__downloads,
+  &__subscribers {
+    @include display-flex(flex-start, flex-end, $flex-direction: column);
+  }
 
-        &--downloads {
-          background-color: $blue-2;
-        }
+  &__layout {
+    @include display-flex(space-between, center);
+    gap: rem(10);
+  }
 
-        &--subscribers {
-          background-color: $gray-1;
-        }
-      }
+  &__indicator {
+    width: rem(24);
+    height: rem(24);
+    border-radius: 50%;
 
-      &__heading {
-        color: $black;
-      }
+    &--downloads {
+      background-color: $light-sea-green-1;
     }
+
+    &--subscribers {
+      background-color: $gainsboro-0;
+    }
+  }
+
+  &__heading {
+    color: $black;
   }
 
   &__info {
     @include display-flex(flex-start, center, column);
     max-width: 40%;
+  }
 
-    .info {
-      &__para-one {
-        @include ellipsis(5);
-        margin-bottom: rem(30);
-      }
+  &__para-one {
+    @include ellipsis(5);
+    margin-bottom: rem(30);
+  }
 
-      &__para-two {
-        @include ellipsis(2);
-        margin-bottom: rem(25);
-      }
-    }
+  &__para-two {
+    @include ellipsis(2);
+    color: $nobel;
+    margin-bottom: rem(25);
   }
 }

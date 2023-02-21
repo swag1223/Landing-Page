@@ -1,25 +1,37 @@
 $html-font-size: 10px;
 
+$z-index-default: 0;
+$z-index-1: 1;
+$z-index-2: 2;
+
 $white: rgba(255, 255, 255, 1);
 $black: rgba(0, 0, 0, 1);
 $red: rgba(255, 0, 0, 1);
 $green: rgba(0, 96, 0, 1);
 
-$blue-0: rgba(36, 175, 181, 0.2);
-$blue-2: rgba(36, 175, 181, 1);
-$blue-1: rgba(39, 190, 196, 1);
-$blue-3: rgba(10, 103, 105, 0.938);
+$light-sea-green-0: rgba(36, 175, 181, 0.2);
+$light-sea-green-1: rgba(36, 175, 181, 1);
+$light-sea-green-2: rgba(39, 190, 196, 1);
+$blue-lagoon: rgba(10, 103, 105, 0.938);
 
-$gray-0: rgba(243, 243, 243, 1);
-$gray-1: rgba(222, 222, 222, 1);
-$gray-2: rgba(219, 219, 219, 1);
-$gray-3: rgba(150, 150, 150, 1);
-$gray-4: rgba(88, 87, 87, 1);
+$white-smoke: rgba(243, 243, 243, 1);
+$gainsboro-0: rgba(222, 222, 222, 1);
+$gainsboro-1: rgba(219, 219, 219, 1);
+$nobel: rgba(150, 150, 150, 1);
+$matterhorn: rgba(88, 87, 87, 1);
 
 $regular-weight: 400;
 $medium-weight: 600;
 $semibold-weight: 700;
 $bold-weight: 800;
+
+$font-path: "@fonts/Poppins/";
+$weights: (
+  "Regular": $regular-weight,
+  "Medium": $medium-weight,
+  "SemiBold": $semibold-weight,
+  "Bold": $bold-weight,
+);
 
 $breakpoints: (
   "sm": 320px,

@@ -1,11 +1,10 @@
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: $white;
-  z-index: 1;
+  @include position(fixed, 0, 0, $left: 0);
   @include display-flex(space-between);
+  margin: 0 auto;
+  max-width: 1300px;
+  background-color: $white;
+  z-index: $z-index-1;
   padding: rem(15);
 
   @include breakpoint(md) {
@@ -21,7 +20,7 @@
 
   &__logo-wrapper {
     width: rem(38);
-    z-index: 2;
+    z-index: $z-index-2;
 
     @include breakpoint(xl) {
       width: rem(52);
@@ -37,60 +36,58 @@
     border: none;
     background-color: transparent;
     padding: 0;
+    z-index: $z-index-2;
     cursor: pointer;
-    z-index: 2;
 
     @include breakpoint(xl) {
       display: none;
     }
   }
+
   &__hamburger {
     max-width: 100%;
     height: auto;
   }
 
   &__menu {
-    position: fixed;
-    top: 0;
-    right: -120%;
+    @include position(fixed, 0, -100%);
+    @include display-flex(flex-start, normal, column);
     background-color: $white;
     height: 100%;
     width: 100%;
-    display: flex; //given seaparately to handle overflow-y: scroll
-    flex-direction: column;
     transition: 0.5s ease;
 
     @include breakpoint(xl) {
       @include display-flex(space-between, $flex-direction: row);
-      position: relative;
-      right: 0;
+      @include position(relative, $right: 0);
     }
 
     &--open {
       overflow-y: auto;
       overflow-x: hidden;
       right: 0;
-      z-index: 1;
+      z-index: $z-index-1;
       transition: 0.5s ease;
-      background-color: $gray-2;
+      background-color: $gainsboro-1;
 
       @include breakpoint(xl) {
+        @include position(relative);
         background-color: $white;
-        position: relative;
-        z-index: 0;
-      }
-      .nav__item {
-        border-bottom: 1px solid $white;
-
-        @include breakpoint(xl) {
-          border: none;
-        }
-      }
-
-      .nav__btn-wrapper {
-        border: none;
+        z-index: $z-index-default;
       }
     }
+  }
+
+  &__item {
+    border-bottom: 1px solid $white;
+
+    @include breakpoint(xl) {
+      border: none;
+    }
+  }
+
+  &__btn-wrapper {
+    border: none;
   }
 
   &__menu-left {
@@ -140,22 +137,23 @@
   }
 
   &__link {
+    @include ellipsis(1);
     color: $black;
     max-width: rem(100);
-    @include ellipsis(1);
     word-break: break-all;
     margin: 0 auto;
   }
 
-  .nav__btn {
+  &__btn {
     height: fit-content;
-    color: $white !important;
+    color: $white;
 
     &.active-link {
-      background-color: $blue-3;
+      background-color: $blue-lagoon;
     }
+
     &:hover {
-      color: $white !important;
+      color: white;
     }
   }
 }

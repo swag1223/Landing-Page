@@ -1,11 +1,12 @@
+@import "~reset-css/sass/reset";
+@import "~normalize.css/normalize";
+
 @import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/mixins";
 
 @import "vendors/icons";
-
-@import "~reset-css/sass/reset";
-@import "~normalize.css/normalize";
+@import "vendors/glide";
 
 @import "base/fonts";
 @import "base/base";
@@ -25,5 +26,3 @@
 @import "layout/slider";
 @import "layout/pre-footer";
 @import "layout/footer";
-
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";

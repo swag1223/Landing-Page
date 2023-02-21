@@ -1,7 +1,7 @@
 .newsletter {
   @include display-flex(flex-start, flex-start, column);
-  border-bottom: 1px solid $gray-2;
-  border-top: 1px solid $gray-2;
+  border-bottom: 1px solid $gainsboro-1;
+  border-top: 1px solid $gainsboro-1;
   gap: rem(20);
   margin-top: rem(10);
   padding-bottom: rem(45);
@@ -81,6 +81,7 @@
       gap: rem(20);
     }
   }
+
   &__email-wrapper {
     @include breakpoint(md) {
       max-width: 57%;
@@ -90,6 +91,7 @@
       text-align: right;
     }
   }
+
   &__input-wrapper {
     width: 100%;
     display: flex;
