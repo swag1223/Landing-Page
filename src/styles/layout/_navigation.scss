@@ -146,14 +146,14 @@
 
   &__btn {
     height: fit-content;
-    color: $white;
+    color: $white !important;
 
     &.active-link {
       background-color: $blue-lagoon;
     }
 
     &:hover {
-      color: white;
+      color: $white;
     }
   }
 }
