@@ -25,7 +25,10 @@ module.exports = {
   },
 
   /**
-   * Aliases are a way to let webpack know where to find our code by providing a word or character that represents a partial reference to where the code is located. Once webpack knows this, the code can be properly resolved while it is compiling during development or building the final package.
+   * Aliases are a way to let webpack know where to find our code by providing a
+   * word or character that represents a partial reference to where the code is located.
+   * Once webpack knows this, the code can be properly resolved while it is compiling during development
+   * or building the final package.
    */
   resolve: {
     alias: {
@@ -51,7 +54,10 @@ module.exports = {
       {
         test: /\.html$/i,
         use: "html-loader",
-        /**html-loader parses HTML files using html-loader which allows Webpack to look for image references. */
+        /**
+         * html-loader parses HTML files using html-loader which allows Webpack to
+         * look for image references.
+         */
       },
 
       //use Asset Module to copy those images to the output directory:
@@ -75,7 +81,8 @@ module.exports = {
 
   plugins: [
     /**
-     * html-webpack-plugin would use the index.html we created under src folder as template and thus the generated index.html in the ‘dist’ folder
+     * html-webpack-plugin would use the index.html we created under src folder as
+     * template and thus the generated index.html in the ‘dist’ folder
      */
     new HtmlWebpackPlugin({
       filename: "index.html",

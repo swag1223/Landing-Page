@@ -1,10 +1,15 @@
-// The app-container utility class sets the left and right margins to auto, centering the element horizontally within its parent container. The max-width property limits the width of the element to 1300 pixels.
+/*
+The app-container utility class sets the left and right margins to auto, 
+centering the element horizontally within its parent container. 
+The max-width property limits the width of the element to 1300 pixels.*/
 .app-container {
   margin: 0 auto;
   max-width: 1300px;
 }
 
-//This section container has responsive left and right padding that adjusts according to the screen size.
+/* This section container has responsive left and right 
+padding that adjusts according to the screen size.
+*/
 .section-container {
   padding: 0 rem(15);
 
@@ -19,7 +24,7 @@
   }
 }
 
-// Hide the element without removing it from the element from the flow directly
+/* Hide the element without removing it from the element from the flow directly  */
 .visibility-hidden {
   visibility: hidden;
 }

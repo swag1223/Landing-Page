@@ -13,7 +13,10 @@ const noScroll = "no-scroll";
 let isMobileMenuOpen = false;
 let enableTabTrapping = false;
 
-/** Opens the navigation menu and displays a close icon when the navigation menu is open. */
+/**
+ * Opens the navigation menu and
+ *  displays a close icon when the navigation menu is open.
+ */
 const openMenu = () => {
   if (!enableTabTrapping) {
     enabletabTrap();
@@ -24,7 +27,9 @@ const openMenu = () => {
   navMenu.classList.remove(hidden);
 };
 
-/** Closes navigation menu and changes the hamburger icon to the default hamburger icon */
+/**
+ * Closes navigation menu and changes the hamburger icon to the default hamburger icon
+ */
 const closeMenu = () => {
   body.classList.remove(noScroll);
   hamburger.firstElementChild.src = "assets/images/hamburger.svg";
@@ -35,8 +40,6 @@ const closeMenu = () => {
 /**
  * A function that handles resizing of the window and adjusts the display of
  * elements based on whether the screen size is below or above a certain breakpoint.
- *
- * @function
  */
 const handleResize = () => {
   // Determine whether the screen is smaller than than 992px breakpoint
@@ -58,12 +61,20 @@ const handleResize = () => {
   }
 };
 
+/**
+ * A function that enables trapping focus within the navbar when mobile menu is open.
+ */
+
 const enabletabTrap = () => {
   const focusElementSelectors = document.querySelectorAll(".js-nav-el");
   const firstFocusElement = focusElementSelectors[0];
   const lastFocusElement = focusElementSelectors[focusElementSelectors.length - 1];
   enableTabTrapping = true;
-  //The keydown event is being listened for on the document object and the function passed as the second parameter is called whenever the event is triggered. The e parameter represents the event object that is passed to the function.
+  /**
+   * The keydown event is being listened for on the document object and
+   * the function passed as the second parameter is called whenever the event is triggered.
+   * The e parameter represents the event object that is passed to the function.
+   */
   document.addEventListener("keydown", (e) => {
     const isTabPressed = e.key === "Tab";
 
@@ -76,12 +87,19 @@ const enabletabTrap = () => {
       // if shift key pressed for shift + tab combination
       if (document.activeElement === firstFocusElement) {
         lastFocusElement.focus(); // add focus for the last focusable element
-        e.preventDefault(); //the default behavior of the Tab key (moving focus to the next element) is prevented.
+        /**
+         * the default behavior of the Tab key
+         * (moving focus to the next element) is prevented.
+         */
+        e.preventDefault();
       }
     } else {
       // if tab key is pressed
       if (document.activeElement === lastFocusElement) {
-        // if focused has reached to last focusable element then focus first focusable element after pressing tab
+        /**
+         * if focused has reached to last focusable element then
+         * focus first focusable element after pressing tab
+         */
         firstFocusElement.focus(); // add focus for the first focusable element
         e.preventDefault();
       }
@@ -89,21 +107,24 @@ const enabletabTrap = () => {
   });
 };
 
-//initially if not in desktop view , navigation menu is hidden
+/**
+ * initially if not in desktop view ,
+ * navigation menu is hidden
+ */
 if (window.innerWidth < BREAKPOINT_XL) {
   navMenu.classList.add(hidden);
 }
 
-// add the "resize" event listener to the window and call the handleResize function when the event is triggered
+/**
+ * add the "resize" event listener to the window and call the handleResize
+ * function when the event is triggered
+ */
 window.addEventListener("resize", handleResize);
 
 /**
- * @function handleActiveLink
- * @description Handles changes to the active link when the URL hash changes
- * @listens hashchange
+ * Closes the navigation menu and changes the state of the mobile menu
+ * when a navigation item is clicked.
  */
-
-/** Closes the navigation menu and changes the state of the mobile menu when a navigation item is clicked. */
 hamburger.addEventListener("click", () => {
   if (!isMobileMenuOpen) {
     openMenu();
@@ -113,7 +134,10 @@ hamburger.addEventListener("click", () => {
   isMobileMenuOpen = !isMobileMenuOpen;
 });
 
-/** Adds an event listener to each link in the navigation item list to toggle the mobile menu open/close state. */
+/**
+ *  Adds an event listener to each link in the navigation item list
+ * to toggle the mobile menu open/close state.
+ */
 navItem.forEach((link) => {
   link.addEventListener("click", () => {
     if (isMobileMenuOpen) {

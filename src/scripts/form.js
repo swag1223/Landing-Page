@@ -8,7 +8,8 @@ const footerForm = document.querySelector(".js-footer-form");
 const footerEmailInput = document.querySelector(".js-footer-email-input");
 const footerErrorText = document.querySelector(".js-footer-email-field-msg");
 
-/** Check if email address is in a valid format
+/**
+ * Check if email address is in a valid format
  * @function
  * @param {string} email - The email address to validate
  * @returns {boolean} - Returns true if the email address is in a valid format, otherwise false
@@ -26,7 +27,10 @@ const isEmailValid = (email) => {
 const handleEmailValidation = (emailValue, errorText, emailInput) => {
   // Check if email value is empty
   if (emailValue === "") {
-    // Update error message with the message from EMAIL_CONFIG.empty and toggle its styleClass to true
+    /**
+     * Update error message with the message from EMAIL_CONFIG.empty and
+     * toggle its styleClass to true
+     */
     errorText.innerText = EMAIL_CONFIG.empty.message;
     errorText.classList.toggle(EMAIL_CONFIG.empty.styleClass, true);
     errorText.classList.toggle(EMAIL_CONFIG.valid.styleClass, false);
@@ -35,7 +39,10 @@ const handleEmailValidation = (emailValue, errorText, emailInput) => {
 
   // Check if email value is valid
   if (isEmailValid(emailValue)) {
-    // Update error message with the message from emailConfig.valid and toggle its styleClass to true
+    /**
+     * Update error message with the message from emailConfig.valid and
+     * toggle its styleClass to true
+     */
     errorText.innerText = EMAIL_CONFIG.valid.message;
     errorText.classList.toggle(EMAIL_CONFIG.valid.styleClass, true);
     errorText.classList.toggle(EMAIL_CONFIG.empty.styleClass, false);
@@ -43,14 +50,20 @@ const handleEmailValidation = (emailValue, errorText, emailInput) => {
     // Clear the email input value
     emailInput.value = "";
   } else {
-    // Update error message with the message from emailConfig.invalid and toggle its styleClass to true
+    /**
+     * Update error message with the message from emailConfig.invalid and
+     * toggle its styleClass to true
+     */
     errorText.innerText = EMAIL_CONFIG.invalid.message;
     errorText.classList.toggle(EMAIL_CONFIG.invalid.styleClass, true);
     errorText.classList.toggle(EMAIL_CONFIG.valid.styleClass, false);
   }
 };
 
-//listens to submit event on newsletterForm and Validates the email address and show an error or success message
+/**
+ * listens to submit event on newsletterForm and
+ * Validates the email address and show an error or success message
+ */
 newsletterForm.addEventListener("submit", (e) => {
   e.preventDefault();
   handleEmailValidation(
@@ -60,7 +73,10 @@ newsletterForm.addEventListener("submit", (e) => {
   );
 });
 
-//listens to submit event on footerForm and Validates the email address and show an error or success message
+/**
+ * listens to submit event on footerForm and
+ * Validates the email address and show an error or success message
+ */
 footerForm.addEventListener("submit", (e) => {
   e.preventDefault();
   handleEmailValidation(footerEmailInput.value.trim(), footerErrorText, footerEmailInput);

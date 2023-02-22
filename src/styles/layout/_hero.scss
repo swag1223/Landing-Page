@@ -86,7 +86,8 @@
   }
 
   &__description {
-    //Ellipses are handled at different breakpoints to adhere to pixel perfect design.
+    /*Ellipses are handled at different breakpoints 
+    to adhere to pixel perfect design.*/
     @include ellipsis(5);
 
     @include breakpoint(md) {
